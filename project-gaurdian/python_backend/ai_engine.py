@@ -6,6 +6,7 @@ import async_runtime
 import chat_sessions
 from resilience import call_with_retry
 from retrieval import retrieve, format_context
+import json
 
 try:
     from google.adk.agents import Agent
@@ -35,6 +36,16 @@ Instructions:
 1. Provide a crisp, structured compliance summary (100-150 words).
 2. Explicitly cite the relevant BaFin Circular numbers or GwG sections.
 3. List 2 concrete actionable DOs and 2 DONTs for traders or sales officers.
+"""
+
+_IDEAS_AGENT_INSTRUCTION = """You are an AI Quantitative Strategist & MiFID II Compliance Engine for a European Investment Bank.
+Given a historical institutional trade ledger, synthesize 3 high-conviction, compliance-pre-cleared trade ideas.
+
+Output requirements:
+1. Return strictly valid JSON array only (no markdown code fences).
+2. Each idea must include: id, title, assetClass, clientName, clientId, expectedAlphaBps, riskAdjustedReturn, prescreenedPassed, justification, orderDraft.
+3. Ground rationale in trends visible in the provided ledger (execution patterns, venue liquidity, slippage, guardian scores).
+4. Use assetClass values from: Rates, FX, Credit, Equities.
 """
 
 _VERTEX_MODEL = os.environ.get('VERTEX_GEMINI_MODEL', 'gemini-2.5-flash')
@@ -89,6 +100,12 @@ def _build_risk_agent():
         model=_VERTEX_MODEL,
         description='Narrates quantitative cross-market anomaly output into a risk-desk briefing via Vertex AI.',
         instruction=_RISK_NARRATOR_INSTRUCTION,
+def _build_ideas_agent():
+    return Agent(
+        name='ideas_generation_agent',
+        model=_VERTEX_MODEL,
+        description='Generates compliance-precleared trade ideas from historical ledger patterns via Vertex AI.',
+        instruction=_IDEAS_AGENT_INSTRUCTION,
     )
 
 
@@ -211,13 +228,22 @@ Write the desk-head briefing."""
 
 import urllib.request
 import urllib.error
+def _run_ideas_oneshot(prompt: str) -> str:
+    return call_with_retry(
+        lambda: async_runtime.submit(_run_ephemeral_adk_agent(_build_ideas_agent(), prompt, 'ideas')),
+        label='ideas',
+    )
+
+
 from vector_engine import build_order_vector, match_precrime_pattern
+from statistical_model import local_statistical_engine
+
 
 # Global state for engine configuration & telemetry
 ENGINE_CONFIG = {
     'mode': 'auto', # 'auto' | 'force_fallback'
     'primary_model': 'gemini-2.5-flash',
-    'fallback_model': 'guardian-statistical-vector-v2',
+    'fallback_model': 'guardian-statistical-logistic-v2',
     'total_requests': 0,
     'gemini_successes': 0,
     'fallback_triggers': 0,
@@ -234,17 +260,17 @@ def get_engine_status() -> dict:
     return {
         'mode': ENGINE_CONFIG['mode'],
         'primaryEngine': {
-            'name': 'Gemini 2.5 Flash / 1.5 Pro AI',
+            'name': 'Gemini 2.5 Flash Primary AI',
             'status': 'ONLINE' if (api_key_present and ENGINE_CONFIG['mode'] == 'auto') else ('STANDBY' if ENGINE_CONFIG['mode'] == 'force_fallback' else 'NO_API_KEY'),
             'apiKeyConfigured': api_key_present,
             'avgLatencyMs': 320,
         },
         'fallbackEngine': {
-            'name': 'Local Statistical & Vector Model (Cosine Distance + Rule Matrix)',
+            'name': 'Local Statistical Model (Logistic Regression + Cosine TF-IDF Vector Engine)',
             'status': 'ACTIVE' if (ENGINE_CONFIG['mode'] == 'force_fallback' or not api_key_present) else 'READY_STANDBY',
             'avgLatencyMs': 12,
             'confidenceScore': 0.984,
-            'algorithm': 'Cosine Vector Similarity + BaFin Decision Tree'
+            'algorithm': 'Logistic Sigmoid + Cosine Pre-Crime Vector Distance + BaFin Decision Tree'
         },
         'telemetry': {
             'totalRequests': ENGINE_CONFIG['total_requests'],
@@ -309,56 +335,36 @@ Requirements:
         except Exception as e:
             print(f"[Python AI Engine] Gemini API call error: {e}. Activating Local Statistical Fallback Engine.")
 
-    # Local Statistical & Vector Fallback Engine
+    # Execute Local Statistical & Vector Reasoning Model
     ENGINE_CONFIG['fallback_triggers'] += 1
-    latency = int((time.time() - start_time) * 1000)
-    size_mb = size_eur / 1_000_000
-    
-    # 1. Compute Cosine Vector Distance against historical sanction records
-    order_vec = build_order_vector(
-        size_eur=size_eur,
+
+    eval_res = local_statistical_engine.evaluate_mifid_order_statistically(
+        order_id=order_id,
+        instrument=instrument,
         asset_class=asset_class,
-        kyc_status='VERIFIED',
-        aml_risk_level='LOW',
-        is_off_market=('OTC' in venue or size_eur > 30_000_000)
-    )
-    precrime_match = match_precrime_pattern(order_vec)
-    cosine_sim = precrime_match['similarityScore']
-
-    # 2. Rule Matrix Decision Tree
-    if guardian_score >= 80:
-        status_code = "RELEASED_AUTOMATED"
-        status_phrase = "RELEASED FOR AUTOMATED EXECUTION"
-        decision_rationale = f"Order cleared green-gate criteria. High executability rating ({executability_score}/100) and low market impact on {venue}."
-    elif guardian_score >= 50:
-        status_code = "HOLD_1ST_LINE"
-        status_phrase = "HELD FOR 1ST LINE COMPLIANCE REVIEW"
-        decision_rationale = f"Order flagged for intermediate risk. Pre-crime vector distance ({cosine_sim}) requires manual desk sign-off under WpHG Section 80."
-    else:
-        status_code = "BLOCKED_CENTRAL"
-        status_phrase = "BLOCKED & ESCALATED TO CENTRAL COMPLIANCE"
-        decision_rationale = f"Order blocked due to severe compliance risk match with '{precrime_match['caseName']}' (Cosine distance {cosine_sim})."
-
-    fallback_text = (
-        f"[GUARDIAN STATISTICAL & VECTOR MODEL FALLBACK — CONFIDENCE: 98.4%]\n\n"
-        f"1. MIFID II ART. 27 EVALUATION: Order {order_id} ({direction} €{size_mb:.1f}M {instrument}) evaluated on venue {venue}.\n"
-        f"2. QUANTITATIVE SCORE: Guardian Index = {guardian_score}/100 | Executability = {executability_score}/100 | Cosine Vector Similarity = {cosine_sim}.\n"
-        f"3. HISTORICAL PATTERN MATCH: Nearest sanction case: '{precrime_match['caseName']}' ({precrime_match['regulatorFine']}).\n"
-        f"4. DECISION OUTCOME: {status_phrase}.\n"
-        f"5. COMPLIANCE RATIONALE: {decision_rationale} Verified under BaFin Circular 04/2026 & MiFID II RTS 28."
+        size_eur=size_eur,
+        direction=direction,
+        venue=venue,
+        guardian_score=guardian_score,
+        executability_score=executability_score,
+        client_name=client_name
     )
 
-    total_latency = max(8, latency)
-    ENGINE_CONFIG['last_latency_ms'] = total_latency
+    latency = max(8, int((time.time() - start_time) * 1000))
+
+
+    ENGINE_CONFIG['last_latency_ms'] = latency
 
     return {
-        'text': fallback_text,
-        'model': 'guardian-statistical-vector-v2 (Local Fallback)',
-        'latencyMs': total_latency,
+        'text': eval_res['text'],
+        'model': eval_res['model'],
+        'latencyMs': latency,
         'fallbackUsed': True,
         'engineMode': 'statistical_fallback',
-        'confidenceScore': 0.984,
-        'vectorMatch': precrime_match
+        'confidenceScore': eval_res['confidenceScore'],
+        'violationProbability': eval_res['violationProbability'],
+        'confidenceInterval': eval_res['confidenceInterval'],
+        'precrimeMatch': eval_res['precrimeMatch']
     }
 
 
@@ -411,26 +417,107 @@ Instructions:
             print(f"[Python AI Engine] Gemini API error: {e}. Activating BaFin Statistical RAG Interpreter.")
 
     ENGINE_CONFIG['fallback_triggers'] += 1
+    eval_res = local_statistical_engine.interpret_bafin_rules_statistically(query, docs_summary)
+
     latency = max(10, int((time.time() - start_time) * 1000))
     ENGINE_CONFIG['last_latency_ms'] = latency
 
-    fallback_text = (
-        f"[GUARDIAN BAFIN STATISTICAL RAG MODEL — CONFIDENCE: 97.8%]\n\n"
-        f"REGULATORY INTERPRETATION FOR QUERY: \"{query}\"\n\n"
-        f"Pursuant to BaFin Circular 04/2026 (MaRisk) and GwG Section 15 guidelines, pre-trade compliance mandates deterministic verification of client suitability, benchmark fixing windows, and UBO documentation.\n\n"
-        f"KEY DIRECTIVES:\n"
-        f"• DO: Verify client suitability category and GDPR consent prior to order entry on MTF venues.\n"
-        f"• DO: Record timestamped XAI justification logs for all off-market transactions exceeding €10M.\n"
-        f"• DONT: Never execute transactions for clients with PENDING or EXPIRED KYC status without Central Compliance sign-off.\n"
-        f"• DONT: Do not submit off-market rate quotes within 15 minutes of EURIBOR / ESTR fixing windows without 1st Line clearance."
-    )
-
     return {
-        'text': fallback_text,
-        'model': 'bafin-rag-python-v1',
-        'latencyMs': max(15, latency),
+        'text': eval_res['text'],
+        'model': eval_res['model'],
+        'latencyMs': latency,
         'fallbackUsed': True,
-        'retrievedIds': retrieved_ids,
-        'retrievalMode': retrieval_mode,
+        'engineMode': 'statistical_fallback',
+        'confidenceScore': eval_res['confidenceScore'],
+        'termCorrelation': eval_res['termCorrelation']
     }
 
+
+def generate_ai_ideas_from_history() -> dict:
+    """
+    Synthesizes high-conviction compliance-pre-cleared trade ideas by passing
+    the institutional trade execution ledger through Gemini AI (or Statistical Engine fallback).
+    """
+    start_time = time.time()
+    ENGINE_CONFIG['total_requests'] += 1
+    should_use_adk = ENGINE_CONFIG['mode'] == 'auto'
+
+    from history_engine import TRADE_HISTORY, derive_trade_ideas_from_history
+
+    if should_use_adk and _ADK_AVAILABLE and _configure_vertex_ai():
+        history_summary = json.dumps([{
+            'tradeId': t['tradeId'],
+            'clientName': t['clientName'],
+            'instrument': t['instrument'],
+            'assetClass': t['assetClass'],
+            'sizeEur': t['sizeEur'],
+            'direction': t['direction'],
+            'venue': t['venue'],
+            'slippageBps': t['slippageBps'],
+            'guardianScore': t['guardianScoreAtTime'],
+            'status': t['status']
+        } for t in TRADE_HISTORY], indent=2)
+
+        prompt = f"""You are an AI Quantitative Strategist & MiFID II Compliance Engine for a European Investment Bank.
+Analyze the following historical institutional trade execution ledger:
+
+{history_summary}
+
+Based ONLY on the actual trends, client execution patterns, venue liquidity, and historical slippage in this ledger, synthesize 3 high-conviction, compliance-approved trade ideas.
+
+Output strictly valid JSON with no markdown formatting around it (or in a ```json code block) matching this schema array:
+[
+  {{
+    "id": "IDEA-AI-101",
+    "title": "Descriptive Trade Title",
+    "assetClass": "Rates | FX | Credit | Equities",
+    "clientName": "Client Name from ledger",
+    "clientId": "Client ID e.g. CL-DE-9081",
+    "expectedAlphaBps": 32.5,
+    "riskAdjustedReturn": 2.9,
+    "prescreenedPassed": true,
+    "justification": "Detailed rationale referencing specific trades in the history log, venue slippage, and MiFID II compliance status.",
+    "orderDraft": {{
+      "instrument": "Instrument Name",
+      "direction": "BUY or SELL",
+      "sizeEur": 15000000,
+      "venue": "Eurex MTF or 360T MTF or Tradeweb"
+    }}
+  }}
+]
+"""
+        try:
+            raw_text = _run_ideas_oneshot(prompt)
+            if raw_text.startswith("```json"):
+                raw_text = raw_text[7:]
+            if raw_text.startswith("```"):
+                raw_text = raw_text[3:]
+            if raw_text.endswith("```"):
+                raw_text = raw_text[:-3]
+            raw_text = raw_text.strip()
+
+            parsed_ideas = json.loads(raw_text)
+            if isinstance(parsed_ideas, list):
+                latency = int((time.time() - start_time) * 1000)
+                ENGINE_CONFIG['gemini_successes'] += 1
+                ENGINE_CONFIG['last_latency_ms'] = latency
+                return {
+                    'ideas': parsed_ideas,
+                    'model': f'{_VERTEX_MODEL} (Vertex AI / Cloud ADK)',
+                    'latencyMs': latency,
+                    'fallbackUsed': False
+                }
+        except Exception as e:
+            print(f"[Python AI Engine] Vertex ADK error generating ideas: {e}. Falling back to Statistical Engine.")
+
+    # Statistical Fallback Generation
+    ENGINE_CONFIG['fallback_triggers'] += 1
+    fallback_ideas = derive_trade_ideas_from_history()
+    latency = max(8, int((time.time() - start_time) * 1000))
+    ENGINE_CONFIG['last_latency_ms'] = latency
+    return {
+        'ideas': fallback_ideas,
+        'model': 'guardian-statistical-vector-v2 (Local Fallback Engine)',
+        'latencyMs': latency,
+        'fallbackUsed': True
+    }
