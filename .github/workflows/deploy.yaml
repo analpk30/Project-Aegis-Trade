@@ -52,8 +52,8 @@ jobs:
             --region "${REGION}" \
             --image "${IMAGE}" \
             --service-account="${WORKLOAD_SA_EMAIL}" \
-            --port=3000 \
-            --set-env-vars="NODE_ENV=production,PORT=3000,PYTHON_PORT=5000,CACHE_TTL_SECONDS=60,REDIS_URL=${REDIS_URL}" \
+            --port=5000 \
+            --set-env-vars="PYTHON_PORT=5000" \
             --set-env-vars="GEMINI_API_KEY=${GEMINI_API_KEY}"
 
           url=$(gcloud run services describe "${SERVICE_NAME}" --region="${REGION}" --format="value(status.url)")
@@ -72,4 +72,4 @@ jobs:
           id_token_include_email: true
 
       - name: 'Poke Cloud Run'
-        run: 'curl -H "Authorization: Bearer ${{ steps.auth.outputs.id_token }}" "${{ steps.deploy.outputs.url }}"'
+        run: 'curl -H "Authorization: Bearer ${{ steps.auth.outputs.id_token }}" "${{ steps.deploy.outputs.url }}/api/health"'
