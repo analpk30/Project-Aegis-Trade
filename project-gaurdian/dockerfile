@@ -21,12 +21,15 @@ ENV PYTHON_PORT=5000
 ENV PYTHONUNBUFFERED=1
 ENV VIRTUAL_ENV=/app/venv
 ENV PATH="/app/venv/bin:$PATH"
+ENV GOOGLE_GENAI_USE_VERTEXAI=TRUE
+ENV GOOGLE_CLOUD_LOCATION=us-central1
 
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 RUN python3 -m venv "$VIRTUAL_ENV" \
     && pip install --no-cache-dir python-dotenv google-adk google-genai
+RUN python3 -c "import google.adk, google.genai"
 
 COPY --from=builder /app/dist ./dist
 COPY vite.config.ts ./vite.config.ts
