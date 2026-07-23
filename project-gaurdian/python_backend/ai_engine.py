@@ -6,6 +6,7 @@ import async_runtime
 import chat_sessions
 from resilience import call_with_retry
 from retrieval import retrieve, format_context
+import json
 
 try:
     from google.adk.agents import Agent
@@ -35,6 +36,16 @@ Instructions:
 1. Provide a crisp, structured compliance summary (100-150 words).
 2. Explicitly cite the relevant BaFin Circular numbers or GwG sections.
 3. List 2 concrete actionable DOs and 2 DONTs for traders or sales officers.
+"""
+
+_IDEAS_AGENT_INSTRUCTION = """You are an AI Quantitative Strategist & MiFID II Compliance Engine for a European Investment Bank.
+Given a historical institutional trade ledger, synthesize 3 high-conviction, compliance-pre-cleared trade ideas.
+
+Output requirements:
+1. Return strictly valid JSON array only (no markdown code fences).
+2. Each idea must include: id, title, assetClass, clientName, clientId, expectedAlphaBps, riskAdjustedReturn, prescreenedPassed, justification, orderDraft.
+3. Ground rationale in trends visible in the provided ledger (execution patterns, venue liquidity, slippage, guardian scores).
+4. Use assetClass values from: Rates, FX, Credit, Equities.
 """
 
 _VERTEX_MODEL = os.environ.get('VERTEX_GEMINI_MODEL', 'gemini-2.5-flash')
@@ -68,6 +79,15 @@ def _build_bafin_agent():
         model=_VERTEX_MODEL,
         description='Interprets BaFin circulars and GwG rules via Vertex AI RAG-style prompting.',
         instruction=_BAFIN_AGENT_INSTRUCTION,
+    )
+
+
+def _build_ideas_agent():
+    return Agent(
+        name='ideas_generation_agent',
+        model=_VERTEX_MODEL,
+        description='Generates compliance-precleared trade ideas from historical ledger patterns via Vertex AI.',
+        instruction=_IDEAS_AGENT_INSTRUCTION,
     )
 
 
@@ -124,8 +144,14 @@ def _run_bafin_oneshot(prompt: str) -> str:
         label='bafin-oneshot',
     )
 
-import urllib.request
-import urllib.error
+
+def _run_ideas_oneshot(prompt: str) -> str:
+    return call_with_retry(
+        lambda: async_runtime.submit(_run_ephemeral_adk_agent(_build_ideas_agent(), prompt, 'ideas')),
+        label='ideas',
+    )
+
+
 from vector_engine import build_order_vector, match_precrime_pattern
 from statistical_model import local_statistical_engine
 
@@ -323,3 +349,92 @@ Instructions:
         'termCorrelation': eval_res['termCorrelation']
     }
 
+
+def generate_ai_ideas_from_history() -> dict:
+    """
+    Synthesizes high-conviction compliance-pre-cleared trade ideas by passing
+    the institutional trade execution ledger through Gemini AI (or Statistical Engine fallback).
+    """
+    start_time = time.time()
+    ENGINE_CONFIG['total_requests'] += 1
+    should_use_adk = ENGINE_CONFIG['mode'] == 'auto'
+
+    from history_engine import TRADE_HISTORY, derive_trade_ideas_from_history
+
+    if should_use_adk and _ADK_AVAILABLE and _configure_vertex_ai():
+        history_summary = json.dumps([{
+            'tradeId': t['tradeId'],
+            'clientName': t['clientName'],
+            'instrument': t['instrument'],
+            'assetClass': t['assetClass'],
+            'sizeEur': t['sizeEur'],
+            'direction': t['direction'],
+            'venue': t['venue'],
+            'slippageBps': t['slippageBps'],
+            'guardianScore': t['guardianScoreAtTime'],
+            'status': t['status']
+        } for t in TRADE_HISTORY], indent=2)
+
+        prompt = f"""You are an AI Quantitative Strategist & MiFID II Compliance Engine for a European Investment Bank.
+Analyze the following historical institutional trade execution ledger:
+
+{history_summary}
+
+Based ONLY on the actual trends, client execution patterns, venue liquidity, and historical slippage in this ledger, synthesize 3 high-conviction, compliance-approved trade ideas.
+
+Output strictly valid JSON with no markdown formatting around it (or in a ```json code block) matching this schema array:
+[
+  {{
+    "id": "IDEA-AI-101",
+    "title": "Descriptive Trade Title",
+    "assetClass": "Rates | FX | Credit | Equities",
+    "clientName": "Client Name from ledger",
+    "clientId": "Client ID e.g. CL-DE-9081",
+    "expectedAlphaBps": 32.5,
+    "riskAdjustedReturn": 2.9,
+    "prescreenedPassed": true,
+    "justification": "Detailed rationale referencing specific trades in the history log, venue slippage, and MiFID II compliance status.",
+    "orderDraft": {{
+      "instrument": "Instrument Name",
+      "direction": "BUY or SELL",
+      "sizeEur": 15000000,
+      "venue": "Eurex MTF or 360T MTF or Tradeweb"
+    }}
+  }}
+]
+"""
+        try:
+            raw_text = _run_ideas_oneshot(prompt)
+            if raw_text.startswith("```json"):
+                raw_text = raw_text[7:]
+            if raw_text.startswith("```"):
+                raw_text = raw_text[3:]
+            if raw_text.endswith("```"):
+                raw_text = raw_text[:-3]
+            raw_text = raw_text.strip()
+
+            parsed_ideas = json.loads(raw_text)
+            if isinstance(parsed_ideas, list):
+                latency = int((time.time() - start_time) * 1000)
+                ENGINE_CONFIG['gemini_successes'] += 1
+                ENGINE_CONFIG['last_latency_ms'] = latency
+                return {
+                    'ideas': parsed_ideas,
+                    'model': f'{_VERTEX_MODEL} (Vertex AI / Cloud ADK)',
+                    'latencyMs': latency,
+                    'fallbackUsed': False
+                }
+        except Exception as e:
+            print(f"[Python AI Engine] Vertex ADK error generating ideas: {e}. Falling back to Statistical Engine.")
+
+    # Statistical Fallback Generation
+    ENGINE_CONFIG['fallback_triggers'] += 1
+    fallback_ideas = derive_trade_ideas_from_history()
+    latency = max(8, int((time.time() - start_time) * 1000))
+    ENGINE_CONFIG['last_latency_ms'] = latency
+    return {
+        'ideas': fallback_ideas,
+        'model': 'guardian-statistical-vector-v2 (Local Fallback Engine)',
+        'latencyMs': latency,
+        'fallbackUsed': True
+    }
