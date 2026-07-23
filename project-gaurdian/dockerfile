@@ -22,6 +22,8 @@ ENV PYTHONUNBUFFERED=1
 ENV VIRTUAL_ENV=/app/venv
 ENV PATH="/app/venv/bin:$PATH"
 ENV GOOGLE_GENAI_USE_VERTEXAI=TRUE
+ENV GOOGLE_CLOUD_PROJECT=hack-team-entscheidungsproblem
+ENV GCP_PROJECT=hack-team-entscheidungsproblem
 ENV GOOGLE_CLOUD_LOCATION=us-central1
 
 COPY package.json package-lock.json ./
