@@ -18,7 +18,7 @@ try:
 except Exception:
     pass
 
-from ai_engine import generate_mifid_justification, interpret_bafin_rules, get_engine_status, set_engine_mode
+from ai_engine import generate_mifid_justification, interpret_bafin_rules, get_engine_status, set_engine_mode, generate_ai_ideas_from_history
 
 
 # Ensure local imports work regardless of working directory
@@ -252,6 +252,28 @@ class RequestHandler(BaseHTTPRequestHandler):
                 fallback_used=(mode == 'force_fallback')
             )
             self.send_json({'success': True, 'engineStatus': get_engine_status()})
+            return
+        
+        if path == '/api/ideas/generate':
+            result = generate_ai_ideas_from_history()
+            store.ideas = result['ideas']
+            log_audit_event(
+                module='Idea Generator',
+                persona=store.active_persona,
+                user=store.active_user,
+                action='AI Synthesized Trade Ideas from Execution History Ledger',
+                reasoning_payload=f"Synthesized {len(result['ideas'])} pre-cleared trade ideas by parsing historical trade log. Model used: {result['model']}.",
+                guardian_score_at_time=96,
+                model_used=result['model'],
+                latency_ms=result['latencyMs'],
+                fallback_used=result['fallbackUsed']
+            )
+            self.send_json({
+                'ideas': result['ideas'],
+                'modelUsed': result['model'],
+                'latencyMs': result['latencyMs'],
+                'fallbackUsed': result['fallbackUsed']
+            })
             return
 
         # Engine Parallel Benchmark Test
