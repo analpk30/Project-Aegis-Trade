@@ -40,12 +40,43 @@ export const Trade: React.FC<TradeProps> = ({ activePersona = 'Trader', onOpenWh
     loadOrders();
   }, []);
 
-  // Trigger MiFID II AutoPilot SSE stream
+  // Trigger MiFID II AutoPilot SSE stream (Python Vertex/ADK backend)
   const handleTriggerAutopilot = async (orderId: string) => {
     setIsStreaming(true);
     setStreamedText('');
 
     let streamSucceeded = false;
+    let latestJustification = '';
+
+    const applySseEvent = (data: {
+      type?: string;
+      text?: string;
+      order?: Order;
+      auditEntry?: AuditEntry;
+    }) => {
+      if (data.type === 'chunk' && data.text) {
+        latestJustification = data.text;
+        setStreamedText(data.text);
+        streamSucceeded = true;
+        return;
+      }
+
+      if (data.type === 'complete') {
+        const justification = data.order?.mifidJustification || latestJustification;
+        if (justification) {
+          latestJustification = justification;
+          setStreamedText(justification);
+          streamSucceeded = true;
+        }
+        if (data.order) {
+          setSelectedOrder(data.order);
+          setOrders((prev) => prev.map((o) => (o.id === data.order!.id ? data.order! : o)));
+        }
+        if (data.auditEntry) {
+          setLastAuditEntry(data.auditEntry);
+        }
+      }
+    };
 
     try {
       const response = await fetch(`/api/orders/${orderId}/autopilot`, {
@@ -54,62 +85,67 @@ export const Trade: React.FC<TradeProps> = ({ activePersona = 'Trader', onOpenWh
         body: JSON.stringify({ userComment: 'Front-office AutoPilot execution request' }),
       });
 
-      if (response.ok) {
-        const reader = response.body?.getReader();
-        const decoder = new TextDecoder();
+      if (!response.ok) {
+        throw new Error(`Autopilot HTTP ${response.status}`);
+      }
 
-        if (reader) {
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
+      const reader = response.body?.getReader();
+      if (!reader) {
+        throw new Error('Autopilot response body is not readable');
+      }
 
-            const chunk = decoder.decode(value);
-            const lines = chunk.split('\n');
+      const decoder = new TextDecoder();
+      let buffer = '';
 
-            for (const line of lines) {
-              if (line.startsWith('data: ')) {
-                try {
-                  const data = JSON.parse(line.slice(6));
-                  if (data.type === 'chunk' && data.text) {
-                    setStreamedText(data.text);
-                    streamSucceeded = true;
-                  } else if (data.type === 'complete') {
-                    if (data.order) {
-                      setSelectedOrder(data.order);
-                      setOrders((prev) => prev.map((o) => (o.id === data.order.id ? data.order : o)));
-                    }
-                    if (data.auditEntry) {
-                      setLastAuditEntry(data.auditEntry);
-                    }
-                  }
-                } catch (e) {}
-              }
-            }
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() ?? '';
+
+        for (const rawLine of lines) {
+          const line = rawLine.trimEnd();
+          if (!line.startsWith('data: ')) continue;
+          try {
+            applySseEvent(JSON.parse(line.slice(6)));
+          } catch (err) {
+            console.warn('[Trade] Skipping malformed SSE payload', err);
           }
         }
       }
+
+      // Flush any final buffered SSE line
+      const trailing = buffer.trim();
+      if (trailing.startsWith('data: ')) {
+        try {
+          applySseEvent(JSON.parse(trailing.slice(6)));
+        } catch (err) {
+          console.warn('[Trade] Skipping malformed trailing SSE payload', err);
+        }
+      }
     } catch (e) {
-      console.warn('[Trade] Backend stream unavailable, using local client AutoPilot generator');
+      console.warn('[Trade] Backend stream unavailable, using local client AutoPilot generator', e);
     }
 
-    // Local fallback simulation if backend stream failed
+    // Offline-only deterministic fallback — never overwrite a live backend justification
     if (!streamSucceeded) {
       const targetOrder = orders.find((o) => o.id === orderId) || selectedOrder;
       if (targetOrder) {
-        const simulatedText = `[AUTOMATED MiFID II ARTICLE 27 JUSTIFICATION ENGINE]\n\nEvaluating Order ${targetOrder.id} (${targetOrder.instrument}) - Size: €${(targetOrder.sizeEur / 1e6).toFixed(1)}M\nVenue Selected: ${targetOrder.venue}\n\n1. BEST EXECUTION POLICY: Verified quote depth across 3 primary MTF venues. Execution price matches benchmark within 0.4bps tolerance.\n2. PRE-CRIME VECTOR CHECK: Cosine distance to BaFin historical sanction records = 0.912 (Safe green threshold).\n3. GDPR & KYC DISCLOSURE: Counterparty suitability verified for ${targetOrder.assetClass} asset class.\n\nCONCLUSION: Order cleared for automated execution under MiFID II compliance standards.`;
-        
-        // Simulate progressive typing
-        let curr = '';
-        const words = simulatedText.split(' ');
-        for (let i = 0; i < words.length; i++) {
-          curr += (i === 0 ? '' : ' ') + words[i];
-          setStreamedText(curr);
-          await new Promise((r) => setTimeout(r, 20));
-        }
+        const simulatedText =
+          `[OFFLINE FALLBACK — MiFID II ARTICLE 27]\n\n` +
+          `Evaluating Order ${targetOrder.id} (${targetOrder.instrument}) - Size: €${(targetOrder.sizeEur / 1e6).toFixed(1)}M\n` +
+          `Venue Selected: ${targetOrder.venue}\n\n` +
+          `1. BEST EXECUTION POLICY: Verified quote depth across primary MTF venues.\n` +
+          `2. PRE-CRIME VECTOR CHECK: Similarity below sanction threshold.\n` +
+          `3. GDPR & KYC DISCLOSURE: Counterparty suitability verified for ${targetOrder.assetClass}.\n\n` +
+          `CONCLUSION: Local fallback justification only — start python_backend on :5000 for live Vertex AI.`;
+
+        setStreamedText(simulatedText);
 
         const updatedOrder: Order = {
           ...targetOrder,
-          status: 'Approved',
           mifidJustification: simulatedText,
           updatedAt: new Date().toISOString(),
         };
@@ -120,12 +156,12 @@ export const Trade: React.FC<TradeProps> = ({ activePersona = 'Trader', onOpenWh
           module: 'AutoPilot Execution',
           persona: activePersona as PersonaRole,
           user: `${activePersona} User`,
-          action: `AutoPilot MiFID II Justification Generated for ${targetOrder.id}`,
+          action: `Offline AutoPilot fallback for ${targetOrder.id}`,
           reasoningPayload: simulatedText,
           guardianScoreAtTime: targetOrder.guardianScore || 92,
-          modelUsed: 'gemini-1.5-pro (Local Engine)',
-          latencyMs: 140,
-          fallbackUsed: false,
+          modelUsed: 'offline-deterministic-fallback',
+          latencyMs: 0,
+          fallbackUsed: true,
         };
 
         setSelectedOrder(updatedOrder);
