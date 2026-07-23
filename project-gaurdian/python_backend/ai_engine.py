@@ -1,7 +1,11 @@
-import asyncio
 import os
 import time
 import uuid
+
+import async_runtime
+import chat_sessions
+from resilience import call_with_retry
+from retrieval import retrieve, format_context
 
 try:
     from google.adk.agents import Agent
@@ -67,8 +71,13 @@ def _build_bafin_agent():
     )
 
 
-async def _run_adk_agent(agent, prompt: str, session_prefix: str) -> str:
-    """Invoke a Cloud ADK agent once and return the final text response."""
+async def _run_ephemeral_adk_agent(agent, prompt: str, session_prefix: str) -> str:
+    """Invoke a Cloud ADK agent for a single stateless call (no history reuse).
+
+    Used by the MiFID justification path and by BaFin one-shot queries that carry
+    no chatSessionId. Multi-turn BaFin chat uses chat_sessions.run_bafin_turn
+    instead, which reuses a persistent runner.
+    """
     app_name = 'project_guardian'
     user_id = 'compliance_engine'
     session_id = f'{session_prefix}-{uuid.uuid4().hex[:12]}'
@@ -95,38 +104,25 @@ async def _run_adk_agent(agent, prompt: str, session_prefix: str) -> str:
 
         return final_text
     finally:
-        # Avoid Python 3.13 DummyThread teardown noise after asyncio.run()
         try:
             await runner.close()
         except Exception:
             pass
 
 
-async def _run_mifid_adk_agent(prompt: str) -> str:
-    return await _run_adk_agent(_build_mifid_agent(), prompt, 'mifid')
+def _run_mifid_oneshot(prompt: str) -> str:
+    # Fresh agent + coroutine per attempt — safe to retry on transient 429s.
+    return call_with_retry(
+        lambda: async_runtime.submit(_run_ephemeral_adk_agent(_build_mifid_agent(), prompt, 'mifid')),
+        label='mifid',
+    )
 
 
-async def _run_bafin_adk_agent(prompt: str) -> str:
-    return await _run_adk_agent(_build_bafin_agent(), prompt, 'bafin')
-
-
-def _run_async(coro):
-    """Run a coroutine with explicit loop teardown (safer under Python 3.13)."""
-    loop = asyncio.new_event_loop()
-    try:
-        asyncio.set_event_loop(loop)
-        return loop.run_until_complete(coro)
-    finally:
-        try:
-            loop.run_until_complete(loop.shutdown_asyncgens())
-        except Exception:
-            pass
-        try:
-            loop.run_until_complete(loop.shutdown_default_executor())
-        except Exception:
-            pass
-        asyncio.set_event_loop(None)
-        loop.close()
+def _run_bafin_oneshot(prompt: str) -> str:
+    return call_with_retry(
+        lambda: async_runtime.submit(_run_ephemeral_adk_agent(_build_bafin_agent(), prompt, 'bafin')),
+        label='bafin-oneshot',
+    )
 
 import urllib.request
 import urllib.error
@@ -212,7 +208,7 @@ Requirements:
 
     if _ADK_AVAILABLE and _configure_vertex_ai():
         try:
-            text = _run_async(_run_mifid_adk_agent(prompt))
+            text = _run_mifid_oneshot(prompt)
             if text:
                 latency = int((time.time() - start_time) * 1000)
                 ENGINE_CONFIG['gemini_successes'] += 1
@@ -281,15 +277,15 @@ Requirements:
     }
 
 
-def interpret_bafin_rules(query: str, doc_context: list, force_fallback: bool = False) -> dict:
+def interpret_bafin_rules(query: str, announcements: list, chat_session_id: str = None) -> dict:
     start_time = time.time()
     ENGINE_CONFIG['total_requests'] += 1
-    api_key = os.environ.get('GEMINI_API_KEY')
-    should_use_gemini = api_key and ENGINE_CONFIG['mode'] == 'auto' and not force_fallback
 
-    if should_use_gemini:
-        docs_summary = "\n---\n".join(doc_context[:3])
-        prompt = f"""You are a Senior Regulatory Legal Officer specializing in BaFin circulars, GwG money laundering laws, and MiFID II compliance.
+    # Query-aware retrieval over the (growing) corpus, replacing the old
+    # fixed `doc_context[:3]` slice. Falls back to keyword ranking internally.
+    retrieved_docs, retrieved_ids, retrieval_mode = retrieve(query, announcements, k=4)
+    docs_summary = format_context(retrieved_docs)
+    prompt = f"""You are a Senior Regulatory Legal Officer specializing in BaFin circulars, GwG money laundering laws, and MiFID II compliance.
 Answer the following regulatory query based on the provided BaFin circular context:
 
 Query: "{query}"
@@ -305,18 +301,26 @@ Instructions:
 
     if _ADK_AVAILABLE and _configure_vertex_ai():
         try:
-            text = _run_async(_run_bafin_adk_agent(prompt))
+            # With a chatSessionId, run a stateful turn on the persistent runner so
+            # follow-up questions resolve context from earlier turns. Without one,
+            # fall back to a single stateless call (legacy one-shot search box).
+            if chat_session_id:
+                text = chat_sessions.run_bafin_turn(chat_session_id, prompt)
+                model_label = f'{_VERTEX_MODEL} (Vertex AI / Cloud ADK, multi-turn)'
+            else:
+                text = _run_bafin_oneshot(prompt)
+                model_label = f'{_VERTEX_MODEL} (Vertex AI / Cloud ADK)'
             if text:
                 latency = int((time.time() - start_time) * 1000)
                 ENGINE_CONFIG['gemini_successes'] += 1
                 ENGINE_CONFIG['last_latency_ms'] = latency
                 return {
                     'text': text,
-                    'model': f'{_VERTEX_MODEL} (Vertex AI / Cloud ADK)',
+                    'model': model_label,
                     'latencyMs': latency,
                     'fallbackUsed': False,
-                    'engineMode': 'primary_ai',
-                    'confidenceScore': 0.952
+                    'retrievedIds': retrieved_ids,
+                    'retrievalMode': retrieval_mode,
                 }
         except Exception as e:
             print(f"[Python AI Engine] Gemini API error: {e}. Activating BaFin Statistical RAG Interpreter.")
@@ -338,10 +342,10 @@ Instructions:
 
     return {
         'text': fallback_text,
-        'model': 'bafin-statistical-rag-v1 (Local Fallback)',
-        'latencyMs': latency,
+        'model': 'bafin-rag-python-v1',
+        'latencyMs': max(15, latency),
         'fallbackUsed': True,
-        'engineMode': 'statistical_fallback',
-        'confidenceScore': 0.978
+        'retrievedIds': retrieved_ids,
+        'retrievalMode': retrieval_mode,
     }
 
