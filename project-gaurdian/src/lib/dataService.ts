@@ -172,6 +172,65 @@ export async function fetchExecutiveMetrics(): Promise<ExecutiveMetrics> {
   return globalStore.executiveMetrics;
 }
 
+export async function fetchEngineStatus(): Promise<any> {
+  try {
+    const res = await fetch('/api/engine/status');
+    if (res.ok) return await res.json();
+  } catch (e) {
+    console.warn('[DataService] API offline, returning mock dual-engine status');
+  }
+  return {
+    mode: 'auto',
+    primaryEngine: {
+      name: 'Gemini 2.5 Flash / 1.5 Pro AI',
+      status: 'ONLINE',
+      apiKeyConfigured: true,
+      avgLatencyMs: 320,
+    },
+    fallbackEngine: {
+      name: 'Local Statistical & Vector Model (Cosine Distance + Rule Matrix)',
+      status: 'READY_STANDBY',
+      avgLatencyMs: 12,
+      confidenceScore: 0.984,
+      algorithm: 'Cosine Vector Similarity + BaFin Decision Tree'
+    },
+    telemetry: {
+      totalRequests: 42,
+      geminiSuccesses: 38,
+      fallbackTriggers: 4,
+      lastLatencyMs: 14
+    }
+  };
+}
+
+export async function setEngineMode(mode: 'auto' | 'force_fallback'): Promise<any> {
+  try {
+    const res = await fetch('/api/engine/mode', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mode }),
+    });
+    if (res.ok) return await res.json();
+  } catch (e) {
+    console.warn('[DataService] API offline for setEngineMode');
+  }
+  return { success: true };
+}
+
+export async function runEngineBenchmark(orderId?: string): Promise<any> {
+  try {
+    const res = await fetch('/api/engine/benchmark', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderId }),
+    });
+    if (res.ok) return await res.json();
+  } catch (e) {
+    console.warn('[DataService] API offline for benchmark');
+  }
+  return null;
+}
+
 export async function fetchAuditLogs(persona?: PersonaRole): Promise<AuditEntry[]> {
   try {
     const url = persona ? `/api/audit?persona=${encodeURIComponent(persona)}` : '/api/audit';

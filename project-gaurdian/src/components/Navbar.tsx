@@ -10,9 +10,12 @@ import {
   AlertTriangle,
   ArrowRight,
   Sparkles,
+  Cpu,
+  Zap,
 } from 'lucide-react';
 import { PersonaRole } from '../types';
 import { useNavigate } from 'react-router-dom';
+import { DualEngineModal } from './DualEngineModal';
 
 interface NavbarProps {
   activePersona: PersonaRole;
@@ -35,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [isSearching, setIsSearching] = useState(false);
   const [isAlertsOpen, setIsAlertsOpen] = useState(false);
   const [unreadAlerts, setUnreadAlerts] = useState<any[]>([]);
+  const [isDualEngineModalOpen, setIsDualEngineModalOpen] = useState(false);
 
   const personas: { role: PersonaRole; desc: string }[] = [
     { role: 'Trader', desc: 'Order blotter & AutoPilot execution' },
@@ -110,8 +114,21 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Right Controls: Guardian Score Gauge + Alerts + Persona Switcher */}
+      {/* Right Controls: Dual Engine + Guardian Score Gauge + Alerts + Persona Switcher */}
       <div className="flex items-center gap-3">
+        {/* Dual Engine Fallback Architecture Badge */}
+        <button
+          onClick={() => setIsDualEngineModalOpen(true)}
+          className="flex items-center gap-2 rounded-lg border border-sky-500/30 bg-sky-500/10 px-3 py-1.5 text-sky-400 hover:bg-sky-500/20 transition-all cursor-pointer"
+          title="Click to view Dual-Engine status, test fallback model, or toggle engine mode"
+        >
+          <Cpu className="h-4 w-4 text-sky-400" />
+          <div className="text-left hidden lg:block">
+            <span className="text-[10px] uppercase text-sky-400/80 block font-mono leading-none">Dual Engine</span>
+            <span className="font-mono text-xs font-bold leading-none">Auto Failover Active</span>
+          </div>
+        </button>
+
         {/* Live Guardian Score Badge */}
         <div className="flex items-center gap-2 rounded-lg border border-[#1F2937] bg-[#090A0C] px-3 py-1.5">
           <Activity className="h-4 w-4 text-emerald-400 animate-pulse" />
@@ -316,6 +333,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
       )}
+
+      {/* Dual Engine Fallback Modal */}
+      <DualEngineModal
+        isOpen={isDualEngineModalOpen}
+        onClose={() => setIsDualEngineModalOpen(false)}
+      />
     </header>
   );
 };
