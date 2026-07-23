@@ -46,6 +46,9 @@ jobs:
         run: 'gcloud auth configure-docker ${{ env.GCP_LOCATION }}-docker.pkg.dev'
 
       - name: 'Build Image'
+        env:
+          BUILDX_NO_DEFAULT_ATTESTATIONS: "1"
+          COMPOSE_BAKE: "false"
         run: |
           test -f project-gaurdian/docker-compose.yml
           test -f project-gaurdian/dockerfile
@@ -61,13 +64,14 @@ jobs:
         run: |
           test -n "${GOOGLE_GHA_CREDS_PATH}"
           docker run --rm \
+            --entrypoint python3 \
             -e GOOGLE_GENAI_USE_VERTEXAI=TRUE \
             -e GOOGLE_CLOUD_PROJECT="${GCP_PROJECT_ID}" \
             -e GOOGLE_CLOUD_LOCATION="${GCP_LOCATION}" \
             -e GOOGLE_APPLICATION_CREDENTIALS=/tmp/gha-creds.json \
             -v "${GOOGLE_GHA_CREDS_PATH}:/tmp/gha-creds.json:ro" \
             "${TARGET_IMAGE}" \
-            python3 -c "import google.auth; import google.adk; import google.genai; creds, project = google.auth.default(); assert project in (None, '${GCP_PROJECT_ID}'); print('ADK runtime check passed')"
+            -c "import google.auth; import google.adk; import google.genai; creds, project = google.auth.default(); assert project in (None, '${GCP_PROJECT_ID}'); print('ADK runtime check passed')"
 
       - name: 'Push Image'
         run: |
