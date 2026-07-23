@@ -62,7 +62,7 @@ al.azure.com). Use your SSO ID and the **initial password** given in your briefi
 *   **Google Cloud Platform:** Login via the [GCP SSO link](https://www.google.com/a/db-hackathon.com/ServiceLogin?continue=https://console.cloud.google.com).
 *   **GitHub:** You must accept the invitation sent to your personal email. Attempt to [login to GitHub via SSO](https://github.com/orgs/db-hackathon/sso) first, then link your personal GitHub account.
 *   **Terraform Cloud:** [Login via SSO](https://app.terraform.io/sso/sign-in) and use `db-hackathon-2026` for the *Organization Name*.
-*   **RedHat OpenShift:** Visit the [OpenShift Console](https://console-openshift-console.apps.hackathon.francecentral.aroapp.io/k8s/cluster/projects/entscheidungsproblem-official) and select **AAD** to log in.
+*   **RedHat OpenShift:** Visit the [OpenShift Console](https://console-openshift-console.apps.dbhackathon.swedencentral.aroapp.io/k8s/cluster/projects/entscheidungsproblem-official) and select **AAD** to log in.
 *   **Microsoft Teams:** Access via the [browser](https://teams.microsoft.com/v2/) or the [desktop app](https://www.microsoft.com/en-gb/microsoft-teams/download-app).
 
 </details>
