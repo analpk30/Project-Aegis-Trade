@@ -1,18 +1,60 @@
-
-FROM python:3.11-slim
+FROM node:20-bookworm-slim AS builder
 WORKDIR /app
 
-ENV PYTHONUNBUFFERED=1
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY index.html vite.config.ts tsconfig.json ./
+COPY src ./src
+RUN npm run build
+
+FROM node:20-bookworm-slim AS runner
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends python3 python3-pip python3-venv \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV NODE_ENV=production
+ENV PORT=3000
 ENV PYTHON_PORT=5000
+ENV PYTHONUNBUFFERED=1
+ENV VIRTUAL_ENV=/app/venv
+ENV PATH="/app/venv/bin:$PATH"
 
-COPY python_backend/requirements.txt ./python_backend/requirements.txt
-RUN pip install --no-cache-dir -r python_backend/requirements.txt
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
 
+RUN python3 -m venv "$VIRTUAL_ENV" \
+    && pip install --no-cache-dir python-dotenv google-adk google-genai
+
+COPY --from=builder /app/dist ./dist
+COPY vite.config.ts ./vite.config.ts
 COPY python_backend ./python_backend
 
+EXPOSE 3000
 EXPOSE 5000
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
-    CMD python3 -c "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:5000/api/health').getcode()==200 else 1)"
+HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
+    CMD python3 -c "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:3000').getcode()==200 else 1)"
 
-CMD ["sh", "-c", "python3 python_backend/app.py ${PYTHON_PORT:-5000}"]
+RUN printf '%s\n' \
+    '#!/bin/sh' \
+    'set -e' \
+    'PYTHON_PORT="${PYTHON_PORT:-5000}"' \
+    'PORT="${PORT:-3000}"' \
+    'export BACKEND_URL="http://127.0.0.1:${PYTHON_PORT}"' \
+    '' \
+    'python3 python_backend/app.py "${PYTHON_PORT}" &' \
+    'PYTHON_PID=$!' \
+    '' \
+    'cleanup() {' \
+    '  kill "$PYTHON_PID" 2>/dev/null || true' \
+    '}' \
+    'trap cleanup INT TERM' \
+    '' \
+    'exec npm run start -- --port "${PORT}" --host 0.0.0.0' \
+    > /app/docker-entrypoint.sh \
+    && chmod +x /app/docker-entrypoint.sh
+
+ENTRYPOINT ["./docker-entrypoint.sh"]
