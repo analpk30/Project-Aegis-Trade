@@ -1,0 +1,1761 @@
+[
+  {
+    "id": "BAFIN-2026-27",
+    "title": "BaFin Circular 11/2026: Algorithm Testing and Kill-Switch Governance",
+    "date": "2026-07-16",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Rates",
+    "summary": "Mandatory pre-deployment testing regime for new or amended trading algorithms.",
+    "full text": "Any new or materially amended trading algorithm must undergo documented conformance testing in a non-production environment and be equipped with an independently triggerable kill-switch prior to live deployment. (Reference: KWG §25a.)",
+    "dos": [
+      "Log all algorithm parameter changes with dual sign-off.",
+      "Complete annual fit-and-proper reassessments for desk head roles.",
+      "Conduct quarterly stress tests on high-frequency trading strategies."
+    ],
+    "donts": [
+      "Do not skip annual fit-and-proper reassessment for desk head roles.",
+      "Do not deploy untested algorithm changes directly to production during market hours.",
+      "Avoid disabling circuit breakers without Head of Trading approval."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-26",
+    "title": "BaFin Circular 24/2026: Client Order Handling for Illiquid Corporate Bonds",
+    "date": "2026-06-29",
+    "category": "WpHG / Best Execution",
+    "asset classes": "FX",
+    "summary": "Revised order handling standards for illiquid corporate bond instruments.",
+    "full text": "Firms handling client orders in corporate bonds classified as illiquid under MiFID II transparency rules must document a specific execution strategy per order, including venue rationale and expected market impact. (Reference: WpHG §85.)",
+    "dos": [
+      "Disclose material conflicts of interest in internal crossing arrangements.",
+      "Aggregate execution quality metrics across all connected venues quarterly."
+    ],
+    "donts": [
+      "Do not bundle research payments with execution commissions.",
+      "Avoid principal trading against client flow without prior written disclosure.",
+      "Do not selectively report only favorable execution venues."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-25",
+    "title": "BaFin Circular 04/2026: Trade Reporting Reconciliation for Interest Rate Swaps",
+    "date": "2026-06-20",
+    "category": "EMIR / Derivatives",
+    "asset classes": "FX",
+    "summary": "Enhanced dual-sided reporting reconciliation standards for OTC interest rate swaps.",
+    "full text": "Counterparties to OTC interest rate swaps must reconcile trade repository reports on a daily basis and remediate any reporting breaks exceeding 5 business days within the following reporting cycle. (Reference: EMIR Art. 38.)",
+    "dos": [
+      "Reconcile trade repository reports on a daily basis.",
+      "Maintain complete UTI and UPI mapping across all reporting counterparties."
+    ],
+    "donts": [
+      "Do not leave reporting breaks exceeding 5 business days unremediated.",
+      "Avoid exceeding clearing thresholds without prior notification to BaFin and ESMA.",
+      "Do not omit sub-threshold FX forwards from daily margin calculations where in scope."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-24",
+    "title": "BaFin Circular 17/2026: ICT Third-Party Risk Management for Trading Infrastructure",
+    "date": "2026-06-16",
+    "category": "DORA / Operational Resilience",
+    "asset classes": "FX",
+    "summary": "New register-of-information requirements for critical ICT providers supporting trading systems.",
+    "full text": "Financial entities must maintain and annually update a register of information covering all ICT third-party providers supporting critical trading, clearing, or settlement functions, including sub-outsourcing arrangements. (Reference: DORA Art. 17.)",
+    "dos": [
+      "Include critical algorithmic systems within annual resilience testing scope.",
+      "Classify ICT incidents using the harmonised severity criteria without delay."
+    ],
+    "donts": [
+      "Do not exclude critical algorithmic systems from penetration testing scope.",
+      "Avoid delaying major incident notification beyond the 4-hour window."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-23",
+    "title": "BaFin Circular 07/2026: Best Execution Reporting for Multi-Venue FX Swaps",
+    "date": "2026-06-12",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Credit, Equities",
+    "summary": "New quarterly reporting obligations for FX swap execution quality across MTFs and internal crossing networks.",
+    "full text": "Investment firms executing FX swaps across multiple venues must submit quarterly best-execution quality reports comparing price improvement, latency, and rejection rates across all connected liquidity pools. (Reference: WpHG §85.)",
+    "dos": [
+      "Document a specific execution strategy for each illiquid bond order.",
+      "Retain venue selection logic for a minimum of 5 years.",
+      "Disclose material conflicts of interest in internal crossing arrangements."
+    ],
+    "donts": [
+      "Avoid principal trading against client flow without prior written disclosure.",
+      "Do not selectively report only favorable execution venues.",
+      "Do not bundle research payments with execution commissions."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-22",
+    "title": "BaFin Circular 05/2026: Clearing Obligation Threshold Monitoring for Credit Default Swaps",
+    "date": "2026-05-31",
+    "category": "EMIR / Derivatives",
+    "asset classes": "Credit, Rates",
+    "summary": "Revised monitoring requirements for entities approaching the clearing obligation threshold.",
+    "full text": "Counterparties whose aggregate month-end average position in credit default swaps approaches the clearing threshold must notify BaFin and ESMA within four business days and assess central clearing readiness. (Reference: EMIR Art. 9.)",
+    "dos": [
+      "Maintain complete UTI and UPI mapping across all reporting counterparties.",
+      "Reconcile trade repository reports on a daily basis."
+    ],
+    "donts": [
+      "Avoid exceeding clearing thresholds without prior notification to BaFin and ESMA.",
+      "Do not omit sub-threshold FX forwards from daily margin calculations where in scope.",
+      "Do not leave reporting breaks exceeding 5 business days unremediated."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-21",
+    "title": "BaFin Circular 11/2026: Margin Requirements for Non-Centrally Cleared FX Forwards",
+    "date": "2026-05-22",
+    "category": "EMIR / Derivatives",
+    "asset classes": "Credit, Rates",
+    "summary": "Updated variation margin exchange requirements for non-centrally cleared FX derivatives.",
+    "full text": "Counterparties to non-centrally cleared FX forward and swap transactions exceeding the relevant threshold must exchange variation margin on a daily basis, calculated using an approved standardised methodology. (Reference: EMIR Art. 38.)",
+    "dos": [
+      "Exchange variation margin daily using an approved standardised methodology.",
+      "Maintain complete UTI and UPI mapping across all reporting counterparties."
+    ],
+    "donts": [
+      "Do not omit sub-threshold FX forwards from daily margin calculations where in scope.",
+      "Avoid exceeding clearing thresholds without prior notification to BaFin and ESMA.",
+      "Do not leave reporting breaks exceeding 5 business days unremediated."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-20",
+    "title": "BaFin Circular 07/2026: Conflicts of Interest Disclosure in Principal Trading",
+    "date": "2026-05-15",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Rates, FX",
+    "summary": "Enhanced disclosure obligations when firms trade as principal against client flow.",
+    "full text": "Where a firm executes client orders on a principal basis, it must disclose the conflict of interest in writing prior to execution and maintain records demonstrating that pricing was not disadvantageous to the client. (Reference: WpHG §83.)",
+    "dos": [
+      "Separate research payments from execution commissions at all times.",
+      "Retain venue selection logic for a minimum of 5 years.",
+      "Document a specific execution strategy for each illiquid bond order."
+    ],
+    "donts": [
+      "Do not bundle research payments with execution commissions.",
+      "Do not selectively report only favorable execution venues."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-19",
+    "title": "BaFin Circular 05/2026: Enhanced Due Diligence for Cross-Border Credit Facilities",
+    "date": "2026-05-10",
+    "category": "GwG / AML",
+    "asset classes": "Credit, Rates",
+    "summary": "Enhanced due diligence requirements for syndicated credit facilities involving non-EU counterparties.",
+    "full text": "Credit institutions extending syndicated loan facilities to non-EU domiciled borrowers must conduct enhanced due diligence including source-of-funds verification and sanctions screening prior to drawdown. (Reference: GwG §25k KWG.)",
+    "dos": [
+      "Enforce instant system blocks on orders originating from EXPIRED KYC profiles.",
+      "Retain source-of-funds documentation for the statutory minimum period."
+    ],
+    "donts": [
+      "Do not delay structuring-pattern escalation beyond 48 hours."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-18",
+    "title": "BaFin Circular 13/2026: Transaction Reporting Accuracy & Timeliness",
+    "date": "2026-05-02",
+    "category": "MiFID II / MAR",
+    "asset classes": "Equities, FX",
+    "summary": "Stricter same-day transaction reporting standards for OTC-executed instruments.",
+    "full text": "Investment firms must ensure that transaction reports for OTC-executed instruments are submitted to BaFin no later than T+1, with automated reconciliation against front-office execution records. (Reference: WpHG §80.)",
+    "dos": [
+      "Escalate flagged chat and voice communications to Compliance within 24 hours.",
+      "Verify client suitability and consent prior to submitting benchmark order.",
+      "Maintain timestamped audit records of automated surveillance alerts."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window.",
+      "Do not omit payment-for-order-flow arrangements from disclosure reports."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-17",
+    "title": "BaFin Circular 09/2026: PEP Screening for High-Value FX Transactions",
+    "date": "2026-04-29",
+    "category": "GwG / AML",
+    "asset classes": "Rates",
+    "summary": "Mandatory politically exposed person screening for FX transactions above defined thresholds.",
+    "full text": "Institutions must screen all counterparties to FX transactions exceeding EUR 50,000 against updated Politically Exposed Person (PEP) databases prior to settlement, with escalation to the AML Officer for positive matches. (Reference: GwG §25k KWG.)",
+    "dos": [
+      "Complete annual risk re-certification for high-risk correspondent relationships.",
+      "Retain source-of-funds documentation for the statutory minimum period."
+    ],
+    "donts": [
+      "Do not process transactions for counterparties with unresolved sanctions matches.",
+      "Avoid onboarding correspondent banks without completed AML control framework reviews."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-16",
+    "title": "BaFin Circular 10/2026: Incident Reporting for Trading System Outages",
+    "date": "2026-04-20",
+    "category": "DORA / Operational Resilience",
+    "asset classes": "Equities, FX",
+    "summary": "Harmonised major-incident classification and reporting timelines for trading infrastructure outages.",
+    "full text": "Institutions must classify ICT-related incidents affecting trading, order routing, or settlement systems using the harmonised severity criteria and submit an initial notification to BaFin within 4 hours of classification as major. (Reference: DORA Art. 5.)",
+    "dos": [
+      "Classify ICT incidents using the harmonised severity criteria without delay.",
+      "Report major ICT incidents to BaFin within the mandated notification window.",
+      "Include critical algorithmic systems within annual resilience testing scope."
+    ],
+    "donts": [
+      "Avoid delaying major incident notification beyond the 4-hour window.",
+      "Do not exclude critical algorithmic systems from penetration testing scope."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-15",
+    "title": "BaFin Circular 07/2026: Segregation of Duties for Proprietary Trading Desks",
+    "date": "2026-04-06",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Equities",
+    "summary": "Reinforced segregation-of-duties requirements between front office and risk control functions.",
+    "full text": "Institutions operating proprietary trading desks must ensure strict segregation of duties between trade execution, risk measurement, and P&L validation functions, with no dual-hatting permitted at desk-head level. (Reference: KWG §10.)",
+    "dos": [
+      "Maintain strict segregation between execution, risk, and P&L validation roles.",
+      "Complete annual fit-and-proper reassessments for desk head roles.",
+      "Log all algorithm parameter changes with dual sign-off."
+    ],
+    "donts": [
+      "Do not deploy untested algorithm changes directly to production during market hours.",
+      "Do not permit dual-hatting between execution and risk control functions.",
+      "Do not skip annual fit-and-proper reassessment for desk head roles."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-13",
+    "title": "BaFin Circular 15/2026: New Product Approval Process for Complex Structured Products",
+    "date": "2026-04-03",
+    "category": "MaRisk",
+    "asset classes": "Rates",
+    "summary": "Strengthened new-product approval governance for structured credit and rates products.",
+    "full text": "Prior to launch, any new structured product referencing credit or interest rate underlyings must undergo a documented New Product Approval Process involving Risk, Legal, and Compliance sign-off. (Reference: MaRisk BTO 1.)",
+    "dos": [
+      "Maintain a documented exit strategy for critical outsourced pricing functions.",
+      "Ensure risk officers have one-click access to model XAI explanations."
+    ],
+    "donts": [
+      "Avoid relying exclusively on vendor pricing without independent benchmarking.",
+      "Do not launch new structured products without completed New Product Approval sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-14",
+    "title": "BaFin Circular 15/2026: Best Execution Disclosure for Retail Order Flow",
+    "date": "2026-04-03",
+    "category": "MiFID II / MAR",
+    "asset classes": "Rates, Credit",
+    "summary": "Enhanced quarterly disclosure requirements for retail order routing practices.",
+    "full text": "Firms handling retail client orders must publish quarterly execution quality reports detailing venue selection criteria, price improvement statistics, and payment-for-order-flow arrangements where applicable. (Reference: MiFID II Art. 27.)",
+    "dos": [
+      "Cross-check order timestamps against official fixing window schedules.",
+      "Maintain timestamped audit records of automated surveillance alerts.",
+      "Verify client suitability and consent prior to submitting benchmark order."
+    ],
+    "donts": [
+      "Never execute off-market rate swaps within fixing windows without Compliance sign-off.",
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-12",
+    "title": "BaFin Circular 08/2026: Ultimate Beneficial Owner (UBO) Strict Enforcement",
+    "date": "2026-04-01",
+    "category": "GwG / AML",
+    "asset classes": "Equities, Credit",
+    "summary": "Mandatory suspension of trading lines for counterparties lacking updated UBO registry validation.",
+    "full text": "Pursuant to Section 15 of the Money Laundering Act (GwG), credit institutions are strictly forbidden from executing transactions exceeding EUR 100,000 for clients whose KYC due diligence package is expired or incomplete. (Reference: GwG §4.)",
+    "dos": [
+      "Enforce instant system blocks on orders originating from EXPIRED KYC profiles.",
+      "Complete annual risk re-certification for high-risk correspondent relationships."
+    ],
+    "donts": [
+      "Do not delay structuring-pattern escalation beyond 48 hours.",
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-11",
+    "title": "BaFin Circular 08/2026: Transaction Reporting Accuracy & Timeliness",
+    "date": "2026-03-16",
+    "category": "MiFID II / MAR",
+    "asset classes": "Equities, Rates",
+    "summary": "Stricter same-day transaction reporting standards for OTC-executed instruments.",
+    "full text": "Investment firms must ensure that transaction reports for OTC-executed instruments are submitted to BaFin no later than T+1, with automated reconciliation against front-office execution records. (Reference: MAR Art. 12.)",
+    "dos": [
+      "Cross-check order timestamps against official fixing window schedules.",
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing."
+    ],
+    "donts": [
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-10",
+    "title": "BaFin Circular 15/2026: Client Order Handling for Illiquid Corporate Bonds",
+    "date": "2026-03-15",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Credit",
+    "summary": "Revised order handling standards for illiquid corporate bond instruments.",
+    "full text": "Firms handling client orders in corporate bonds classified as illiquid under MiFID II transparency rules must document a specific execution strategy per order, including venue rationale and expected market impact. (Reference: WpHG §83.)",
+    "dos": [
+      "Disclose material conflicts of interest in internal crossing arrangements.",
+      "Aggregate execution quality metrics across all connected venues quarterly.",
+      "Separate research payments from execution commissions at all times."
+    ],
+    "donts": [
+      "Do not bundle research payments with execution commissions.",
+      "Do not selectively report only favorable execution venues.",
+      "Avoid principal trading against client flow without prior written disclosure."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-09",
+    "title": "BaFin Circular 20/2026: Internal Controls for High-Frequency Rates Trading Desks",
+    "date": "2026-03-09",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Credit, Rates",
+    "summary": "Enhanced internal control requirements for desks running high-frequency government bond and swap strategies.",
+    "full text": "Institutions operating high-frequency trading strategies in government bonds and interest rate swaps must implement real-time position and risk limit monitoring with automated circuit breakers. (Reference: KWG §10.)",
+    "dos": [
+      "Log all algorithm parameter changes with dual sign-off.",
+      "Maintain strict segregation between execution, risk, and P&L validation roles."
+    ],
+    "donts": [
+      "Avoid disabling circuit breakers without Head of Trading approval."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-08",
+    "title": "BaFin Circular 01/2026: Capital Buffers & Hedging Recommender Transparency",
+    "date": "2026-03-08",
+    "category": "MaRisk",
+    "asset classes": "Credit, Rates",
+    "summary": "Requirements for AI and algorithmic hedging recommendations influencing regulatory capital.",
+    "full text": "When automated systems recommend credit risk hedges or macro interest rate overlays, the underlying efficiency score, capital impact, and rationale must be recorded in an immutable audit trail accessible to 2nd Line Risk Officers. (Reference: MaRisk BTO 1.)",
+    "dos": [
+      "Independently benchmark vendor pricing models against internal models quarterly.",
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Document combined hedging efficiency score and regulatory capital impact before booking."
+    ],
+    "donts": [
+      "Do not execute unhedged illiquid credit positions exceeding the desk limit without Desk Head sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-07",
+    "title": "BaFin Circular 13/2026: Ultimate Beneficial Owner (UBO) Strict Enforcement",
+    "date": "2026-03-05",
+    "category": "GwG / AML",
+    "asset classes": "Credit",
+    "summary": "Mandatory suspension of trading lines for counterparties lacking updated UBO registry validation.",
+    "full text": "Pursuant to Section 15 of the Money Laundering Act (GwG), credit institutions are strictly forbidden from executing transactions exceeding EUR 100,000 for clients whose KYC due diligence package is expired or incomplete. (Reference: GwG §43.)",
+    "dos": [
+      "Escalate positive PEP screening matches to the AML Officer immediately.",
+      "Enforce instant system blocks on orders originating from EXPIRED KYC profiles.",
+      "Complete annual risk re-certification for high-risk correspondent relationships."
+    ],
+    "donts": [
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off.",
+      "Do not delay structuring-pattern escalation beyond 48 hours.",
+      "Avoid onboarding correspondent banks without completed AML control framework reviews."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-06",
+    "title": "BaFin Circular 20/2026: Enhanced Due Diligence for Cross-Border Credit Facilities",
+    "date": "2026-03-03",
+    "category": "GwG / AML",
+    "asset classes": "Rates",
+    "summary": "Enhanced due diligence requirements for syndicated credit facilities involving non-EU counterparties.",
+    "full text": "Credit institutions extending syndicated loan facilities to non-EU domiciled borrowers must conduct enhanced due diligence including source-of-funds verification and sanctions screening prior to drawdown. (Reference: GwG §15.)",
+    "dos": [
+      "Re-verify offshore holding structures annually.",
+      "Escalate positive PEP screening matches to the AML Officer immediately."
+    ],
+    "donts": [
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-05",
+    "title": "BaFin Circular 16/2026: Algorithm Testing and Kill-Switch Governance",
+    "date": "2026-02-20",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Rates",
+    "summary": "Mandatory pre-deployment testing regime for new or amended trading algorithms.",
+    "full text": "Any new or materially amended trading algorithm must undergo documented conformance testing in a non-production environment and be equipped with an independently triggerable kill-switch prior to live deployment. (Reference: KWG §24.)",
+    "dos": [
+      "Log all algorithm parameter changes with dual sign-off.",
+      "Maintain strict segregation between execution, risk, and P&L validation roles.",
+      "Conduct quarterly stress tests on high-frequency trading strategies."
+    ],
+    "donts": [
+      "Do not deploy untested algorithm changes directly to production during market hours.",
+      "Avoid disabling circuit breakers without Head of Trading approval."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-04",
+    "title": "BaFin Circular 14/2026: Correspondent Banking Relationship Reviews",
+    "date": "2026-02-03",
+    "category": "GwG / AML",
+    "asset classes": "Equities, Credit",
+    "summary": "Annual re-certification requirement for correspondent banking relationships with elevated risk jurisdictions.",
+    "full text": "Credit institutions maintaining correspondent banking relationships with counterparties domiciled in FATF grey-list jurisdictions must complete an annual risk re-certification, including review of respondent bank AML control frameworks. (Reference: GwG §10.)",
+    "dos": [
+      "Retain source-of-funds documentation for the statutory minimum period.",
+      "Re-verify offshore holding structures annually."
+    ],
+    "donts": [
+      "Avoid onboarding correspondent banks without completed AML control framework reviews.",
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off.",
+      "Do not delay structuring-pattern escalation beyond 48 hours."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-03",
+    "title": "BaFin Circular 18/2026: Outsourcing Controls for Algorithmic Pricing Models",
+    "date": "2026-02-01",
+    "category": "MaRisk",
+    "asset classes": "Credit",
+    "summary": "Governance requirements for third-party pricing model providers used in valuation.",
+    "full text": "Institutions relying on externally hosted algorithmic pricing models must maintain documented model validation, exit strategies, and independent performance benchmarking on at least a quarterly basis. (Reference: MaRisk BTO 1.)",
+    "dos": [
+      "Independently benchmark vendor pricing models against internal models quarterly.",
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Document combined hedging efficiency score and regulatory capital impact before booking."
+    ],
+    "donts": [
+      "Do not omit model fairness testing results from validation documentation.",
+      "Do not execute unhedged illiquid credit positions exceeding the desk limit without Desk Head sign-off.",
+      "Avoid relying exclusively on vendor pricing without independent benchmarking."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-02",
+    "title": "BaFin Circular 09/2026: Market Abuse Surveillance for Block Trades",
+    "date": "2026-01-26",
+    "category": "MiFID II / MAR",
+    "asset classes": "Credit, FX",
+    "summary": "Surveillance thresholds tightened for large block trades executed outside continuous trading hours.",
+    "full text": "Firms executing block trades outside continuous trading sessions must apply enhanced pre- and post-trade surveillance to detect potential front-running or information leakage patterns. (Reference: WpHG §80.)",
+    "dos": [
+      "Verify client suitability and consent prior to submitting benchmark order.",
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing.",
+      "Maintain timestamped audit records of automated surveillance alerts."
+    ],
+    "donts": [
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED."
+    ]
+  },
+  {
+    "id": "BAFIN-2026-01",
+    "title": "BaFin Circular 14/2026: New Product Approval Process for Complex Structured Products",
+    "date": "2026-01-24",
+    "category": "MaRisk",
+    "asset classes": "Equities, Credit",
+    "summary": "Strengthened new-product approval governance for structured credit and rates products.",
+    "full text": "Prior to launch, any new structured product referencing credit or interest rate underlyings must undergo a documented New Product Approval Process involving Risk, Legal, and Compliance sign-off. (Reference: MaRisk BTR 1.)",
+    "dos": [
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Document combined hedging efficiency score and regulatory capital impact before booking.",
+      "Conduct fairness testing for all machine-learning credit scoring models annually."
+    ],
+    "donts": [
+      "Do not omit model fairness testing results from validation documentation."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-31",
+    "title": "BaFin Circular 16/2025: Algorithm Testing and Kill-Switch Governance",
+    "date": "2025-12-14",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Rates",
+    "summary": "Mandatory pre-deployment testing regime for new or amended trading algorithms.",
+    "full text": "Any new or materially amended trading algorithm must undergo documented conformance testing in a non-production environment and be equipped with an independently triggerable kill-switch prior to live deployment. (Reference: KWG §10.)",
+    "dos": [
+      "Implement automated kill-switches for breach of intraday VaR limits.",
+      "Maintain strict segregation between execution, risk, and P&L validation roles."
+    ],
+    "donts": [
+      "Avoid disabling circuit breakers without Head of Trading approval."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-30",
+    "title": "BaFin Circular 23/2025: Segregation of Duties for Proprietary Trading Desks",
+    "date": "2025-12-11",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Rates",
+    "summary": "Reinforced segregation-of-duties requirements between front office and risk control functions.",
+    "full text": "Institutions operating proprietary trading desks must ensure strict segregation of duties between trade execution, risk measurement, and P&L validation functions, with no dual-hatting permitted at desk-head level. (Reference: KWG §24.)",
+    "dos": [
+      "Complete annual fit-and-proper reassessments for desk head roles.",
+      "Maintain strict segregation between execution, risk, and P&L validation roles.",
+      "Log all algorithm parameter changes with dual sign-off."
+    ],
+    "donts": [
+      "Avoid disabling circuit breakers without Head of Trading approval."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-29",
+    "title": "BaFin Circular 21/2025: Outsourcing Controls for Algorithmic Pricing Models",
+    "date": "2025-12-08",
+    "category": "MaRisk",
+    "asset classes": "Credit, Rates",
+    "summary": "Governance requirements for third-party pricing model providers used in valuation.",
+    "full text": "Institutions relying on externally hosted algorithmic pricing models must maintain documented model validation, exit strategies, and independent performance benchmarking on at least a quarterly basis. (Reference: MaRisk AT 4.2.)",
+    "dos": [
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Maintain a documented exit strategy for critical outsourced pricing functions.",
+      "Independently benchmark vendor pricing models against internal models quarterly."
+    ],
+    "donts": [
+      "Avoid relying exclusively on vendor pricing without independent benchmarking."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-28",
+    "title": "BaFin Circular 04/2025: Best Execution Disclosure for Retail Order Flow",
+    "date": "2025-11-27",
+    "category": "MiFID II / MAR",
+    "asset classes": "FX, Rates",
+    "summary": "Enhanced quarterly disclosure requirements for retail order routing practices.",
+    "full text": "Firms handling retail client orders must publish quarterly execution quality reports detailing venue selection criteria, price improvement statistics, and payment-for-order-flow arrangements where applicable. (Reference: MAR Art. 8.)",
+    "dos": [
+      "Verify client suitability and consent prior to submitting benchmark order.",
+      "Maintain timestamped audit records of automated surveillance alerts.",
+      "Escalate flagged chat and voice communications to Compliance within 24 hours."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-27",
+    "title": "BaFin Circular 08/2025: Client Order Handling for Illiquid Corporate Bonds",
+    "date": "2025-11-19",
+    "category": "WpHG / Best Execution",
+    "asset classes": "FX, Equities",
+    "summary": "Revised order handling standards for illiquid corporate bond instruments.",
+    "full text": "Firms handling client orders in corporate bonds classified as illiquid under MiFID II transparency rules must document a specific execution strategy per order, including venue rationale and expected market impact. (Reference: WpHG §83.)",
+    "dos": [
+      "Separate research payments from execution commissions at all times.",
+      "Aggregate execution quality metrics across all connected venues quarterly.",
+      "Disclose material conflicts of interest in internal crossing arrangements."
+    ],
+    "donts": [
+      "Avoid internalizing client order flow without documented best-execution justification.",
+      "Do not bundle research payments with execution commissions."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-25",
+    "title": "BaFin Circular 12/2025: Transaction Reporting Accuracy & Timeliness",
+    "date": "2025-11-10",
+    "category": "MiFID II / MAR",
+    "asset classes": "FX",
+    "summary": "Stricter same-day transaction reporting standards for OTC-executed instruments.",
+    "full text": "Investment firms must ensure that transaction reports for OTC-executed instruments are submitted to BaFin no later than T+1, with automated reconciliation against front-office execution records. (Reference: MiFIR Art. 26.)",
+    "dos": [
+      "Document venue selection rationale for every retail client order.",
+      "Cross-check order timestamps against official fixing window schedules.",
+      "Maintain timestamped audit records of automated surveillance alerts."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window.",
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-26",
+    "title": "BaFin Circular 16/2025: Trade Reporting Reconciliation for Interest Rate Swaps",
+    "date": "2025-11-10",
+    "category": "EMIR / Derivatives",
+    "asset classes": "Rates, Credit",
+    "summary": "Enhanced dual-sided reporting reconciliation standards for OTC interest rate swaps.",
+    "full text": "Counterparties to OTC interest rate swaps must reconcile trade repository reports on a daily basis and remediate any reporting breaks exceeding 5 business days within the following reporting cycle. (Reference: EMIR Art. 11.)",
+    "dos": [
+      "Exchange variation margin daily using an approved standardised methodology.",
+      "Reconcile trade repository reports on a daily basis.",
+      "Maintain complete UTI and UPI mapping across all reporting counterparties."
+    ],
+    "donts": [
+      "Avoid exceeding clearing thresholds without prior notification to BaFin and ESMA.",
+      "Do not leave reporting breaks exceeding 5 business days unremediated.",
+      "Do not omit sub-threshold FX forwards from daily margin calculations where in scope."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-24",
+    "title": "BaFin Circular 05/2025: Suspicious Activity Reporting for Structured Trade Finance",
+    "date": "2025-11-07",
+    "category": "GwG / AML",
+    "asset classes": "Equities",
+    "summary": "Clarified reporting thresholds for potentially structured trade finance transactions.",
+    "full text": "Trade finance transactions exhibiting characteristics of structuring to avoid reporting thresholds must be escalated to the Central AML Unit within 48 hours of detection, regardless of underlying transaction legitimacy. (Reference: GwG §10.)",
+    "dos": [
+      "Complete annual risk re-certification for high-risk correspondent relationships.",
+      "Escalate positive PEP screening matches to the AML Officer immediately."
+    ],
+    "donts": [
+      "Do not process transactions for counterparties with unresolved sanctions matches."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-23",
+    "title": "BaFin Circular 22/2025: Suspicious Transaction and Order Report (STOR) Escalation",
+    "date": "2025-09-30",
+    "category": "MiFID II / MAR",
+    "asset classes": "Equities, Rates",
+    "summary": "Revised escalation timelines for suspicious order patterns identified by surveillance systems.",
+    "full text": "Compliance functions must escalate any system-flagged suspicious order or transaction pattern to the designated MAR officer within 24 hours, with a documented rationale for STOR filing or dismissal. (Reference: MAR Art. 12.)",
+    "dos": [
+      "Document venue selection rationale for every retail client order.",
+      "Escalate flagged chat and voice communications to Compliance within 24 hours.",
+      "Maintain timestamped audit records of automated surveillance alerts."
+    ],
+    "donts": [
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED.",
+      "Do not combine unvetted client orders with proprietary hedging flows."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-22",
+    "title": "BaFin Circular 03/2025: Internal Controls for High-Frequency Rates Trading Desks",
+    "date": "2025-09-28",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Equities",
+    "summary": "Enhanced internal control requirements for desks running high-frequency government bond and swap strategies.",
+    "full text": "Institutions operating high-frequency trading strategies in government bonds and interest rate swaps must implement real-time position and risk limit monitoring with automated circuit breakers. (Reference: KWG §25a.)",
+    "dos": [
+      "Conduct quarterly stress tests on high-frequency trading strategies.",
+      "Implement automated kill-switches for breach of intraday VaR limits."
+    ],
+    "donts": [
+      "Do not permit dual-hatting between execution and risk control functions."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-21",
+    "title": "BaFin Circular 24/2025: ICT Third-Party Risk Management for Trading Infrastructure",
+    "date": "2025-09-21",
+    "category": "DORA / Operational Resilience",
+    "asset classes": "Equities, FX",
+    "summary": "New register-of-information requirements for critical ICT providers supporting trading systems.",
+    "full text": "Financial entities must maintain and annually update a register of information covering all ICT third-party providers supporting critical trading, clearing, or settlement functions, including sub-outsourcing arrangements. (Reference: DORA Art. 5.)",
+    "dos": [
+      "Maintain an up-to-date register of critical ICT third-party providers.",
+      "Report major ICT incidents to BaFin within the mandated notification window.",
+      "Classify ICT incidents using the harmonised severity criteria without delay."
+    ],
+    "donts": [
+      "Avoid delaying major incident notification beyond the 4-hour window.",
+      "Do not omit sub-outsourcing arrangements from the ICT provider register."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-20",
+    "title": "BaFin Circular 18/2025: Incident Reporting for Trading System Outages",
+    "date": "2025-09-19",
+    "category": "DORA / Operational Resilience",
+    "asset classes": "Rates",
+    "summary": "Harmonised major-incident classification and reporting timelines for trading infrastructure outages.",
+    "full text": "Institutions must classify ICT-related incidents affecting trading, order routing, or settlement systems using the harmonised severity criteria and submit an initial notification to BaFin within 4 hours of classification as major. (Reference: DORA Art. 24.)",
+    "dos": [
+      "Report major ICT incidents to BaFin within the mandated notification window.",
+      "Classify ICT incidents using the harmonised severity criteria without delay.",
+      "Maintain an up-to-date register of critical ICT third-party providers."
+    ],
+    "donts": [
+      "Avoid delaying major incident notification beyond the 4-hour window.",
+      "Do not exclude critical algorithmic systems from penetration testing scope.",
+      "Do not omit sub-outsourcing arrangements from the ICT provider register."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-19",
+    "title": "BaFin Circular 22/2025: Model Risk Governance for Machine Learning Credit Scoring",
+    "date": "2025-09-01",
+    "category": "MaRisk",
+    "asset classes": "Credit, FX",
+    "summary": "New validation standards for machine-learning-based credit scoring models.",
+    "full text": "Credit institutions deploying machine learning models for credit scoring must maintain independent model validation documentation, including feature importance analysis and fairness testing results, reviewed at least annually. (Reference: MaRisk AT 4.3.2.)",
+    "dos": [
+      "Conduct fairness testing for all machine-learning credit scoring models annually.",
+      "Document combined hedging efficiency score and regulatory capital impact before booking."
+    ],
+    "donts": [
+      "Do not execute unhedged illiquid credit positions exceeding the desk limit without Desk Head sign-off.",
+      "Do not launch new structured products without completed New Product Approval sign-off.",
+      "Avoid relying exclusively on vendor pricing without independent benchmarking."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-17",
+    "title": "BaFin Circular 02/2025: Capital Buffers & Hedging Recommender Transparency",
+    "date": "2025-08-16",
+    "category": "MaRisk",
+    "asset classes": "Rates, Credit",
+    "summary": "Requirements for AI and algorithmic hedging recommendations influencing regulatory capital.",
+    "full text": "When automated systems recommend credit risk hedges or macro interest rate overlays, the underlying efficiency score, capital impact, and rationale must be recorded in an immutable audit trail accessible to 2nd Line Risk Officers. (Reference: MaRisk BTO 1.)",
+    "dos": [
+      "Document combined hedging efficiency score and regulatory capital impact before booking.",
+      "Conduct fairness testing for all machine-learning credit scoring models annually."
+    ],
+    "donts": [
+      "Do not execute unhedged illiquid credit positions exceeding the desk limit without Desk Head sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-18",
+    "title": "BaFin Circular 24/2025: Clearing Obligation Threshold Monitoring for Credit Default Swaps",
+    "date": "2025-08-16",
+    "category": "EMIR / Derivatives",
+    "asset classes": "Credit",
+    "summary": "Revised monitoring requirements for entities approaching the clearing obligation threshold.",
+    "full text": "Counterparties whose aggregate month-end average position in credit default swaps approaches the clearing threshold must notify BaFin and ESMA within four business days and assess central clearing readiness. (Reference: EMIR REFIT Art. 4.)",
+    "dos": [
+      "Maintain complete UTI and UPI mapping across all reporting counterparties.",
+      "Exchange variation margin daily using an approved standardised methodology.",
+      "Notify BaFin and ESMA promptly when nearing clearing obligation thresholds."
+    ],
+    "donts": [
+      "Do not omit sub-threshold FX forwards from daily margin calculations where in scope."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-16",
+    "title": "BaFin Circular 22/2025: PEP Screening for High-Value FX Transactions",
+    "date": "2025-08-06",
+    "category": "GwG / AML",
+    "asset classes": "FX",
+    "summary": "Mandatory politically exposed person screening for FX transactions above defined thresholds.",
+    "full text": "Institutions must screen all counterparties to FX transactions exceeding EUR 50,000 against updated Politically Exposed Person (PEP) databases prior to settlement, with escalation to the AML Officer for positive matches. (Reference: GwG §43.)",
+    "dos": [
+      "Re-verify offshore holding structures annually.",
+      "Retain source-of-funds documentation for the statutory minimum period.",
+      "Enforce instant system blocks on orders originating from EXPIRED KYC profiles."
+    ],
+    "donts": [
+      "Avoid onboarding correspondent banks without completed AML control framework reviews.",
+      "Do not process transactions for counterparties with unresolved sanctions matches."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-15",
+    "title": "BaFin Circular 18/2025: Ultimate Beneficial Owner (UBO) Strict Enforcement",
+    "date": "2025-07-18",
+    "category": "GwG / AML",
+    "asset classes": "FX",
+    "summary": "Mandatory suspension of trading lines for counterparties lacking updated UBO registry validation.",
+    "full text": "Pursuant to Section 15 of the Money Laundering Act (GwG), credit institutions are strictly forbidden from executing transactions exceeding EUR 100,000 for clients whose KYC due diligence package is expired or incomplete. (Reference: GwG §25k KWG.)",
+    "dos": [
+      "Complete annual risk re-certification for high-risk correspondent relationships.",
+      "Enforce instant system blocks on orders originating from EXPIRED KYC profiles."
+    ],
+    "donts": [
+      "Do not process transactions for counterparties with unresolved sanctions matches.",
+      "Do not delay structuring-pattern escalation beyond 48 hours."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-14",
+    "title": "BaFin Circular 20/2025: Suspicious Activity Reporting for Structured Trade Finance",
+    "date": "2025-07-05",
+    "category": "GwG / AML",
+    "asset classes": "Credit, FX",
+    "summary": "Clarified reporting thresholds for potentially structured trade finance transactions.",
+    "full text": "Trade finance transactions exhibiting characteristics of structuring to avoid reporting thresholds must be escalated to the Central AML Unit within 48 hours of detection, regardless of underlying transaction legitimacy. (Reference: GwG §43.)",
+    "dos": [
+      "Enforce instant system blocks on orders originating from EXPIRED KYC profiles.",
+      "Retain source-of-funds documentation for the statutory minimum period.",
+      "Re-verify offshore holding structures annually."
+    ],
+    "donts": [
+      "Do not delay structuring-pattern escalation beyond 48 hours.",
+      "Avoid onboarding correspondent banks without completed AML control framework reviews.",
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-13",
+    "title": "BaFin Circular 15/2025: New Product Approval Process for Complex Structured Products",
+    "date": "2025-07-03",
+    "category": "MaRisk",
+    "asset classes": "Credit",
+    "summary": "Strengthened new-product approval governance for structured credit and rates products.",
+    "full text": "Prior to launch, any new structured product referencing credit or interest rate underlyings must undergo a documented New Product Approval Process involving Risk, Legal, and Compliance sign-off. (Reference: MaRisk AT 4.3.2.)",
+    "dos": [
+      "Conduct fairness testing for all machine-learning credit scoring models annually.",
+      "Maintain a documented exit strategy for critical outsourced pricing functions.",
+      "Independently benchmark vendor pricing models against internal models quarterly."
+    ],
+    "donts": [
+      "Do not execute unhedged illiquid credit positions exceeding the desk limit without Desk Head sign-off.",
+      "Avoid relying exclusively on vendor pricing without independent benchmarking."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-12",
+    "title": "BaFin Circular 15/2025: Suspicious Transaction and Order Report (STOR) Escalation",
+    "date": "2025-05-17",
+    "category": "MiFID II / MAR",
+    "asset classes": "Rates",
+    "summary": "Revised escalation timelines for suspicious order patterns identified by surveillance systems.",
+    "full text": "Compliance functions must escalate any system-flagged suspicious order or transaction pattern to the designated MAR officer within 24 hours, with a documented rationale for STOR filing or dismissal. (Reference: MAR Art. 8.)",
+    "dos": [
+      "Verify client suitability and consent prior to submitting benchmark order.",
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing."
+    ],
+    "donts": [
+      "Do not omit payment-for-order-flow arrangements from disclosure reports.",
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-11",
+    "title": "BaFin Circular 24/2025: Capital Buffers & Hedging Recommender Transparency",
+    "date": "2025-04-26",
+    "category": "MaRisk",
+    "asset classes": "FX",
+    "summary": "Requirements for AI and algorithmic hedging recommendations influencing regulatory capital.",
+    "full text": "When automated systems recommend credit risk hedges or macro interest rate overlays, the underlying efficiency score, capital impact, and rationale must be recorded in an immutable audit trail accessible to 2nd Line Risk Officers. (Reference: MaRisk AT 4.3.2.)",
+    "dos": [
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Document combined hedging efficiency score and regulatory capital impact before booking.",
+      "Independently benchmark vendor pricing models against internal models quarterly."
+    ],
+    "donts": [
+      "Do not execute unhedged illiquid credit positions exceeding the desk limit without Desk Head sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-10",
+    "title": "BaFin Circular 24/2025: Transaction Reporting Accuracy & Timeliness",
+    "date": "2025-04-21",
+    "category": "MiFID II / MAR",
+    "asset classes": "FX, Rates",
+    "summary": "Stricter same-day transaction reporting standards for OTC-executed instruments.",
+    "full text": "Investment firms must ensure that transaction reports for OTC-executed instruments are submitted to BaFin no later than T+1, with automated reconciliation against front-office execution records. (Reference: WpHG §80.)",
+    "dos": [
+      "Maintain timestamped audit records of automated surveillance alerts.",
+      "Escalate flagged chat and voice communications to Compliance within 24 hours."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-09",
+    "title": "BaFin Circular 05/2025: Algorithmic Rate Fixing & Benchmark Transparency",
+    "date": "2025-04-12",
+    "category": "MiFID II / MAR",
+    "asset classes": "Credit",
+    "summary": "Tightening pre-trade disclosure and comms monitoring for orders routed near benchmark fixing windows.",
+    "full text": "Financial institutions must ensure that all orders in benchmark-sensitive instruments routed near fixing windows undergo automated pre-trade anomaly analysis. Chat logs referencing quote adjustments or benchmark offsets must trigger an immediate 1st Line Compliance hold. (Reference: MiFIR Art. 26.)",
+    "dos": [
+      "Verify client suitability and consent prior to submitting benchmark order.",
+      "Maintain timestamped audit records of automated surveillance alerts."
+    ],
+    "donts": [
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED.",
+      "Do not omit payment-for-order-flow arrangements from disclosure reports."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-08",
+    "title": "BaFin Circular 07/2025: Liquidity Risk Stress Testing for Derivative Portfolios",
+    "date": "2025-04-11",
+    "category": "MaRisk",
+    "asset classes": "Rates, Credit",
+    "summary": "Enhanced stress testing frequency for portfolios with significant derivative exposure.",
+    "full text": "Institutions with derivative notional exposure exceeding 5% of Tier 1 capital must conduct monthly liquidity stress tests incorporating margin call scenarios and collateral haircut shocks. (Reference: MaRisk BTR 1.)",
+    "dos": [
+      "Document combined hedging efficiency score and regulatory capital impact before booking.",
+      "Independently benchmark vendor pricing models against internal models quarterly.",
+      "Maintain a documented exit strategy for critical outsourced pricing functions."
+    ],
+    "donts": [
+      "Do not omit model fairness testing results from validation documentation.",
+      "Do not launch new structured products without completed New Product Approval sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-07",
+    "title": "BaFin Circular 22/2025: Inducements and Research Unbundling Compliance",
+    "date": "2025-04-09",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Credit, Equities",
+    "summary": "Continued enforcement of research payment unbundling requirements for equity research.",
+    "full text": "Firms must ensure that payments for investment research are separated from execution commissions, with research budgets approved and reviewed by Compliance on an annual basis. (Reference: WpHG §83.)",
+    "dos": [
+      "Document a specific execution strategy for each illiquid bond order.",
+      "Aggregate execution quality metrics across all connected venues quarterly."
+    ],
+    "donts": [
+      "Avoid principal trading against client flow without prior written disclosure.",
+      "Avoid internalizing client order flow without documented best-execution justification."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-06",
+    "title": "BaFin Circular 15/2025: Segregation of Duties for Proprietary Trading Desks",
+    "date": "2025-02-27",
+    "category": "KWG / Internal Controls",
+    "asset classes": "FX",
+    "summary": "Reinforced segregation-of-duties requirements between front office and risk control functions.",
+    "full text": "Institutions operating proprietary trading desks must ensure strict segregation of duties between trade execution, risk measurement, and P&L validation functions, with no dual-hatting permitted at desk-head level. (Reference: KWG §45.)",
+    "dos": [
+      "Maintain strict segregation between execution, risk, and P&L validation roles.",
+      "Conduct quarterly stress tests on high-frequency trading strategies.",
+      "Complete annual fit-and-proper reassessments for desk head roles."
+    ],
+    "donts": [
+      "Do not permit dual-hatting between execution and risk control functions.",
+      "Do not deploy untested algorithm changes directly to production during market hours."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-05",
+    "title": "BaFin Circular 03/2025: Model Risk Governance for Machine Learning Credit Scoring",
+    "date": "2025-02-23",
+    "category": "MaRisk",
+    "asset classes": "FX",
+    "summary": "New validation standards for machine-learning-based credit scoring models.",
+    "full text": "Credit institutions deploying machine learning models for credit scoring must maintain independent model validation documentation, including feature importance analysis and fairness testing results, reviewed at least annually. (Reference: MaRisk AT 9.)",
+    "dos": [
+      "Conduct fairness testing for all machine-learning credit scoring models annually.",
+      "Maintain a documented exit strategy for critical outsourced pricing functions.",
+      "Independently benchmark vendor pricing models against internal models quarterly."
+    ],
+    "donts": [
+      "Avoid relying exclusively on vendor pricing without independent benchmarking."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-03",
+    "title": "BaFin Circular 03/2025: Conflicts of Interest Disclosure in Principal Trading",
+    "date": "2025-02-14",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Credit, FX",
+    "summary": "Enhanced disclosure obligations when firms trade as principal against client flow.",
+    "full text": "Where a firm executes client orders on a principal basis, it must disclose the conflict of interest in writing prior to execution and maintain records demonstrating that pricing was not disadvantageous to the client. (Reference: WpHG §85.)",
+    "dos": [
+      "Aggregate execution quality metrics across all connected venues quarterly.",
+      "Disclose material conflicts of interest in internal crossing arrangements.",
+      "Separate research payments from execution commissions at all times."
+    ],
+    "donts": [
+      "Avoid principal trading against client flow without prior written disclosure.",
+      "Do not bundle research payments with execution commissions.",
+      "Do not selectively report only favorable execution venues."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-04",
+    "title": "BaFin Circular 15/2025: Fit and Proper Assessments for Trading Desk Heads",
+    "date": "2025-02-14",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Rates",
+    "summary": "Renewed fit-and-proper assessment cycle for senior trading function holders.",
+    "full text": "Institutions must conduct annual fit-and-proper reassessments for individuals holding trading desk head positions in credit and rates businesses, with findings reported to the Management Board. (Reference: KWG §25a.)",
+    "dos": [
+      "Maintain strict segregation between execution, risk, and P&L validation roles.",
+      "Implement automated kill-switches for breach of intraday VaR limits."
+    ],
+    "donts": [
+      "Do not skip annual fit-and-proper reassessment for desk head roles.",
+      "Avoid disabling circuit breakers without Head of Trading approval.",
+      "Do not deploy untested algorithm changes directly to production during market hours."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-02",
+    "title": "BaFin Circular 07/2025: Suspicious Transaction and Order Report (STOR) Escalation",
+    "date": "2025-02-11",
+    "category": "MiFID II / MAR",
+    "asset classes": "Credit, Equities",
+    "summary": "Revised escalation timelines for suspicious order patterns identified by surveillance systems.",
+    "full text": "Compliance functions must escalate any system-flagged suspicious order or transaction pattern to the designated MAR officer within 24 hours, with a documented rationale for STOR filing or dismissal. (Reference: MAR Art. 12.)",
+    "dos": [
+      "Document venue selection rationale for every retail client order.",
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing."
+    ],
+    "donts": [
+      "Do not omit payment-for-order-flow arrangements from disclosure reports.",
+      "Never execute off-market rate swaps within fixing windows without Compliance sign-off.",
+      "Do not delay STOR escalation beyond the mandated review window."
+    ]
+  },
+  {
+    "id": "BAFIN-2025-01",
+    "title": "BaFin Circular 17/2025: Best Execution Disclosure for Retail Order Flow",
+    "date": "2025-01-25",
+    "category": "MiFID II / MAR",
+    "asset classes": "FX",
+    "summary": "Enhanced quarterly disclosure requirements for retail order routing practices.",
+    "full text": "Firms handling retail client orders must publish quarterly execution quality reports detailing venue selection criteria, price improvement statistics, and payment-for-order-flow arrangements where applicable. (Reference: MiFIR Art. 26.)",
+    "dos": [
+      "Verify client suitability and consent prior to submitting benchmark order.",
+      "Document venue selection rationale for every retail client order.",
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window.",
+      "Do not combine unvetted client orders with proprietary hedging flows."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-42",
+    "title": "BaFin Circular 11/2024: Best Execution Disclosure for Retail Order Flow",
+    "date": "2024-12-22",
+    "category": "MiFID II / MAR",
+    "asset classes": "Rates",
+    "summary": "Enhanced quarterly disclosure requirements for retail order routing practices.",
+    "full text": "Firms handling retail client orders must publish quarterly execution quality reports detailing venue selection criteria, price improvement statistics, and payment-for-order-flow arrangements where applicable. (Reference: WpHG §80.)",
+    "dos": [
+      "Maintain timestamped audit records of automated surveillance alerts.",
+      "Escalate flagged chat and voice communications to Compliance within 24 hours."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window.",
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED.",
+      "Do not omit payment-for-order-flow arrangements from disclosure reports."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-41",
+    "title": "BaFin Circular 10/2024: Client Order Handling for Illiquid Corporate Bonds",
+    "date": "2024-11-28",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Equities",
+    "summary": "Revised order handling standards for illiquid corporate bond instruments.",
+    "full text": "Firms handling client orders in corporate bonds classified as illiquid under MiFID II transparency rules must document a specific execution strategy per order, including venue rationale and expected market impact. (Reference: WpHG §80.)",
+    "dos": [
+      "Separate research payments from execution commissions at all times.",
+      "Document a specific execution strategy for each illiquid bond order."
+    ],
+    "donts": [
+      "Avoid internalizing client order flow without documented best-execution justification.",
+      "Do not selectively report only favorable execution venues.",
+      "Do not bundle research payments with execution commissions."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-40",
+    "title": "BaFin Circular 08/2024: Outsourcing Controls for Algorithmic Pricing Models",
+    "date": "2024-11-09",
+    "category": "MaRisk",
+    "asset classes": "Rates",
+    "summary": "Governance requirements for third-party pricing model providers used in valuation.",
+    "full text": "Institutions relying on externally hosted algorithmic pricing models must maintain documented model validation, exit strategies, and independent performance benchmarking on at least a quarterly basis. (Reference: MaRisk BTR 1.)",
+    "dos": [
+      "Conduct fairness testing for all machine-learning credit scoring models annually.",
+      "Ensure risk officers have one-click access to model XAI explanations."
+    ],
+    "donts": [
+      "Do not launch new structured products without completed New Product Approval sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-39",
+    "title": "BaFin Circular 15/2024: Ultimate Beneficial Owner (UBO) Strict Enforcement",
+    "date": "2024-10-18",
+    "category": "GwG / AML",
+    "asset classes": "Equities, Credit",
+    "summary": "Mandatory suspension of trading lines for counterparties lacking updated UBO registry validation.",
+    "full text": "Pursuant to Section 15 of the Money Laundering Act (GwG), credit institutions are strictly forbidden from executing transactions exceeding EUR 100,000 for clients whose KYC due diligence package is expired or incomplete. (Reference: GwG §15.)",
+    "dos": [
+      "Complete annual risk re-certification for high-risk correspondent relationships.",
+      "Escalate positive PEP screening matches to the AML Officer immediately."
+    ],
+    "donts": [
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off.",
+      "Do not delay structuring-pattern escalation beyond 48 hours.",
+      "Do not process transactions for counterparties with unresolved sanctions matches."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-38",
+    "title": "BaFin Circular 18/2024: Digital Operational Resilience Testing for Algorithmic Systems",
+    "date": "2024-10-13",
+    "category": "DORA / Operational Resilience",
+    "asset classes": "Equities",
+    "summary": "Mandatory resilience testing programme for systems supporting algorithmic execution.",
+    "full text": "Institutions operating algorithmic trading systems must include those systems within the scope of their annual threat-led penetration testing programme where they are classified as critical or important functions. (Reference: DORA Art. 17.)",
+    "dos": [
+      "Classify ICT incidents using the harmonised severity criteria without delay.",
+      "Include critical algorithmic systems within annual resilience testing scope."
+    ],
+    "donts": [
+      "Avoid delaying major incident notification beyond the 4-hour window.",
+      "Do not omit sub-outsourcing arrangements from the ICT provider register."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-37",
+    "title": "BaFin Circular 09/2024: Suspicious Activity Reporting for Structured Trade Finance",
+    "date": "2024-10-12",
+    "category": "GwG / AML",
+    "asset classes": "Credit",
+    "summary": "Clarified reporting thresholds for potentially structured trade finance transactions.",
+    "full text": "Trade finance transactions exhibiting characteristics of structuring to avoid reporting thresholds must be escalated to the Central AML Unit within 48 hours of detection, regardless of underlying transaction legitimacy. (Reference: GwG §10.)",
+    "dos": [
+      "Enforce instant system blocks on orders originating from EXPIRED KYC profiles.",
+      "Complete annual risk re-certification for high-risk correspondent relationships.",
+      "Re-verify offshore holding structures annually."
+    ],
+    "donts": [
+      "Avoid onboarding correspondent banks without completed AML control framework reviews."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-36",
+    "title": "BaFin Circular 03/2024: Liquidity Risk Stress Testing for Derivative Portfolios",
+    "date": "2024-10-08",
+    "category": "MaRisk",
+    "asset classes": "Rates, Credit",
+    "summary": "Enhanced stress testing frequency for portfolios with significant derivative exposure.",
+    "full text": "Institutions with derivative notional exposure exceeding 5% of Tier 1 capital must conduct monthly liquidity stress tests incorporating margin call scenarios and collateral haircut shocks. (Reference: MaRisk AT 4.2.)",
+    "dos": [
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Conduct fairness testing for all machine-learning credit scoring models annually."
+    ],
+    "donts": [
+      "Do not omit model fairness testing results from validation documentation."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-34",
+    "title": "BaFin Circular 10/2024: Internal Controls for High-Frequency Rates Trading Desks",
+    "date": "2024-09-28",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Credit",
+    "summary": "Enhanced internal control requirements for desks running high-frequency government bond and swap strategies.",
+    "full text": "Institutions operating high-frequency trading strategies in government bonds and interest rate swaps must implement real-time position and risk limit monitoring with automated circuit breakers. (Reference: KWG §10.)",
+    "dos": [
+      "Log all algorithm parameter changes with dual sign-off.",
+      "Complete annual fit-and-proper reassessments for desk head roles.",
+      "Maintain strict segregation between execution, risk, and P&L validation roles."
+    ],
+    "donts": [
+      "Do not deploy untested algorithm changes directly to production during market hours."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-35",
+    "title": "BaFin Circular 05/2024: Correspondent Banking Relationship Reviews",
+    "date": "2024-09-28",
+    "category": "GwG / AML",
+    "asset classes": "Credit, Rates",
+    "summary": "Annual re-certification requirement for correspondent banking relationships with elevated risk jurisdictions.",
+    "full text": "Credit institutions maintaining correspondent banking relationships with counterparties domiciled in FATF grey-list jurisdictions must complete an annual risk re-certification, including review of respondent bank AML control frameworks. (Reference: GwG §10.)",
+    "dos": [
+      "Retain source-of-funds documentation for the statutory minimum period.",
+      "Escalate positive PEP screening matches to the AML Officer immediately.",
+      "Complete annual risk re-certification for high-risk correspondent relationships."
+    ],
+    "donts": [
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off.",
+      "Do not process transactions for counterparties with unresolved sanctions matches.",
+      "Do not delay structuring-pattern escalation beyond 48 hours."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-33",
+    "title": "BaFin Circular 06/2024: Best Execution Reporting for Multi-Venue FX Swaps",
+    "date": "2024-09-27",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Equities",
+    "summary": "New quarterly reporting obligations for FX swap execution quality across MTFs and internal crossing networks.",
+    "full text": "Investment firms executing FX swaps across multiple venues must submit quarterly best-execution quality reports comparing price improvement, latency, and rejection rates across all connected liquidity pools. (Reference: WpHG §80.)",
+    "dos": [
+      "Aggregate execution quality metrics across all connected venues quarterly.",
+      "Document a specific execution strategy for each illiquid bond order."
+    ],
+    "donts": [
+      "Avoid principal trading against client flow without prior written disclosure.",
+      "Avoid internalizing client order flow without documented best-execution justification."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-32",
+    "title": "BaFin Circular 22/2024: Margin Requirements for Non-Centrally Cleared FX Forwards",
+    "date": "2024-09-24",
+    "category": "EMIR / Derivatives",
+    "asset classes": "Rates, FX",
+    "summary": "Updated variation margin exchange requirements for non-centrally cleared FX derivatives.",
+    "full text": "Counterparties to non-centrally cleared FX forward and swap transactions exceeding the relevant threshold must exchange variation margin on a daily basis, calculated using an approved standardised methodology. (Reference: EMIR Art. 11.)",
+    "dos": [
+      "Maintain complete UTI and UPI mapping across all reporting counterparties.",
+      "Reconcile trade repository reports on a daily basis.",
+      "Exchange variation margin daily using an approved standardised methodology."
+    ],
+    "donts": [
+      "Avoid exceeding clearing thresholds without prior notification to BaFin and ESMA."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-31",
+    "title": "BaFin Circular 23/2024: Enhanced Due Diligence for Cross-Border Credit Facilities",
+    "date": "2024-09-17",
+    "category": "GwG / AML",
+    "asset classes": "Credit",
+    "summary": "Enhanced due diligence requirements for syndicated credit facilities involving non-EU counterparties.",
+    "full text": "Credit institutions extending syndicated loan facilities to non-EU domiciled borrowers must conduct enhanced due diligence including source-of-funds verification and sanctions screening prior to drawdown. (Reference: GwG §10.)",
+    "dos": [
+      "Escalate positive PEP screening matches to the AML Officer immediately.",
+      "Retain source-of-funds documentation for the statutory minimum period."
+    ],
+    "donts": [
+      "Avoid onboarding correspondent banks without completed AML control framework reviews."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-30",
+    "title": "BaFin Circular 01/2024: Suspicious Transaction and Order Report (STOR) Escalation",
+    "date": "2024-09-10",
+    "category": "MiFID II / MAR",
+    "asset classes": "Rates, Equities",
+    "summary": "Revised escalation timelines for suspicious order patterns identified by surveillance systems.",
+    "full text": "Compliance functions must escalate any system-flagged suspicious order or transaction pattern to the designated MAR officer within 24 hours, with a documented rationale for STOR filing or dismissal. (Reference: MAR Art. 16.)",
+    "dos": [
+      "Cross-check order timestamps against official fixing window schedules.",
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing."
+    ],
+    "donts": [
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED.",
+      "Do not omit payment-for-order-flow arrangements from disclosure reports."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-29",
+    "title": "BaFin Circular 01/2024: Fit and Proper Assessments for Trading Desk Heads",
+    "date": "2024-08-27",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Credit, Rates",
+    "summary": "Renewed fit-and-proper assessment cycle for senior trading function holders.",
+    "full text": "Institutions must conduct annual fit-and-proper reassessments for individuals holding trading desk head positions in credit and rates businesses, with findings reported to the Management Board. (Reference: KWG §10.)",
+    "dos": [
+      "Implement automated kill-switches for breach of intraday VaR limits.",
+      "Maintain strict segregation between execution, risk, and P&L validation roles."
+    ],
+    "donts": [
+      "Do not permit dual-hatting between execution and risk control functions.",
+      "Do not skip annual fit-and-proper reassessment for desk head roles.",
+      "Avoid disabling circuit breakers without Head of Trading approval."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-26",
+    "title": "BaFin Circular 11/2024: Algorithmic Rate Fixing & Benchmark Transparency",
+    "date": "2024-08-18",
+    "category": "MiFID II / MAR",
+    "asset classes": "Equities",
+    "summary": "Tightening pre-trade disclosure and comms monitoring for orders routed near benchmark fixing windows.",
+    "full text": "Financial institutions must ensure that all orders in benchmark-sensitive instruments routed near fixing windows undergo automated pre-trade anomaly analysis. Chat logs referencing quote adjustments or benchmark offsets must trigger an immediate 1st Line Compliance hold. (Reference: MiFID II Art. 27.)",
+    "dos": [
+      "Verify client suitability and consent prior to submitting benchmark order.",
+      "Document venue selection rationale for every retail client order."
+    ],
+    "donts": [
+      "Never execute off-market rate swaps within fixing windows without Compliance sign-off.",
+      "Do not combine unvetted client orders with proprietary hedging flows.",
+      "Do not omit payment-for-order-flow arrangements from disclosure reports."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-27",
+    "title": "BaFin Circular 05/2024: Algorithmic Rate Fixing & Benchmark Transparency",
+    "date": "2024-08-18",
+    "category": "MiFID II / MAR",
+    "asset classes": "Equities, Rates",
+    "summary": "Tightening pre-trade disclosure and comms monitoring for orders routed near benchmark fixing windows.",
+    "full text": "Financial institutions must ensure that all orders in benchmark-sensitive instruments routed near fixing windows undergo automated pre-trade anomaly analysis. Chat logs referencing quote adjustments or benchmark offsets must trigger an immediate 1st Line Compliance hold. (Reference: MAR Art. 8.)",
+    "dos": [
+      "Maintain timestamped audit records of automated surveillance alerts.",
+      "Cross-check order timestamps against official fixing window schedules."
+    ],
+    "donts": [
+      "Do not omit payment-for-order-flow arrangements from disclosure reports.",
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED.",
+      "Do not combine unvetted client orders with proprietary hedging flows."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-28",
+    "title": "BaFin Circular 15/2024: Algorithmic Rate Fixing & Benchmark Transparency",
+    "date": "2024-08-18",
+    "category": "MiFID II / MAR",
+    "asset classes": "Equities, Rates",
+    "summary": "Tightening pre-trade disclosure and comms monitoring for orders routed near benchmark fixing windows.",
+    "full text": "Financial institutions must ensure that all orders in benchmark-sensitive instruments routed near fixing windows undergo automated pre-trade anomaly analysis. Chat logs referencing quote adjustments or benchmark offsets must trigger an immediate 1st Line Compliance hold. (Reference: MiFID II Art. 27.)",
+    "dos": [
+      "Cross-check order timestamps against official fixing window schedules.",
+      "Maintain timestamped audit records of automated surveillance alerts.",
+      "Escalate flagged chat and voice communications to Compliance within 24 hours."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window.",
+      "Do not combine unvetted client orders with proprietary hedging flows."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-25",
+    "title": "BaFin Circular 15/2024: Fit and Proper Assessments for Trading Desk Heads",
+    "date": "2024-08-15",
+    "category": "KWG / Internal Controls",
+    "asset classes": "FX",
+    "summary": "Renewed fit-and-proper assessment cycle for senior trading function holders.",
+    "full text": "Institutions must conduct annual fit-and-proper reassessments for individuals holding trading desk head positions in credit and rates businesses, with findings reported to the Management Board. (Reference: KWG §24.)",
+    "dos": [
+      "Log all algorithm parameter changes with dual sign-off.",
+      "Implement automated kill-switches for breach of intraday VaR limits."
+    ],
+    "donts": [
+      "Avoid disabling circuit breakers without Head of Trading approval.",
+      "Do not skip annual fit-and-proper reassessment for desk head roles.",
+      "Do not permit dual-hatting between execution and risk control functions."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-24",
+    "title": "BaFin Circular 23/2024: Liquidity Risk Stress Testing for Derivative Portfolios",
+    "date": "2024-08-04",
+    "category": "MaRisk",
+    "asset classes": "Credit",
+    "summary": "Enhanced stress testing frequency for portfolios with significant derivative exposure.",
+    "full text": "Institutions with derivative notional exposure exceeding 5% of Tier 1 capital must conduct monthly liquidity stress tests incorporating margin call scenarios and collateral haircut shocks. (Reference: MaRisk BTO 1.)",
+    "dos": [
+      "Maintain a documented exit strategy for critical outsourced pricing functions.",
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Conduct fairness testing for all machine-learning credit scoring models annually."
+    ],
+    "donts": [
+      "Do not launch new structured products without completed New Product Approval sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-23",
+    "title": "BaFin Circular 22/2024: Liquidity Risk Stress Testing for Derivative Portfolios",
+    "date": "2024-07-15",
+    "category": "MaRisk",
+    "asset classes": "Credit, FX",
+    "summary": "Enhanced stress testing frequency for portfolios with significant derivative exposure.",
+    "full text": "Institutions with derivative notional exposure exceeding 5% of Tier 1 capital must conduct monthly liquidity stress tests incorporating margin call scenarios and collateral haircut shocks. (Reference: MaRisk AT 4.2.)",
+    "dos": [
+      "Maintain a documented exit strategy for critical outsourced pricing functions.",
+      "Document combined hedging efficiency score and regulatory capital impact before booking.",
+      "Ensure risk officers have one-click access to model XAI explanations."
+    ],
+    "donts": [
+      "Do not launch new structured products without completed New Product Approval sign-off.",
+      "Do not omit model fairness testing results from validation documentation."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-22",
+    "title": "BaFin Circular 12/2024: Model Risk Governance for Machine Learning Credit Scoring",
+    "date": "2024-07-11",
+    "category": "MaRisk",
+    "asset classes": "Credit, Rates",
+    "summary": "New validation standards for machine-learning-based credit scoring models.",
+    "full text": "Credit institutions deploying machine learning models for credit scoring must maintain independent model validation documentation, including feature importance analysis and fairness testing results, reviewed at least annually. (Reference: MaRisk BTO 1.)",
+    "dos": [
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Independently benchmark vendor pricing models against internal models quarterly."
+    ],
+    "donts": [
+      "Do not launch new structured products without completed New Product Approval sign-off.",
+      "Do not omit model fairness testing results from validation documentation.",
+      "Avoid relying exclusively on vendor pricing without independent benchmarking."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-21",
+    "title": "BaFin Circular 15/2024: Capital Buffers & Hedging Recommender Transparency",
+    "date": "2024-07-06",
+    "category": "MaRisk",
+    "asset classes": "FX",
+    "summary": "Requirements for AI and algorithmic hedging recommendations influencing regulatory capital.",
+    "full text": "When automated systems recommend credit risk hedges or macro interest rate overlays, the underlying efficiency score, capital impact, and rationale must be recorded in an immutable audit trail accessible to 2nd Line Risk Officers. (Reference: MaRisk BTR 1.)",
+    "dos": [
+      "Conduct fairness testing for all machine-learning credit scoring models annually.",
+      "Document combined hedging efficiency score and regulatory capital impact before booking.",
+      "Maintain a documented exit strategy for critical outsourced pricing functions."
+    ],
+    "donts": [
+      "Do not execute unhedged illiquid credit positions exceeding the desk limit without Desk Head sign-off.",
+      "Do not omit model fairness testing results from validation documentation.",
+      "Avoid relying exclusively on vendor pricing without independent benchmarking."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-20",
+    "title": "BaFin Circular 09/2024: PEP Screening for High-Value FX Transactions",
+    "date": "2024-07-05",
+    "category": "GwG / AML",
+    "asset classes": "FX",
+    "summary": "Mandatory politically exposed person screening for FX transactions above defined thresholds.",
+    "full text": "Institutions must screen all counterparties to FX transactions exceeding EUR 50,000 against updated Politically Exposed Person (PEP) databases prior to settlement, with escalation to the AML Officer for positive matches. (Reference: GwG §10.)",
+    "dos": [
+      "Escalate positive PEP screening matches to the AML Officer immediately.",
+      "Retain source-of-funds documentation for the statutory minimum period.",
+      "Re-verify offshore holding structures annually."
+    ],
+    "donts": [
+      "Avoid onboarding correspondent banks without completed AML control framework reviews.",
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-19",
+    "title": "BaFin Circular 01/2024: Enhanced Due Diligence for Cross-Border Credit Facilities",
+    "date": "2024-07-02",
+    "category": "GwG / AML",
+    "asset classes": "FX, Credit",
+    "summary": "Enhanced due diligence requirements for syndicated credit facilities involving non-EU counterparties.",
+    "full text": "Credit institutions extending syndicated loan facilities to non-EU domiciled borrowers must conduct enhanced due diligence including source-of-funds verification and sanctions screening prior to drawdown. (Reference: GwG §4.)",
+    "dos": [
+      "Complete annual risk re-certification for high-risk correspondent relationships.",
+      "Escalate positive PEP screening matches to the AML Officer immediately."
+    ],
+    "donts": [
+      "Do not process transactions for counterparties with unresolved sanctions matches.",
+      "Avoid onboarding correspondent banks without completed AML control framework reviews.",
+      "Do not delay structuring-pattern escalation beyond 48 hours."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-18",
+    "title": "BaFin Circular 06/2024: Best Execution Reporting for Multi-Venue FX Swaps",
+    "date": "2024-06-20",
+    "category": "WpHG / Best Execution",
+    "asset classes": "FX, Equities",
+    "summary": "New quarterly reporting obligations for FX swap execution quality across MTFs and internal crossing networks.",
+    "full text": "Investment firms executing FX swaps across multiple venues must submit quarterly best-execution quality reports comparing price improvement, latency, and rejection rates across all connected liquidity pools. (Reference: WpHG §80.)",
+    "dos": [
+      "Separate research payments from execution commissions at all times.",
+      "Document a specific execution strategy for each illiquid bond order.",
+      "Disclose material conflicts of interest in internal crossing arrangements."
+    ],
+    "donts": [
+      "Avoid internalizing client order flow without documented best-execution justification.",
+      "Do not selectively report only favorable execution venues.",
+      "Do not bundle research payments with execution commissions."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-17",
+    "title": "BaFin Circular 16/2024: Outsourcing Controls for Algorithmic Pricing Models",
+    "date": "2024-06-19",
+    "category": "MaRisk",
+    "asset classes": "Equities",
+    "summary": "Governance requirements for third-party pricing model providers used in valuation.",
+    "full text": "Institutions relying on externally hosted algorithmic pricing models must maintain documented model validation, exit strategies, and independent performance benchmarking on at least a quarterly basis. (Reference: MaRisk AT 4.2.)",
+    "dos": [
+      "Ensure risk officers have one-click access to model XAI explanations.",
+      "Maintain a documented exit strategy for critical outsourced pricing functions."
+    ],
+    "donts": [
+      "Do not omit model fairness testing results from validation documentation."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-16",
+    "title": "BaFin Circular 10/2024: Digital Operational Resilience Testing for Algorithmic Systems",
+    "date": "2024-05-10",
+    "category": "DORA / Operational Resilience",
+    "asset classes": "Equities",
+    "summary": "Mandatory resilience testing programme for systems supporting algorithmic execution.",
+    "full text": "Institutions operating algorithmic trading systems must include those systems within the scope of their annual threat-led penetration testing programme where they are classified as critical or important functions. (Reference: DORA Art. 5.)",
+    "dos": [
+      "Include critical algorithmic systems within annual resilience testing scope.",
+      "Maintain an up-to-date register of critical ICT third-party providers."
+    ],
+    "donts": [
+      "Do not omit sub-outsourcing arrangements from the ICT provider register.",
+      "Do not exclude critical algorithmic systems from penetration testing scope.",
+      "Avoid delaying major incident notification beyond the 4-hour window."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-15",
+    "title": "BaFin Circular 23/2024: Market Abuse Surveillance for Block Trades",
+    "date": "2024-05-07",
+    "category": "MiFID II / MAR",
+    "asset classes": "FX",
+    "summary": "Surveillance thresholds tightened for large block trades executed outside continuous trading hours.",
+    "full text": "Firms executing block trades outside continuous trading sessions must apply enhanced pre- and post-trade surveillance to detect potential front-running or information leakage patterns. (Reference: WpHG §80.)",
+    "dos": [
+      "Cross-check order timestamps against official fixing window schedules.",
+      "Document venue selection rationale for every retail client order.",
+      "Escalate flagged chat and voice communications to Compliance within 24 hours."
+    ],
+    "donts": [
+      "Never execute off-market rate swaps within fixing windows without Compliance sign-off.",
+      "Do not omit payment-for-order-flow arrangements from disclosure reports."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-14",
+    "title": "BaFin Circular 02/2024: Market Abuse Surveillance for Block Trades",
+    "date": "2024-04-29",
+    "category": "MiFID II / MAR",
+    "asset classes": "FX, Equities",
+    "summary": "Surveillance thresholds tightened for large block trades executed outside continuous trading hours.",
+    "full text": "Firms executing block trades outside continuous trading sessions must apply enhanced pre- and post-trade surveillance to detect potential front-running or information leakage patterns. (Reference: MAR Art. 16.)",
+    "dos": [
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing.",
+      "Cross-check order timestamps against official fixing window schedules."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-13",
+    "title": "BaFin Circular 24/2024: Correspondent Banking Relationship Reviews",
+    "date": "2024-04-28",
+    "category": "GwG / AML",
+    "asset classes": "FX, Equities",
+    "summary": "Annual re-certification requirement for correspondent banking relationships with elevated risk jurisdictions.",
+    "full text": "Credit institutions maintaining correspondent banking relationships with counterparties domiciled in FATF grey-list jurisdictions must complete an annual risk re-certification, including review of respondent bank AML control frameworks. (Reference: GwG §10.)",
+    "dos": [
+      "Re-verify offshore holding structures annually.",
+      "Escalate positive PEP screening matches to the AML Officer immediately.",
+      "Retain source-of-funds documentation for the statutory minimum period."
+    ],
+    "donts": [
+      "Avoid onboarding correspondent banks without completed AML control framework reviews.",
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-12",
+    "title": "BaFin Circular 19/2024: Best Execution Reporting for Multi-Venue FX Swaps",
+    "date": "2024-04-15",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Equities",
+    "summary": "New quarterly reporting obligations for FX swap execution quality across MTFs and internal crossing networks.",
+    "full text": "Investment firms executing FX swaps across multiple venues must submit quarterly best-execution quality reports comparing price improvement, latency, and rejection rates across all connected liquidity pools. (Reference: WpHG §80.)",
+    "dos": [
+      "Disclose material conflicts of interest in internal crossing arrangements.",
+      "Aggregate execution quality metrics across all connected venues quarterly.",
+      "Separate research payments from execution commissions at all times."
+    ],
+    "donts": [
+      "Do not selectively report only favorable execution venues.",
+      "Avoid principal trading against client flow without prior written disclosure."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-11",
+    "title": "BaFin Circular 22/2024: Inducements and Research Unbundling Compliance",
+    "date": "2024-04-14",
+    "category": "WpHG / Best Execution",
+    "asset classes": "FX, Rates",
+    "summary": "Continued enforcement of research payment unbundling requirements for equity research.",
+    "full text": "Firms must ensure that payments for investment research are separated from execution commissions, with research budgets approved and reviewed by Compliance on an annual basis. (Reference: WpHG §83.)",
+    "dos": [
+      "Retain venue selection logic for a minimum of 5 years.",
+      "Document a specific execution strategy for each illiquid bond order."
+    ],
+    "donts": [
+      "Do not bundle research payments with execution commissions.",
+      "Do not selectively report only favorable execution venues.",
+      "Avoid internalizing client order flow without documented best-execution justification."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-10",
+    "title": "BaFin Circular 14/2024: Market Abuse Surveillance for Block Trades",
+    "date": "2024-04-04",
+    "category": "MiFID II / MAR",
+    "asset classes": "Rates, FX",
+    "summary": "Surveillance thresholds tightened for large block trades executed outside continuous trading hours.",
+    "full text": "Firms executing block trades outside continuous trading sessions must apply enhanced pre- and post-trade surveillance to detect potential front-running or information leakage patterns. (Reference: MAR Art. 8.)",
+    "dos": [
+      "Document venue selection rationale for every retail client order.",
+      "Maintain timestamped audit records of automated surveillance alerts."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-09",
+    "title": "BaFin Circular 16/2024: Market Abuse Surveillance for Block Trades",
+    "date": "2024-03-28",
+    "category": "MiFID II / MAR",
+    "asset classes": "Credit, FX",
+    "summary": "Surveillance thresholds tightened for large block trades executed outside continuous trading hours.",
+    "full text": "Firms executing block trades outside continuous trading sessions must apply enhanced pre- and post-trade surveillance to detect potential front-running or information leakage patterns. (Reference: MAR Art. 8.)",
+    "dos": [
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing.",
+      "Escalate flagged chat and voice communications to Compliance within 24 hours."
+    ],
+    "donts": [
+      "Do not combine unvetted client orders with proprietary hedging flows.",
+      "Avoid routing orders if client KYC status is PENDING or EXPIRED.",
+      "Do not delay STOR escalation beyond the mandated review window."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-08",
+    "title": "BaFin Circular 20/2024: Internal Controls for High-Frequency Rates Trading Desks",
+    "date": "2024-03-21",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Equities, Rates",
+    "summary": "Enhanced internal control requirements for desks running high-frequency government bond and swap strategies.",
+    "full text": "Institutions operating high-frequency trading strategies in government bonds and interest rate swaps must implement real-time position and risk limit monitoring with automated circuit breakers. (Reference: KWG §10.)",
+    "dos": [
+      "Maintain strict segregation between execution, risk, and P&L validation roles.",
+      "Conduct quarterly stress tests on high-frequency trading strategies."
+    ],
+    "donts": [
+      "Do not permit dual-hatting between execution and risk control functions.",
+      "Do not skip annual fit-and-proper reassessment for desk head roles."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-07",
+    "title": "BaFin Circular 24/2024: Algorithmic Rate Fixing & Benchmark Transparency",
+    "date": "2024-03-03",
+    "category": "MiFID II / MAR",
+    "asset classes": "Credit",
+    "summary": "Tightening pre-trade disclosure and comms monitoring for orders routed near benchmark fixing windows.",
+    "full text": "Financial institutions must ensure that all orders in benchmark-sensitive instruments routed near fixing windows undergo automated pre-trade anomaly analysis. Chat logs referencing quote adjustments or benchmark offsets must trigger an immediate 1st Line Compliance hold. (Reference: WpHG §80.)",
+    "dos": [
+      "Log explicit best-execution rationale comparing venue depth vs internal crossing.",
+      "Document venue selection rationale for every retail client order."
+    ],
+    "donts": [
+      "Do not delay STOR escalation beyond the mandated review window.",
+      "Do not combine unvetted client orders with proprietary hedging flows.",
+      "Do not omit payment-for-order-flow arrangements from disclosure reports."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-06",
+    "title": "BaFin Circular 20/2024: Trade Reporting Reconciliation for Interest Rate Swaps",
+    "date": "2024-02-09",
+    "category": "EMIR / Derivatives",
+    "asset classes": "FX",
+    "summary": "Enhanced dual-sided reporting reconciliation standards for OTC interest rate swaps.",
+    "full text": "Counterparties to OTC interest rate swaps must reconcile trade repository reports on a daily basis and remediate any reporting breaks exceeding 5 business days within the following reporting cycle. (Reference: EMIR Art. 9.)",
+    "dos": [
+      "Maintain complete UTI and UPI mapping across all reporting counterparties.",
+      "Notify BaFin and ESMA promptly when nearing clearing obligation thresholds.",
+      "Exchange variation margin daily using an approved standardised methodology."
+    ],
+    "donts": [
+      "Do not omit sub-threshold FX forwards from daily margin calculations where in scope.",
+      "Do not leave reporting breaks exceeding 5 business days unremediated."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-04",
+    "title": "BaFin Circular 10/2024: PEP Screening for High-Value FX Transactions",
+    "date": "2024-02-03",
+    "category": "GwG / AML",
+    "asset classes": "Equities, Credit",
+    "summary": "Mandatory politically exposed person screening for FX transactions above defined thresholds.",
+    "full text": "Institutions must screen all counterparties to FX transactions exceeding EUR 50,000 against updated Politically Exposed Person (PEP) databases prior to settlement, with escalation to the AML Officer for positive matches. (Reference: GwG §15.)",
+    "dos": [
+      "Escalate positive PEP screening matches to the AML Officer immediately.",
+      "Re-verify offshore holding structures annually."
+    ],
+    "donts": [
+      "Do not issue temporary manual compliance overrides without Central Compliance sign-off.",
+      "Avoid onboarding correspondent banks without completed AML control framework reviews."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-05",
+    "title": "BaFin Circular 07/2024: Margin Requirements for Non-Centrally Cleared FX Forwards",
+    "date": "2024-02-03",
+    "category": "EMIR / Derivatives",
+    "asset classes": "Credit",
+    "summary": "Updated variation margin exchange requirements for non-centrally cleared FX derivatives.",
+    "full text": "Counterparties to non-centrally cleared FX forward and swap transactions exceeding the relevant threshold must exchange variation margin on a daily basis, calculated using an approved standardised methodology. (Reference: EMIR REFIT Art. 4.)",
+    "dos": [
+      "Exchange variation margin daily using an approved standardised methodology.",
+      "Notify BaFin and ESMA promptly when nearing clearing obligation thresholds.",
+      "Reconcile trade repository reports on a daily basis."
+    ],
+    "donts": [
+      "Do not omit sub-threshold FX forwards from daily margin calculations where in scope.",
+      "Avoid exceeding clearing thresholds without prior notification to BaFin and ESMA.",
+      "Do not leave reporting breaks exceeding 5 business days unremediated."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-03",
+    "title": "BaFin Circular 16/2024: Conflicts of Interest Disclosure in Principal Trading",
+    "date": "2024-01-13",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Rates",
+    "summary": "Enhanced disclosure obligations when firms trade as principal against client flow.",
+    "full text": "Where a firm executes client orders on a principal basis, it must disclose the conflict of interest in writing prior to execution and maintain records demonstrating that pricing was not disadvantageous to the client. (Reference: WpHG §85.)",
+    "dos": [
+      "Disclose material conflicts of interest in internal crossing arrangements.",
+      "Document a specific execution strategy for each illiquid bond order.",
+      "Aggregate execution quality metrics across all connected venues quarterly."
+    ],
+    "donts": [
+      "Do not bundle research payments with execution commissions.",
+      "Avoid principal trading against client flow without prior written disclosure.",
+      "Avoid internalizing client order flow without documented best-execution justification."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-02",
+    "title": "BaFin Circular 10/2024: Segregation of Duties for Proprietary Trading Desks",
+    "date": "2024-01-10",
+    "category": "KWG / Internal Controls",
+    "asset classes": "Rates, Equities",
+    "summary": "Reinforced segregation-of-duties requirements between front office and risk control functions.",
+    "full text": "Institutions operating proprietary trading desks must ensure strict segregation of duties between trade execution, risk measurement, and P&L validation functions, with no dual-hatting permitted at desk-head level. (Reference: KWG §10.)",
+    "dos": [
+      "Complete annual fit-and-proper reassessments for desk head roles.",
+      "Conduct quarterly stress tests on high-frequency trading strategies.",
+      "Maintain strict segregation between execution, risk, and P&L validation roles."
+    ],
+    "donts": [
+      "Do not permit dual-hatting between execution and risk control functions.",
+      "Avoid disabling circuit breakers without Head of Trading approval."
+    ]
+  },
+  {
+    "id": "BAFIN-2024-01",
+    "title": "BaFin Circular 17/2024: Inducements and Research Unbundling Compliance",
+    "date": "2024-01-04",
+    "category": "WpHG / Best Execution",
+    "asset classes": "Equities, FX",
+    "summary": "Continued enforcement of research payment unbundling requirements for equity research.",
+    "full text": "Firms must ensure that payments for investment research are separated from execution commissions, with research budgets approved and reviewed by Compliance on an annual basis. (Reference: WpHG §83.)",
+    "dos": [
+      "Separate research payments from execution commissions at all times.",
+      "Disclose material conflicts of interest in internal crossing arrangements.",
+      "Aggregate execution quality metrics across all connected venues quarterly."
+    ],
+    "donts": [
+      "Avoid internalizing client order flow without documented best-execution justification.",
+      "Do not bundle research payments with execution commissions."
+    ]
+  }
+]

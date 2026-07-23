@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -k -s first \"npm:dev:backend\" \"npm:dev:frontend\"",
-    "dev:backend": "python3 python_backend/app.py",
+    "dev:backend": "python python_backend/app.py",
     "dev:frontend": "vite",
     "build": "vite build",
     "start": "vite preview --port 3000 --host 0.0.0.0",

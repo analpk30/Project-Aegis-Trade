@@ -53,9 +53,9 @@ export const Ideas: React.FC<IdeasProps> = ({ activePersona = 'Trader' }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {ideas.map((idea) => (
+        {ideas.map((idea,i) => (
           <div
-            key={idea.id}
+            key={i}
             className="rounded-2xl border border-[#1F2937] bg-[#0F1115] p-5 shadow-xl flex flex-col justify-between space-y-4 hover:border-amber-500/40 transition-all"
           >
             <div className="space-y-3">
