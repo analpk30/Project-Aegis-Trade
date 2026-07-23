@@ -46,8 +46,6 @@ jobs:
           SERVICE_NAME: ${{ inputs.service_name }}
           IMAGE: us-central1-docker.pkg.dev/hack-team-entscheidungsproblem/guardian-app/guardian-app:${{ inputs.image_version }}
           WORKLOAD_SA_EMAIL: workload@hack-team-entscheidungsproblem.iam.gserviceaccount.com
-          REDIS_URL: ${{ secrets.REDIS_URL }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           set -e
           gcloud run deploy "${SERVICE_NAME}" \
