@@ -1,0 +1,6 @@
+{
+  "name": "Project Guardian",
+  "description": "Predictive compliance & intelligence dashboard for bank front-office trading with real-time MiFID II justification, Pre-Crime vector similarity, BaFin RAG, and XAI audit logging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
