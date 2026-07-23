@@ -1,0 +1,52 @@
+name: Build and Push Guardian App to Artifact Registry
+on:
+  workflow_dispatch:
+    inputs:
+      image_version:
+        description: 'Image tag/version to push (e.g. v1.2.0, latest)'
+        required: true
+        default: 'latest'
+        type: string
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    steps:
+      # actions/checkout MUST come before auth
+      - name: 'Checkout'
+        uses: 'actions/checkout@v4'
+
+      - name: 'Authenticate to GCP as workload SA for docker push to artifact registry'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          export_environment_variables: true
+          project_id: hack-team-entscheidungsproblem
+          workload_identity_provider: projects/662541806905/locations/global/workloadIdentityPools/github-2026/providers/github-2026
+          service_account: workload@hack-team-entscheidungsproblem.iam.gserviceaccount.com
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+
+      - name: 'Create Artifact Registry repository'
+        run: |
+            if gcloud artifacts repositories describe guardian-app --location=us-central1 &> /dev/null; then
+                echo "Artifact Registry repository 'guardian-app' already exists"
+            else
+                gcloud artifacts repositories create guardian-app --location=us-central1 --repository-format=docker
+            fi
+
+      - name: 'docker config'
+        run: 'gcloud auth configure-docker us-central1-docker.pkg.dev'
+
+      - name: 'Build Image'
+        run: |
+          docker build \
+            -f dockerfile \
+            -t us-central1-docker.pkg.dev/hack-team-entscheidungsproblem/guardian-app/guardian-app:${{ inputs.image_version }} \
+            .
+
+      - name: 'Push Image'
+        run: |
+          docker push us-central1-docker.pkg.dev/hack-team-entscheidungsproblem/guardian-app/guardian-app:${{ inputs.image_version }}

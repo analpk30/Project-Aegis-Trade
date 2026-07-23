@@ -1,0 +1,77 @@
+name: Deploy Guardian App to Cloud Run
+on:
+  workflow_dispatch:
+    inputs:
+      image_version:
+        description: 'Image tag/version to deploy (must already exist in Artifact Registry)'
+        required: true
+        default: 'latest'
+        type: string
+      region:
+        description: 'Cloud Run region'
+        required: true
+        default: 'us-central1'
+        type: string
+      service_name:
+        description: 'Cloud Run service name'
+        required: true
+        default: 'guardian-app'
+        type: string
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    steps:
+      # actions/checkout MUST come before auth
+      - name: 'Checkout'
+        uses: 'actions/checkout@v4'
+
+      - name: 'Authenticate to GCP as Infrastructure SA for deployment'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          export_environment_variables: true
+          project_id: hack-team-entscheidungsproblem
+          workload_identity_provider: projects/662541806905/locations/global/workloadIdentityPools/github-2026/providers/github-2026
+          service_account: infrastructure@hack-team-entscheidungsproblem.iam.gserviceaccount.com
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+
+      - name: 'Deploy Cloud Run'
+        id: deploy
+        env:
+          REGION: ${{ inputs.region }}
+          SERVICE_NAME: ${{ inputs.service_name }}
+          IMAGE: us-central1-docker.pkg.dev/hack-team-entscheidungsproblem/guardian-app/guardian-app:${{ inputs.image_version }}
+          WORKLOAD_SA_EMAIL: workload@hack-team-entscheidungsproblem.iam.gserviceaccount.com
+          REDIS_URL: ${{ secrets.REDIS_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -e
+          gcloud run deploy "${SERVICE_NAME}" \
+            --region "${REGION}" \
+            --image "${IMAGE}" \
+            --service-account="${WORKLOAD_SA_EMAIL}" \
+            --port=3000 \
+            --set-env-vars="NODE_ENV=production,PORT=3000,PYTHON_PORT=5000,CACHE_TTL_SECONDS=60,REDIS_URL=${REDIS_URL}" \
+            --set-env-vars="GEMINI_API_KEY=${GEMINI_API_KEY}"
+
+          url=$(gcloud run services describe "${SERVICE_NAME}" --region="${REGION}" --format="value(status.url)")
+          echo "url=${url}" >> "${GITHUB_OUTPUT}"
+
+      # Only needed to get an ID token to simulate an authenticated curl call.
+      # Not needed for deployment.
+      - name: 'Authenticate to GCP as workload SA for invocation'
+        id: 'auth'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          token_format: 'id_token'
+          workload_identity_provider: projects/662541806905/locations/global/workloadIdentityPools/github-2026/providers/github-2026
+          service_account: workload@hack-team-entscheidungsproblem.iam.gserviceaccount.com
+          id_token_audience: ${{ steps.deploy.outputs.url }}
+          id_token_include_email: true
+
+      - name: 'Poke Cloud Run'
+        run: 'curl -H "Authorization: Bearer ${{ steps.auth.outputs.id_token }}" "${{ steps.deploy.outputs.url }}"'
