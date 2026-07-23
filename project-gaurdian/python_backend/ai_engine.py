@@ -308,7 +308,7 @@ Instructions:
             print(f"[Python AI Engine] Gemini API error: {e}. Activating BaFin Statistical RAG Interpreter.")
 
     ENGINE_CONFIG['fallback_triggers'] += 1
-    eval_res = local_statistical_engine.interpret_bafin_rules_statistically(query, doc_context)
+    eval_res = local_statistical_engine.interpret_bafin_rules_statistically(query, docs_summary)
 
     latency = max(10, int((time.time() - start_time) * 1000))
     ENGINE_CONFIG['last_latency_ms'] = latency
