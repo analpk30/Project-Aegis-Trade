@@ -44,6 +44,7 @@ jobs:
         run: |
           test -f project-gaurdian/docker-compose.yml
           test -f project-gaurdian/dockerfile
+          test -f project-gaurdian/python_backend/app.py
           docker compose -f project-gaurdian/docker-compose.yml --project-name guardian build app
           docker tag guardian-app:latest us-central1-docker.pkg.dev/hack-team-entscheidungsproblem/guardian-app/guardian-app:${{ inputs.image_version }}
 
