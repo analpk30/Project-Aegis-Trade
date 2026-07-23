@@ -18,6 +18,7 @@ from scoring import compute_guardian_score
 from vector_engine import build_order_vector, match_precrime_pattern, SEEDED_FINE_CASES
 from audit import log_audit_event, get_audit_logs, subscribe_audit
 from ai_engine import generate_mifid_justification, interpret_bafin_rules
+from chat_sessions import reset_session as reset_bafin_session
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     daemon_threads = True
@@ -509,16 +510,29 @@ class RequestHandler(BaseHTTPRequestHandler):
         # 6. BaFin RAG Interpretation
         if path == '/api/bafin/interpret':
             query = body.get('query', '')
-            docs = [f"{a['title']}\n{a['summary']}\n{a['text']}" for a in store.bafin_announcements]
+            chat_session_id = body.get('chatSessionId')
 
-            interpretation = interpret_bafin_rules(query, docs)
+            # Retrieval now happens inside interpret_bafin_rules (query-aware,
+            # over the full growing corpus) rather than a fixed slice here.
+            # chatSessionId (when present) enables multi-turn follow-ups.
+            interpretation = interpret_bafin_rules(query, store.bafin_announcements, chat_session_id)
+            retrieved_ids = interpretation.get('retrievedIds', [])
+            retrieval_mode = interpretation.get('retrievalMode', 'keyword')
+
+            # The retrieved subset is what actually grounded the answer — surface
+            # it (not the whole corpus) so the UI can cite the exact circulars.
+            matching = [a for a in store.bafin_announcements if a['id'] in retrieved_ids]
 
             audit_entry = log_audit_event(
                 module='BaFin Interpreter',
                 persona=store.active_persona,
                 user=store.active_user,
                 action=f"Executed Regulatory RAG Query: '{query}'",
-                reasoning_payload=f"Retrieved {len(docs)} BaFin circulars. Python RAG Interpretation: '{interpretation['text'][:150]}...'",
+                reasoning_payload=(
+                    f"Retrieved {len(retrieved_ids)} of {len(store.bafin_announcements)} "
+                    f"BaFin circulars via {retrieval_mode} ranking (ids: {', '.join(retrieved_ids) or 'none'}). "
+                    f"Python RAG Interpretation: '{interpretation['text'][:150]}...'"
+                ),
                 guardian_score_at_time=95,
                 model_used=interpretation['model'],
                 latency_ms=interpretation['latencyMs'],
@@ -527,10 +541,23 @@ class RequestHandler(BaseHTTPRequestHandler):
 
             self.send_json({
                 'query': query,
+                'chatSessionId': chat_session_id,
                 'interpretation': interpretation['text'],
-                'matchingAnnouncements': store.bafin_announcements,
+                'matchingAnnouncements': matching,
+                'retrievedAnnouncementIds': retrieved_ids,
+                'retrievalMode': retrieval_mode,
                 'auditEntry': audit_entry
             })
+            return
+
+        # 6b. Reset a BaFin chat conversation (frontend "clear chat")
+        if path == '/api/bafin/chat/reset':
+            chat_session_id = body.get('chatSessionId')
+            if not chat_session_id:
+                self.send_json({'error': 'chatSessionId required'}, status=400)
+                return
+            reset_bafin_session(chat_session_id)
+            self.send_json({'success': True, 'chatSessionId': chat_session_id})
             return
 
         # 7. Audit Export PDF
