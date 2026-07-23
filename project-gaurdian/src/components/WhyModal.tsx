@@ -70,11 +70,14 @@ export const WhyModal: React.FC<WhyModalProps> = ({ isOpen, onClose, auditEntry,
 
             <div className="rounded-lg border border-[#1F2937] bg-[#090A0C] p-3">
               <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                <AlertTriangle className="h-3.5 w-3.5 text-slate-400" />
-                <span>Status</span>
+                <span>Engine Mode</span>
               </div>
-              <p className="mt-1 text-xs font-mono font-semibold text-slate-300">
-                {auditEntry.fallbackUsed ? 'Fallback' : 'Verified AI'}
+              <p
+                className={`mt-1 text-xs font-mono font-semibold ${
+                  auditEntry.fallbackUsed ? 'text-amber-400' : 'text-emerald-400'
+                }`}
+              >
+                {auditEntry.fallbackUsed ? 'Statistical Fallback' : 'Primary Gemini AI'}
               </p>
             </div>
           </div>
