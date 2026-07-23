@@ -26,3 +26,4 @@ urllib3_secure_extra==0.1.0
 xmlrpclib==1.0.1
 google-adk>=1.0.0
 google-genai>=1.0.0
+python-dotenv>=1.0.0

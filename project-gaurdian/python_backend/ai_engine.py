@@ -183,11 +183,11 @@ def generate_mifid_justification(
 ) -> dict:
     start_time = time.time()
     ENGINE_CONFIG['total_requests'] += 1
-    api_key = os.environ.get('GEMINI_API_KEY')
-    should_use_gemini = api_key and ENGINE_CONFIG['mode'] == 'auto' and not force_fallback
+    # api_key = os.environ.get('GEMINI_API_KEY')
+    # should_use_gemini = api_key and ENGINE_CONFIG['mode'] == 'auto' and not force_fallback
 
-    if should_use_gemini:
-        prompt = f"""You are an automated MiFID II Article 27 Best Execution & Compliance Engine for a top European Investment Bank.
+    # if should_use_gemini:
+    prompt = f"""You are an automated MiFID II Article 27 Best Execution & Compliance Engine for a top European Investment Bank.
 Generate a concise, authoritative pre-trade justification report (120-160 words) for the following institutional order:
 
 - Order ID: {order_id}
