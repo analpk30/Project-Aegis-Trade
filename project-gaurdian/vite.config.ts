@@ -32,6 +32,7 @@ export default defineConfig(() => {
     },
     preview: {
       port: 3000,
+      allowedHosts: ['.localhost', '.127.0.0.1', 'guardian-app-359026735934.us-central1.run.app'],
       host: '0.0.0.0',
       proxy: apiProxy,
     },
