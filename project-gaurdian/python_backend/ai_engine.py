@@ -1,8 +1,133 @@
-import json
+import asyncio
 import os
 import time
-import urllib.request
-import urllib.error
+import uuid
+
+try:
+    from google.adk.agents import Agent
+    from google.adk.runners import InMemoryRunner
+    from google.genai import types
+    _ADK_AVAILABLE = True
+except ImportError:
+    Agent = None  # type: ignore
+    InMemoryRunner = None  # type: ignore
+    types = None  # type: ignore
+    _ADK_AVAILABLE = False
+
+_MIFID_AGENT_INSTRUCTION = """You are an automated MiFID II Article 27 Best Execution & Compliance Engine for a top European Investment Bank.
+Generate a concise, authoritative pre-trade justification report (120-160 words).
+
+Requirements:
+1. Reference MiFID II Article 27 Best Execution factors (price, speed, likelihood of execution, market impact).
+2. Explicitly evaluate the calculated Guardian Score and whether pre-trade clearance or 1st Line review is required.
+3. State whether venue depth satisfies price transparency criteria.
+4. Conclude with a clear recommendation: RELEASE FOR AUTOMATED EXECUTION, HOLD FOR COMPLIANCE REVIEW, or REJECT ORDER.
+"""
+
+_BAFIN_AGENT_INSTRUCTION = """You are a Senior Regulatory Legal Officer specializing in BaFin circulars, GwG money laundering laws, and MiFID II compliance.
+Answer regulatory queries using the provided BaFin circular context.
+
+Instructions:
+1. Provide a crisp, structured compliance summary (100-150 words).
+2. Explicitly cite the relevant BaFin Circular numbers or GwG sections.
+3. List 2 concrete actionable DOs and 2 DONTs for traders or sales officers.
+"""
+
+_VERTEX_MODEL = os.environ.get('VERTEX_GEMINI_MODEL', 'gemini-2.5-flash')
+
+
+def _configure_vertex_ai() -> bool:
+    """Enable Vertex AI / Cloud ADK auth via ADC (no GEMINI_API_KEY)."""
+    project = os.environ.get('GOOGLE_CLOUD_PROJECT') or os.environ.get('GCP_PROJECT')
+    if not project:
+        return False
+
+    location = os.environ.get('GOOGLE_CLOUD_LOCATION', 'us-central1')
+    os.environ['GOOGLE_GENAI_USE_VERTEXAI'] = 'TRUE'
+    os.environ['GOOGLE_CLOUD_PROJECT'] = project
+    os.environ['GOOGLE_CLOUD_LOCATION'] = location
+    return True
+
+
+def _build_mifid_agent():
+    return Agent(
+        name='mifid_justification_agent',
+        model=_VERTEX_MODEL,
+        description='Generates MiFID II Article 27 pre-trade justification reports via Vertex AI.',
+        instruction=_MIFID_AGENT_INSTRUCTION,
+    )
+
+
+def _build_bafin_agent():
+    return Agent(
+        name='bafin_interpretation_agent',
+        model=_VERTEX_MODEL,
+        description='Interprets BaFin circulars and GwG rules via Vertex AI RAG-style prompting.',
+        instruction=_BAFIN_AGENT_INSTRUCTION,
+    )
+
+
+async def _run_adk_agent(agent, prompt: str, session_prefix: str) -> str:
+    """Invoke a Cloud ADK agent once and return the final text response."""
+    app_name = 'project_guardian'
+    user_id = 'compliance_engine'
+    session_id = f'{session_prefix}-{uuid.uuid4().hex[:12]}'
+
+    runner = InMemoryRunner(agent=agent, app_name=app_name)
+    try:
+        await runner.session_service.create_session(
+            app_name=app_name,
+            user_id=user_id,
+            session_id=session_id,
+        )
+
+        message = types.Content(role='user', parts=[types.Part(text=prompt)])
+        final_text = ''
+
+        async for event in runner.run_async(
+            user_id=user_id,
+            session_id=session_id,
+            new_message=message,
+        ):
+            if event.is_final_response() and event.content and event.content.parts:
+                chunks = [p.text for p in event.content.parts if getattr(p, 'text', None)]
+                final_text = '\n'.join(chunks).strip()
+
+        return final_text
+    finally:
+        # Avoid Python 3.13 DummyThread teardown noise after asyncio.run()
+        try:
+            await runner.close()
+        except Exception:
+            pass
+
+
+async def _run_mifid_adk_agent(prompt: str) -> str:
+    return await _run_adk_agent(_build_mifid_agent(), prompt, 'mifid')
+
+
+async def _run_bafin_adk_agent(prompt: str) -> str:
+    return await _run_adk_agent(_build_bafin_agent(), prompt, 'bafin')
+
+
+def _run_async(coro):
+    """Run a coroutine with explicit loop teardown (safer under Python 3.13)."""
+    loop = asyncio.new_event_loop()
+    try:
+        asyncio.set_event_loop(loop)
+        return loop.run_until_complete(coro)
+    finally:
+        try:
+            loop.run_until_complete(loop.shutdown_asyncgens())
+        except Exception:
+            pass
+        try:
+            loop.run_until_complete(loop.shutdown_default_executor())
+        except Exception:
+            pass
+        asyncio.set_event_loop(None)
+        loop.close()
+
 
 def generate_mifid_justification(
     order_id: str,
@@ -16,7 +141,6 @@ def generate_mifid_justification(
     client_name: str
 ) -> dict:
     start_time = time.time()
-    api_key = os.environ.get('GEMINI_API_KEY')
 
     prompt = f"""You are an automated MiFID II Article 27 Best Execution & Compliance Engine for a top European Investment Bank.
 Generate a concise, authoritative pre-trade justification report (120-160 words) for the following institutional order:
@@ -37,28 +161,19 @@ Requirements:
 4. Conclude with a clear recommendation: RELEASE FOR AUTOMATED EXECUTION, HOLD FOR COMPLIANCE REVIEW, or REJECT ORDER.
 """
 
-    if api_key:
+    if _ADK_AVAILABLE and _configure_vertex_ai():
         try:
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
-            headers = {"Content-Type": "application/json"}
-            payload = json.dumps({
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 350}
-            }).encode('utf-8')
-
-            req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
-            with urllib.request.urlopen(req, timeout=10) as response:
-                result = json.loads(response.read().decode('utf-8'))
-                text = result['candidates'][0]['content']['parts'][0]['text'].strip()
+            text = _run_async(_run_mifid_adk_agent(prompt))
+            if text:
                 latency = int((time.time() - start_time) * 1000)
                 return {
                     'text': text,
-                    'model': 'gemini-2.5-flash (Python Engine)',
+                    'model': f'{_VERTEX_MODEL} (Vertex AI / Cloud ADK)',
                     'latencyMs': latency,
                     'fallbackUsed': False
                 }
         except Exception as e:
-            print(f"[Python AI Engine] Gemini API call error: {e}. Falling back to deterministic compliance engine.")
+            print(f"[Python AI Engine] Vertex AI / Cloud ADK error: {e}. Falling back to deterministic compliance engine.")
 
     # Intelligent Fallback Engine
     latency = int((time.time() - start_time) * 1000)
@@ -84,7 +199,6 @@ Requirements:
 
 def interpret_bafin_rules(query: str, doc_context: list) -> dict:
     start_time = time.time()
-    api_key = os.environ.get('GEMINI_API_KEY')
 
     docs_summary = "\n---\n".join(doc_context[:3])
     prompt = f"""You are a Senior Regulatory Legal Officer specializing in BaFin circulars, GwG money laundering laws, and MiFID II compliance.
@@ -101,28 +215,19 @@ Instructions:
 3. List 2 concrete actionable DOs and 2 DONTs for traders or sales officers.
 """
 
-    if api_key:
+    if _ADK_AVAILABLE and _configure_vertex_ai():
         try:
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
-            headers = {"Content-Type": "application/json"}
-            payload = json.dumps({
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 400}
-            }).encode('utf-8')
-
-            req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
-            with urllib.request.urlopen(req, timeout=10) as response:
-                result = json.loads(response.read().decode('utf-8'))
-                text = result['candidates'][0]['content']['parts'][0]['text'].strip()
+            text = _run_async(_run_bafin_adk_agent(prompt))
+            if text:
                 latency = int((time.time() - start_time) * 1000)
                 return {
                     'text': text,
-                    'model': 'gemini-2.5-flash (Python Engine)',
+                    'model': f'{_VERTEX_MODEL} (Vertex AI / Cloud ADK)',
                     'latencyMs': latency,
                     'fallbackUsed': False
                 }
         except Exception as e:
-            print(f"[Python AI Engine] Gemini API error: {e}. Falling back to deterministic RAG interpreter.")
+            print(f"[Python AI Engine] Vertex AI / Cloud ADK error: {e}. Falling back to deterministic RAG interpreter.")
 
     latency = int((time.time() - start_time) * 1000)
     fallback_text = (
