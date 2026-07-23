@@ -42,10 +42,8 @@ jobs:
 
       - name: 'Build Image'
         run: |
-          docker build \
-            -f dockerfile \
-            -t us-central1-docker.pkg.dev/hack-team-entscheidungsproblem/guardian-app/guardian-app:${{ inputs.image_version }} \
-            .
+          docker compose -f project-gaurdian/docker-compose.yml --project-name guardian build app
+          docker tag guardian-app:latest us-central1-docker.pkg.dev/hack-team-entscheidungsproblem/guardian-app/guardian-app:${{ inputs.image_version }}
 
       - name: 'Push Image'
         run: |
