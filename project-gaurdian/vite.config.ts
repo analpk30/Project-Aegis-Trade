@@ -27,5 +27,8 @@ export default defineConfig(() => {
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
+    preview : {
+      allowedHosts: ['.localhost', '.127.0.0.1', 'guardian-app-359026735934.us-central1.run.app'],
+    }
   };
 });
