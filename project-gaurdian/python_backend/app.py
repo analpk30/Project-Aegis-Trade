@@ -7,6 +7,8 @@ from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from socketserver import ThreadingMixIn
 import urllib.parse
+from ai_engine import generate_mifid_justification, interpret_bafin_rules, get_engine_status, set_engine_mode
+
 
 # Ensure local imports work regardless of working directory
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -65,6 +67,10 @@ class RequestHandler(BaseHTTPRequestHandler):
                 'fineCasesCount': len(SEEDED_FINE_CASES),
                 'timestamp': datetime.utcnow().isoformat() + 'Z'
             })
+            return
+        
+        if path == '/api/engine/status':
+            self.send_json(get_engine_status())
             return
 
         # 2. Auth Persona
@@ -218,6 +224,65 @@ class RequestHandler(BaseHTTPRequestHandler):
         parsed_url = urllib.parse.urlparse(self.path)
         path = parsed_url.path
         body = self.parse_json_body()
+        # Engine Mode Toggle
+        if path == '/api/engine/mode':
+            mode = body.get('mode', 'auto')
+            updated = set_engine_mode(mode)
+            log_audit_event(
+                module='Dual-Engine Controller',
+                persona=store.active_persona,
+                user=store.active_user,
+                action=f"Engine Mode Switched to '{mode.upper()}'",
+                reasoning_payload=f"System operation mode updated to '{mode}'. Primary Gemini AI & Local Statistical Vector Model configuration recalculated.",
+                guardian_score_at_time=98,
+                model_used='dual-engine-controller',
+                latency_ms=1,
+                fallback_used=(mode == 'force_fallback')
+            )
+            self.send_json({'success': True, 'engineStatus': get_engine_status()})
+            return
+
+        # Engine Parallel Benchmark Test
+        if path == '/api/engine/benchmark':
+            test_order_id = body.get('orderId', store.orders[0]['id'])
+            order = next((o for o in store.orders if o['id'] == test_order_id), store.orders[0])
+
+            # 1. Run Gemini Primary AI (if available)
+            primary_res = generate_mifid_justification(
+                order_id=order['id'],
+                instrument=order['instrument'],
+                asset_class=order['assetClass'],
+                size_eur=order['sizeEur'],
+                direction=order['direction'],
+                venue=order['venue'],
+                guardian_score=order['guardianScore'],
+                executability_score=order['scoreBreakdown']['executabilityScore'],
+                client_name=order['clientName'],
+                force_fallback=False
+            )
+
+            # 2. Force Local Statistical Vector Model
+            fallback_res = generate_mifid_justification(
+                order_id=order['id'],
+                instrument=order['instrument'],
+                asset_class=order['assetClass'],
+                size_eur=order['sizeEur'],
+                direction=order['direction'],
+                venue=order['venue'],
+                guardian_score=order['guardianScore'],
+                executability_score=order['scoreBreakdown']['executabilityScore'],
+                client_name=order['clientName'],
+                force_fallback=True
+            )
+
+            self.send_json({
+                'orderId': order['id'],
+                'primaryResult': primary_res,
+                'fallbackResult': fallback_res,
+                'latencyDeltaMs': abs(primary_res['latencyMs'] - fallback_res['latencyMs'])
+            })
+            return
+
 
         # 1. Switch Persona
         if path == '/api/auth/persona':
@@ -501,7 +566,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 
         self.send_json({'error': 'Endpoint not found'}, status=404)
 
-def run_server(port=5050):
+def run_server(port=5000):
     server_address = ('0.0.0.0', port)
     httpd = ThreadedHTTPServer(server_address, RequestHandler)
     print(f"==================================================")
@@ -514,5 +579,5 @@ def run_server(port=5050):
     httpd.server_close()
 
 if __name__ == '__main__':
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 5050
-    run_server(port)
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
+    run_server(5050)
