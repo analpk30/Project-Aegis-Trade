@@ -4,12 +4,14 @@ import time
 import urllib.request
 import urllib.error
 from vector_engine import build_order_vector, match_precrime_pattern
+from statistical_model import local_statistical_engine
+
 
 # Global state for engine configuration & telemetry
 ENGINE_CONFIG = {
     'mode': 'auto', # 'auto' | 'force_fallback'
     'primary_model': 'gemini-2.5-flash',
-    'fallback_model': 'guardian-statistical-vector-v2',
+    'fallback_model': 'guardian-statistical-logistic-v2',
     'total_requests': 0,
     'gemini_successes': 0,
     'fallback_triggers': 0,
@@ -26,17 +28,17 @@ def get_engine_status() -> dict:
     return {
         'mode': ENGINE_CONFIG['mode'],
         'primaryEngine': {
-            'name': 'Gemini 2.5 Flash / 1.5 Pro AI',
+            'name': 'Gemini 2.5 Flash Primary AI',
             'status': 'ONLINE' if (api_key_present and ENGINE_CONFIG['mode'] == 'auto') else ('STANDBY' if ENGINE_CONFIG['mode'] == 'force_fallback' else 'NO_API_KEY'),
             'apiKeyConfigured': api_key_present,
             'avgLatencyMs': 320,
         },
         'fallbackEngine': {
-            'name': 'Local Statistical & Vector Model (Cosine Distance + Rule Matrix)',
+            'name': 'Local Statistical Model (Logistic Regression + Cosine TF-IDF Vector Engine)',
             'status': 'ACTIVE' if (ENGINE_CONFIG['mode'] == 'force_fallback' or not api_key_present) else 'READY_STANDBY',
             'avgLatencyMs': 12,
             'confidenceScore': 0.984,
-            'algorithm': 'Cosine Vector Similarity + BaFin Decision Tree'
+            'algorithm': 'Logistic Sigmoid + Cosine Pre-Crime Vector Distance + BaFin Decision Tree'
         },
         'telemetry': {
             'totalRequests': ENGINE_CONFIG['total_requests'],
@@ -108,56 +110,36 @@ Requirements:
         except Exception as e:
             print(f"[Python AI Engine] Gemini API call error: {e}. Activating Local Statistical Fallback Engine.")
 
-    # Local Statistical & Vector Fallback Engine
+    # Execute Local Statistical & Vector Reasoning Model
     ENGINE_CONFIG['fallback_triggers'] += 1
-    latency = int((time.time() - start_time) * 1000)
-    size_mb = size_eur / 1_000_000
-    
-    # 1. Compute Cosine Vector Distance against historical sanction records
-    order_vec = build_order_vector(
-        size_eur=size_eur,
+
+    eval_res = local_statistical_engine.evaluate_mifid_order_statistically(
+        order_id=order_id,
+        instrument=instrument,
         asset_class=asset_class,
-        kyc_status='VERIFIED',
-        aml_risk_level='LOW',
-        is_off_market=('OTC' in venue or size_eur > 30_000_000)
-    )
-    precrime_match = match_precrime_pattern(order_vec)
-    cosine_sim = precrime_match['similarityScore']
-
-    # 2. Rule Matrix Decision Tree
-    if guardian_score >= 80:
-        status_code = "RELEASED_AUTOMATED"
-        status_phrase = "RELEASED FOR AUTOMATED EXECUTION"
-        decision_rationale = f"Order cleared green-gate criteria. High executability rating ({executability_score}/100) and low market impact on {venue}."
-    elif guardian_score >= 50:
-        status_code = "HOLD_1ST_LINE"
-        status_phrase = "HELD FOR 1ST LINE COMPLIANCE REVIEW"
-        decision_rationale = f"Order flagged for intermediate risk. Pre-crime vector distance ({cosine_sim}) requires manual desk sign-off under WpHG Section 80."
-    else:
-        status_code = "BLOCKED_CENTRAL"
-        status_phrase = "BLOCKED & ESCALATED TO CENTRAL COMPLIANCE"
-        decision_rationale = f"Order blocked due to severe compliance risk match with '{precrime_match['caseName']}' (Cosine distance {cosine_sim})."
-
-    fallback_text = (
-        f"[GUARDIAN STATISTICAL & VECTOR MODEL FALLBACK — CONFIDENCE: 98.4%]\n\n"
-        f"1. MIFID II ART. 27 EVALUATION: Order {order_id} ({direction} €{size_mb:.1f}M {instrument}) evaluated on venue {venue}.\n"
-        f"2. QUANTITATIVE SCORE: Guardian Index = {guardian_score}/100 | Executability = {executability_score}/100 | Cosine Vector Similarity = {cosine_sim}.\n"
-        f"3. HISTORICAL PATTERN MATCH: Nearest sanction case: '{precrime_match['caseName']}' ({precrime_match['regulatorFine']}).\n"
-        f"4. DECISION OUTCOME: {status_phrase}.\n"
-        f"5. COMPLIANCE RATIONALE: {decision_rationale} Verified under BaFin Circular 04/2026 & MiFID II RTS 28."
+        size_eur=size_eur,
+        direction=direction,
+        venue=venue,
+        guardian_score=guardian_score,
+        executability_score=executability_score,
+        client_name=client_name
     )
 
-    total_latency = max(8, latency)
-    ENGINE_CONFIG['last_latency_ms'] = total_latency
+    latency = max(8, int((time.time() - start_time) * 1000))
+
+
+    ENGINE_CONFIG['last_latency_ms'] = latency
 
     return {
-        'text': fallback_text,
-        'model': 'guardian-statistical-vector-v2 (Local Fallback)',
-        'latencyMs': total_latency,
+        'text': eval_res['text'],
+        'model': eval_res['model'],
+        'latencyMs': latency,
         'fallbackUsed': True,
         'engineMode': 'statistical_fallback',
-        'confidenceScore': 0.984,
-        'vectorMatch': precrime_match
+        'confidenceScore': eval_res['confidenceScore'],
+        'violationProbability': eval_res['violationProbability'],
+        'confidenceInterval': eval_res['confidenceInterval'],
+        'precrimeMatch': eval_res['precrimeMatch']
     }
 
 
@@ -209,26 +191,18 @@ Instructions:
             print(f"[Python AI Engine] Gemini API error: {e}. Activating BaFin Statistical RAG Interpreter.")
 
     ENGINE_CONFIG['fallback_triggers'] += 1
+    eval_res = local_statistical_engine.interpret_bafin_rules_statistically(query, doc_context)
+
     latency = max(10, int((time.time() - start_time) * 1000))
     ENGINE_CONFIG['last_latency_ms'] = latency
 
-    fallback_text = (
-        f"[GUARDIAN BAFIN STATISTICAL RAG MODEL — CONFIDENCE: 97.8%]\n\n"
-        f"REGULATORY INTERPRETATION FOR QUERY: \"{query}\"\n\n"
-        f"Pursuant to BaFin Circular 04/2026 (MaRisk) and GwG Section 15 guidelines, pre-trade compliance mandates deterministic verification of client suitability, benchmark fixing windows, and UBO documentation.\n\n"
-        f"KEY DIRECTIVES:\n"
-        f"• DO: Verify client suitability category and GDPR consent prior to order entry on MTF venues.\n"
-        f"• DO: Record timestamped XAI justification logs for all off-market transactions exceeding €10M.\n"
-        f"• DONT: Never execute transactions for clients with PENDING or EXPIRED KYC status without Central Compliance sign-off.\n"
-        f"• DONT: Do not submit off-market rate quotes within 15 minutes of EURIBOR / ESTR fixing windows without 1st Line clearance."
-    )
-
     return {
-        'text': fallback_text,
-        'model': 'bafin-statistical-rag-v1 (Local Fallback)',
+        'text': eval_res['text'],
+        'model': eval_res['model'],
         'latencyMs': latency,
         'fallbackUsed': True,
         'engineMode': 'statistical_fallback',
-        'confidenceScore': 0.978
+        'confidenceScore': eval_res['confidenceScore'],
+        'termCorrelation': eval_res['termCorrelation']
     }
 
