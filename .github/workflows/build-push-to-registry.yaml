@@ -50,14 +50,14 @@ jobs:
           BUILDX_NO_DEFAULT_ATTESTATIONS: "1"
           COMPOSE_BAKE: "false"
         run: |
+          set -euo pipefail
           test -f project-gaurdian/docker-compose.yml
           test -f project-gaurdian/dockerfile
           test -f project-gaurdian/python_backend/app.py
           docker compose -f project-gaurdian/docker-compose.yml --project-name guardian build app
-          IMAGE_ID=$(docker compose -f project-gaurdian/docker-compose.yml --project-name guardian images -q app)
-          test -n "${IMAGE_ID}"
+          docker image inspect guardian-app:latest >/dev/null
           TARGET_IMAGE="${GCP_LOCATION}-docker.pkg.dev/${GCP_PROJECT_ID}/${AR_REPOSITORY}/${IMAGE_NAME}:${{ inputs.image_version }}"
-          docker tag "${IMAGE_ID}" "${TARGET_IMAGE}"
+          docker tag guardian-app:latest "${TARGET_IMAGE}"
           echo "TARGET_IMAGE=${TARGET_IMAGE}" >> "$GITHUB_ENV"
 
       - name: 'Validate ADK runtime in image with GCP auth'
