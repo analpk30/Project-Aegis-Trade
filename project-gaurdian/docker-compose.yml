@@ -12,5 +12,4 @@ services:
       PORT: 3000
       PYTHON_PORT: 5000
       CACHE_TTL_SECONDS: 60
-      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
     restart: unless-stopped
