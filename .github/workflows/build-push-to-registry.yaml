@@ -46,6 +46,9 @@ jobs:
         run: 'gcloud auth configure-docker ${{ env.GCP_LOCATION }}-docker.pkg.dev'
 
       - name: 'Build Image'
+        env:
+          BUILDX_NO_DEFAULT_ATTESTATIONS: "1"
+          COMPOSE_BAKE: "false"
         run: |
           test -f project-gaurdian/docker-compose.yml
           test -f project-gaurdian/dockerfile
