@@ -6,7 +6,18 @@ import time
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from socketserver import ThreadingMixIn
+from pathlib import Path
 import urllib.parse
+
+# Load repo-root .env so `npm run dev` (plain `python3 app.py`) picks up
+# GOOGLE_CLOUD_PROJECT etc. Without this the server runs with no project set and
+# silently drops to keyword retrieval + deterministic fallback.
+try:
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).resolve().parents[2] / '.env')
+except Exception:
+    pass
+
 from ai_engine import generate_mifid_justification, interpret_bafin_rules, get_engine_status, set_engine_mode
 
 
@@ -606,5 +617,5 @@ def run_server(port=5000):
     httpd.server_close()
 
 if __name__ == '__main__':
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
-    run_server(5050)
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 5050
+    run_server(port)
