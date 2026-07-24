@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Lightbulb,
   Sparkles,
@@ -15,7 +15,9 @@ import {
   XCircle,
   Clock,
   Zap,
-  Cpu
+  Cpu,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import {
   ResponsiveContainer,
@@ -41,6 +43,7 @@ interface IdeasProps {
 
 export const Ideas: React.FC<IdeasProps> = ({ activePersona = 'Trader' }) => {
   const navigate = useNavigate();
+  const ideasScrollerRef = useRef<HTMLDivElement | null>(null);
   const [ideas, setIdeas] = useState<GuardianIdea[]>([]);
   const [tradeHistory, setTradeHistory] = useState<any[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -94,6 +97,13 @@ export const Ideas: React.FC<IdeasProps> = ({ activePersona = 'Trader' }) => {
       setSendingId(null);
     }
     navigate('/trade');
+  };
+
+  const scrollIdeas = (direction: 'left' | 'right') => {
+    const el = ideasScrollerRef.current;
+    if (!el) return;
+    const amount = el.clientWidth;
+    el.scrollBy({ left: direction === 'right' ? amount : -amount, behavior: 'smooth' });
   };
 
   // --- Analytical Data Preparation ---
@@ -212,7 +222,25 @@ export const Ideas: React.FC<IdeasProps> = ({ activePersona = 'Trader' }) => {
         </div>
 
         <div className="space-y-4">
+          <div className="flex items-center justify-end gap-2">
+            <button
+              onClick={() => scrollIdeas('left')}
+              className="rounded-lg border border-[#1F2937] bg-[#0F1115] p-2 text-slate-300 hover:bg-[#1F2937] transition-colors"
+              aria-label="Scroll ideas left"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => scrollIdeas('right')}
+              className="rounded-lg border border-[#1F2937] bg-[#0F1115] p-2 text-slate-300 hover:bg-[#1F2937] transition-colors"
+              aria-label="Scroll ideas right"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+
           <div
+            ref={ideasScrollerRef}
             className="flex gap-6 overflow-y-auto snap-x snap-mandatory pb-2"
           >
             {ideas.map((idea) => (

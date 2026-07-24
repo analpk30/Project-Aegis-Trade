@@ -36,6 +36,7 @@ from vector_engine import build_order_vector, match_precrime_pattern, SEEDED_FIN
 from audit import log_audit_event, get_audit_logs, subscribe_audit
 from ai_engine import generate_mifid_justification, interpret_bafin_rules
 from chat_sessions import reset_session as reset_bafin_session
+from history_engine import TRADE_HISTORY
 
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
@@ -154,6 +155,10 @@ class RequestHandler(BaseHTTPRequestHandler):
         # 5. Ideas
         if path == "/api/ideas":
             self.send_json({"ideas": store.ideas})
+            return
+
+        if path == "/api/trade-history":
+            self.send_json({"tradeHistory": TRADE_HISTORY})
             return
 
         # 6. BaFin Circulars
