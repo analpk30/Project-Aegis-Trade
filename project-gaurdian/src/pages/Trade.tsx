@@ -261,9 +261,9 @@ export const Trade: React.FC<TradeProps> = ({ activePersona = 'Trader', onOpenWh
             <span className="text-[10px] text-slate-500 font-mono">Select order to inspect or execute</span>
           </div>
 
-          <div className="overflow-x-auto rounded-xl border border-[#1F2937] bg-[#090A0C]">
+          <div className="overflow-x-auto overflow-y-auto max-h-[1000px] rounded-xl border border-[#1F2937] bg-[#090A0C]">
             <table className="w-full text-left text-xs">
-              <thead className="bg-[#0F1115] text-[10px] font-mono uppercase text-slate-400 border-b border-[#1F2937]">
+              <thead className="sticky top-0 z-10 bg-[#0F1115] text-[10px] font-mono uppercase text-slate-400 border-b border-[#1F2937]">
                 <tr>
                   <th className="py-2.5 px-3">Order ID</th>
                   <th className="py-2.5 px-3">Instrument</th>

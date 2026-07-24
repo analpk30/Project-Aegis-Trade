@@ -96,6 +96,10 @@ def build_order_vector(
     comms_text: str = '',
     is_off_market: bool = False
 ) -> list:
+    try:
+        size_eur = float(size_eur)
+    except (TypeError, ValueError):
+        size_eur = 0.0
     size_factor = min(1.0, size_eur / 60_000_000)
     spread_factor = 0.9 if is_off_market else 0.2
     off_market_factor = 0.95 if is_off_market else 0.15

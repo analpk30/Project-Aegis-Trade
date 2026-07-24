@@ -8,6 +8,16 @@ def compute_guardian_score(
     gdpr_consent: bool,
     precrime_similarity_score: float = 0.0
 ) -> dict:
+    # Coerce numeric inputs — externalized JSON seed data can arrive as strings.
+    try:
+        size_eur = float(size_eur)
+    except (TypeError, ValueError):
+        size_eur = 0.0
+    try:
+        precrime_similarity_score = float(precrime_similarity_score)
+    except (TypeError, ValueError):
+        precrime_similarity_score = 0.0
+
     # 1. Executability & Liquidity Score (0 - 100)
     executability = 100
     if size_eur > 40_000_000:

@@ -447,7 +447,7 @@ class RequestHandler(BaseHTTPRequestHandler):
                 aml_risk_level=client["amlRiskLevel"],
                 suitability_category=client["suitabilityCategory"],
                 gdpr_consent=has_consent,
-                precrime_similarity_score=order.get("precrimeMatch", {}).get(
+                precrime_similarity_score=(order.get("precrimeMatch") or {}).get(
                     "similarityScore", 0.0
                 ),
             )
@@ -603,7 +603,8 @@ class RequestHandler(BaseHTTPRequestHandler):
                 "clientName": idea["clientName"],
                 "instrument": idea["orderDraft"]["instrument"],
                 "assetClass": idea["assetClass"],
-                "sizeEur": idea["orderDraft"]["sizeEur"],
+                # Idea draft sizeEur can be a string in seed data — store as a number.
+                "sizeEur": float(idea["orderDraft"].get("sizeEur") or 0),
                 "direction": idea["orderDraft"]["direction"],
                 "venue": idea["orderDraft"]["venue"],
                 "status": "Pending",
