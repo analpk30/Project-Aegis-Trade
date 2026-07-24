@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Search, CheckCircle, XCircle, FileText, Sparkles, Cpu } from 'lucide-react';
+import { BookOpen, Search, CheckCircle, XCircle, FileText, Sparkles, Cpu, MessageSquare } from 'lucide-react';
 import { BaFinAnnouncement, PersonaRole } from '../types';
 import { fetchBafinAnnouncements } from '../lib/dataService';
+import { BafinChatModal } from '../components/BafinChatModal';
 
 interface BafinProps {
   activePersona?: PersonaRole;
@@ -13,6 +14,7 @@ export const Bafin: React.FC<BafinProps> = ({ activePersona = 'Central Complianc
   const [ragResult, setRagResult] = useState<string | null>(null);
   const [isSearching, setIsSearching] = useState(false);
   const [selectedAssetClass, setSelectedAssetClass] = useState<string>('ALL');
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     fetchBafinAnnouncements().then((data) => setAnnouncements(data));
@@ -67,14 +69,23 @@ export const Bafin: React.FC<BafinProps> = ({ activePersona = 'Central Complianc
   return (
     <div className="space-y-6 pb-20">
       {/* Header */}
-      <div className="border-b border-slate-800 pb-4">
-        <h1 className="text-xl font-bold text-slate-100 flex items-center gap-2">
-          <BookOpen className="h-5 w-5 text-blue-400" />
-          <span>Module 7: Real-Time BaFin Rulebook RAG Interpreter</span>
-        </h1>
-        <p className="text-xs text-slate-400">
-          In-memory vector store & RAG pipeline parsing BaFin circulars, WpHG, and MaRisk directives into actionable Do/Don't cards.
-        </p>
+      <div className="flex flex-col gap-3 border-b border-slate-800 pb-4 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h1 className="text-xl font-bold text-slate-100 flex items-center gap-2">
+            <BookOpen className="h-5 w-5 text-blue-400" />
+            <span>Module 7: Real-Time BaFin Rulebook RAG Interpreter</span>
+          </h1>
+          <p className="text-xs text-slate-400">
+            In-memory vector store & RAG pipeline parsing BaFin circulars, WpHG, and MaRisk directives into actionable Do/Don't cards.
+          </p>
+        </div>
+        <button
+          onClick={() => setIsChatOpen(true)}
+          className="flex shrink-0 items-center gap-2 rounded-xl bg-blue-500 px-4 py-2 text-xs font-bold text-slate-950 transition-colors hover:bg-blue-400"
+        >
+          <MessageSquare className="h-4 w-4" />
+          <span>Ask Compliance Assistant</span>
+        </button>
       </div>
 
       {/* Search Input Box */}
@@ -176,6 +187,14 @@ export const Bafin: React.FC<BafinProps> = ({ activePersona = 'Central Complianc
           </div>
         ))}
       </div>
+
+      {/* Multi-turn Compliance Assistant */}
+      <BafinChatModal
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+        activePersona={activePersona}
+        announcements={announcements}
+      />
     </div>
   );
 };

@@ -115,6 +115,7 @@ The following APIs have been activated on your project. You cannot activate othe
 * secretmanager.googleapis.com
 * servicemanagement.googleapis.com
 * serviceusage.googleapis.com
+* spanner.googleapis.com
 * speech.googleapis.com
 * sql-component.googleapis.com
 * sqladmin.googleapis.com
@@ -185,6 +186,7 @@ Every team member has the following roles at the project level:
 * roles/secretmanager.admin
 * roles/servicemanagement.quotaViewer
 * roles/serviceusage.serviceUsageConsumer
+* roles/spanner.admin
 * roles/speech.editor
 * roles/storage.admin
 * roles/storagetransfer.admin
@@ -247,6 +249,7 @@ Workload SA (`workload@hack-team-entscheidungsproblem.iam.gserviceaccount.com`):
 * roles/secretmanager.secretVersionAdder
 * roles/servicemanagement.quotaViewer
 * roles/serviceusage.serviceUsageConsumer
+* roles/spanner.databaseUser
 * roles/speech.client
 * roles/storage.objectViewer
 * roles/storagetransfer.transferAgent
@@ -263,10 +266,37 @@ The default service accounts are de-privileged. You **must** attach your Workloa
 *   You have a budget of **EUR ~200**. Your team lead will receive spending notifications.
 *   You **cannot** create service accounts or service account keys. Use Workload Identity Federation.
 
+#### Gemini / Vertex AI :sparkles:
+
+Gemini models run on the Gemini Enterprise Agent Platform (the service previously called Vertex AI). Your project already has the `aiplatform.googleapis.com` API enabled and your Workload SA holds `roles/aiplatform.user`, so you can call Gemini without extra setup. There are no API keys to manage, so you authenticate the same way you would for any other GCP API.
+
+* **From your laptop:** sign in once with `gcloud auth application-default login`, then set your quota project with `gcloud auth application-default set-quota-project hack-team-entscheidungsproblem`. The Google client libraries find these credentials automatically.
+* **From compute (Cloud Run, Cloud Functions, a VM, OpenShift):** attach your Workload SA `workload@hack-team-entscheidungsproblem.iam.gserviceaccount.com` to the resource. Your code reads its credentials from the metadata server through Application Default Credentials, so you do not copy or store any secret.
+
+Install the current SDK with `pip install google-genai` and point it at Vertex:
+
+```python
+from google import genai
+
+client = genai.Client(vertexai=True, project="hack-team-entscheidungsproblem", location="global")
+
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents="Give me three ideas for a hackathon project.",
+)
+print(response.text)
+```
+
+The same code runs unchanged on your laptop and on your compute, because both resolve credentials through ADC. For per-service instructions on attaching the Workload SA and more examples, see **[GCP_SERVICE_ACCOUNTS.md](./GCP_SERVICE_ACCOUNTS.md)**.
+
 #### GitHub :bookmark_tabs:
 
 **Access:** All team members have **maintainer** access to this repository.
 **GitHub Actions Variables:** A set of useful variables has been populated for you:
+* vars.APP_ENGINE_DEFAULT_SA_EMAIL - The email address of the default App Engine service account.: hack-team-entscheidungsproblem@appspot.gserviceaccount.com
+* vars.APP_ENGINE_DEFAULT_SA_ID - The fully qualified name of the default App Engine service account.: projects/hack-team-entscheidungsproblem/serviceAccounts/hack-team-entscheidungsproblem@appspot.gserviceaccount.com
+* vars.COMPUTE_DEFAULT_SA_EMAIL - The email address of the default Compute Engine service account.: 359026735934-compute@developer.gserviceaccount.com
+* vars.COMPUTE_DEFAULT_SA_ID - The fully qualified name of the default Compute Engine service account.: projects/hack-team-entscheidungsproblem/serviceAccounts/359026735934-compute@developer.gserviceaccount.com
 * vars.INFRA_SA_EMAIL - The email address representation of the SA you can use to deploy infrastructure. It has the same access rights as human team members.: infrastructure@hack-team-entscheidungsproblem.iam.gserviceaccount.com
 * vars.INFRA_SA_ID - The fully qualified ID representation of the SA you can use to deploy infrastructure.: projects/hack-team-entscheidungsproblem/serviceAccounts/infrastructure@hack-team-entscheidungsproblem.iam.gserviceaccount.com
 * vars.OPENSHIFT_NAMESPACE - The OpenShift namespace for your team: entscheidungsproblem-official
@@ -288,6 +318,10 @@ Your workspace is VCS-driven. Pushing to the `/terraform` directory will trigger
 The Google provider is pre-configured to use your infrastructure SA.
 A set of useful input variables has been populated for you:
 
+* app_engine_default_sa_email - The email address of the default App Engine service account.: hack-team-entscheidungsproblem@appspot.gserviceaccount.com
+* app_engine_default_sa_id - The fully qualified name of the default App Engine service account.: projects/hack-team-entscheidungsproblem/serviceAccounts/hack-team-entscheidungsproblem@appspot.gserviceaccount.com
+* compute_default_sa_email - The email address of the default Compute Engine service account.: 359026735934-compute@developer.gserviceaccount.com
+* compute_default_sa_id - The fully qualified name of the default Compute Engine service account.: projects/hack-team-entscheidungsproblem/serviceAccounts/359026735934-compute@developer.gserviceaccount.com
 * infra_sa_email - The email address representation of the SA you can use to deploy infrastructure. It has the same access rights as human team members.: infrastructure@hack-team-entscheidungsproblem.iam.gserviceaccount.com
 * infra_sa_id - The fully qualified ID representation of the SA you can use to deploy infrastructure.: projects/hack-team-entscheidungsproblem/serviceAccounts/infrastructure@hack-team-entscheidungsproblem.iam.gserviceaccount.com
 * openshift_namespace - The OpenShift namespace for your team: entscheidungsproblem-official
@@ -315,7 +349,7 @@ A set of useful input variables has been populated for you:
 #### Code & Setup Tutorials
 
 * **DB:**
-    * [Participant Briefing Deck](https://storage.cloud.google.com/hackathon_shared_storage_2026/Hackathon_Participant_Briefing26.pdf)
+    * [Participant Briefing Deck](https://storage.cloud.google.com/hackathon_shared_storage_2026/Hackathon_Participant_Briefing26.pdf?authuser=1)
 *   **Google Cloud:**
     *   [Generative AI Training Resources](https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-generative-ai-training-resources)
     *   [Example GCP Apps](https://github.com/db-hackathon/support/tree/main/google-examples)
@@ -330,6 +364,8 @@ A set of useful input variables has been populated for you:
     *   **Locally:** Run `gcloud auth login --update-adc`.
     *   **On GCP Compute:** Attach your Workload SA. [Application Default Credentials](https://cloud.google.com/docs/authentication/application-default-credentials) will handle the rest.
     *   **On OpenShift:** See the example in the [`openshift-api/`](./openshift-api/) directory.
+*   **How do I call Gemini / Vertex AI?**
+    *   Your project has the Vertex AI API enabled and your Workload SA can use it. Authenticate with ADC (as above), then use the `google-genai` SDK with `vertexai=True`. Copy-paste examples are in [GCP_SERVICE_ACCOUNTS.md](./GCP_SERVICE_ACCOUNTS.md#gemini-models-enterprise-agent-platform).
 *   **How do I deploy to Cloud Run / App Engine / Cloud Functions?**
     *   There are examples in this repository! See the [`.github/workflows/`](.github/workflows/) directory for `gcloud` examples and the `terraform/` directory for Terraform examples.
 

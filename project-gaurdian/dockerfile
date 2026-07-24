@@ -1,0 +1,98 @@
+FROM node:20-bookworm-slim AS builder
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY index.html vite.config.ts tsconfig.json ./
+COPY src ./src
+RUN npm run build
+
+FROM node:20-bookworm-slim AS runner
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends python3 python3-pip python3-venv \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV PYTHON_PORT=5000
+ENV PYTHONUNBUFFERED=1
+ENV VIRTUAL_ENV=/app/venv
+ENV PATH="/app/venv/bin:$PATH"
+ENV GOOGLE_GENAI_USE_VERTEXAI=TRUE
+ENV GOOGLE_CLOUD_PROJECT=hack-team-entscheidungsproblem
+ENV GCP_PROJECT=hack-team-entscheidungsproblem
+ENV GOOGLE_CLOUD_LOCATION=us-central1
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+
+RUN python3 -m venv "$VIRTUAL_ENV" \
+    && pip install --no-cache-dir python-dotenv google-adk google-genai numpy
+RUN python3 -c "import google.adk, google.genai, numpy"
+
+COPY --from=builder /app/dist ./dist
+COPY vite.config.ts ./vite.config.ts
+COPY python_backend ./python_backend
+
+EXPOSE 3000
+EXPOSE 5050
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
+    CMD python3 -c "import json,sys,urllib.request; frontend_ok = urllib.request.urlopen('http://127.0.0.1:3000').getcode() == 200; backend = json.load(urllib.request.urlopen('http://127.0.0.1:5000/api/health')); sys.exit(0 if frontend_ok and backend.get('status') == 'ok' else 1)"
+
+RUN printf '%s\n' \
+    '#!/bin/sh' \
+    'set -e' \
+    'PYTHON_PORT="${PYTHON_PORT:-5050}"' \
+    'PORT="${PORT:-3000}"' \
+    'export BACKEND_URL="http://127.0.0.1:${PYTHON_PORT}"' \
+    '' \
+    'python3 python_backend/app.py "${PYTHON_PORT}" &' \
+    'PYTHON_PID=$!' \
+    '' \
+    'wait_for_backend() {' \
+    '  ATTEMPT=0' \
+    '  while [ "$ATTEMPT" -lt 60 ]; do' \
+    '    if ! kill -0 "$PYTHON_PID" 2>/dev/null; then' \
+    '      echo "Backend process exited before becoming ready" >&2' \
+    '      return 1' \
+    '    fi' \
+    '    if python3 -c "import json,sys,urllib.request; data = json.load(urllib.request.urlopen(\"http://127.0.0.1:${PYTHON_PORT}/api/health\", timeout=2)); sys.exit(0 if data.get(\"status\") == \"ok\" else 1)" 2>/dev/null; then' \
+    '      return 0' \
+    '    fi' \
+    '    ATTEMPT=$((ATTEMPT + 1))' \
+    '    sleep 1' \
+    '  done' \
+    '  echo "Backend did not become ready in time" >&2' \
+    '  return 1' \
+    '}' \
+    '' \
+    'cleanup() {' \
+    '  kill "$PYTHON_PID" 2>/dev/null || true' \
+    '  kill "$FRONTEND_PID" 2>/dev/null || true' \
+    '}' \
+    'trap cleanup INT TERM EXIT' \
+    '' \
+    'wait_for_backend' \
+    '' \
+    'npm run start -- --port "${PORT}" --host 0.0.0.0 &' \
+    'FRONTEND_PID=$!' \
+    '' \
+    'while kill -0 "$PYTHON_PID" 2>/dev/null && kill -0 "$FRONTEND_PID" 2>/dev/null; do' \
+    '  sleep 2' \
+    'done' \
+    '' \
+    'if ! kill -0 "$PYTHON_PID" 2>/dev/null; then' \
+    '  echo "Backend process exited" >&2' \
+    '  wait "$PYTHON_PID" || true' \
+    '  exit 1' \
+    'fi' \
+    '' \
+    'wait "$FRONTEND_PID"' \
+    > /app/docker-entrypoint.sh \
+    && chmod +x /app/docker-entrypoint.sh
+
+ENTRYPOINT ["./docker-entrypoint.sh"]

@@ -1,0 +1,78 @@
+name: Build and Push Guardian App to Artifact Registry
+on:
+  workflow_dispatch:
+    inputs:
+      image_version:
+        description: 'Image tag/version to push (e.g. v1.2.0, latest)'
+        required: true
+        default: 'latest'
+        type: string
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    env:
+      GCP_PROJECT_ID: hack-team-entscheidungsproblem
+      GCP_LOCATION: us-central1
+      AR_REPOSITORY: guardian-app
+      IMAGE_NAME: guardian-app
+    steps:
+      # actions/checkout MUST come before auth
+      - name: 'Checkout'
+        uses: 'actions/checkout@v4'
+
+      - name: 'Authenticate to GCP as workload SA for docker push to artifact registry'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          export_environment_variables: true
+          project_id: ${{ env.GCP_PROJECT_ID }}
+          workload_identity_provider: projects/662541806905/locations/global/workloadIdentityPools/github-2026/providers/github-2026
+          service_account: workload@hack-team-entscheidungsproblem.iam.gserviceaccount.com
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+
+      - name: 'Create Artifact Registry repository'
+        run: |
+            if gcloud artifacts repositories describe "${AR_REPOSITORY}" --location="${GCP_LOCATION}" &> /dev/null; then
+                echo "Artifact Registry repository '${AR_REPOSITORY}' already exists"
+            else
+                gcloud artifacts repositories create "${AR_REPOSITORY}" --location="${GCP_LOCATION}" --repository-format=docker
+            fi
+
+      - name: 'docker config'
+        run: 'gcloud auth configure-docker ${{ env.GCP_LOCATION }}-docker.pkg.dev'
+
+      - name: 'Build Image'
+        env:
+          BUILDX_NO_DEFAULT_ATTESTATIONS: "1"
+          COMPOSE_BAKE: "false"
+        run: |
+          set -euo pipefail
+          test -f project-gaurdian/docker-compose.yml
+          test -f project-gaurdian/dockerfile
+          test -f project-gaurdian/python_backend/app.py
+          docker compose -f project-gaurdian/docker-compose.yml --project-name guardian build app
+          docker image inspect guardian-app:latest >/dev/null
+          TARGET_IMAGE="${GCP_LOCATION}-docker.pkg.dev/${GCP_PROJECT_ID}/${AR_REPOSITORY}/${IMAGE_NAME}:${{ inputs.image_version }}"
+          docker tag guardian-app:latest "${TARGET_IMAGE}"
+          echo "TARGET_IMAGE=${TARGET_IMAGE}" >> "$GITHUB_ENV"
+
+      - name: 'Validate ADK runtime in image with GCP auth'
+        run: |
+          test -n "${GOOGLE_GHA_CREDS_PATH}"
+          docker run --rm \
+            --entrypoint python3 \
+            -e GOOGLE_GENAI_USE_VERTEXAI=TRUE \
+            -e GOOGLE_CLOUD_PROJECT="${GCP_PROJECT_ID}" \
+            -e GOOGLE_CLOUD_LOCATION="${GCP_LOCATION}" \
+            -e GOOGLE_APPLICATION_CREDENTIALS=/tmp/gha-creds.json \
+            -v "${GOOGLE_GHA_CREDS_PATH}:/tmp/gha-creds.json:ro" \
+            "${TARGET_IMAGE}" \
+            -c "import google.auth; import google.adk; import google.genai; creds, project = google.auth.default(); assert project in (None, '${GCP_PROJECT_ID}'); print('ADK runtime check passed')"
+
+      - name: 'Push Image'
+        run: |
+          docker push "${TARGET_IMAGE}"
