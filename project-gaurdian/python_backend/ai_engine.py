@@ -100,6 +100,7 @@ def _build_risk_agent():
         model=_VERTEX_MODEL,
         description='Narrates quantitative cross-market anomaly output into a risk-desk briefing via Vertex AI.',
         instruction=_RISK_NARRATOR_INSTRUCTION,
+    )
 def _build_ideas_agent():
     return Agent(
         name='ideas_generation_agent',
