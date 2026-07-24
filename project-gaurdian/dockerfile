@@ -31,7 +31,7 @@ RUN npm ci --omit=dev && npm cache clean --force
 
 RUN python3 -m venv "$VIRTUAL_ENV" \
     && pip install --no-cache-dir python-dotenv google-adk google-genai numpy
-RUN python3 -c "import google.adk, google.genai, numpy"
+RUN python3 -c "import google.adk, google.genai, numpy, pandas, openpyxl"  # Verify that the packages are installed correctly
 
 COPY --from=builder /app/dist ./dist
 COPY vite.config.ts ./vite.config.ts
