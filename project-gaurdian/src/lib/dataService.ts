@@ -520,3 +520,13 @@ export async function fetchAuditLogs(persona?: PersonaRole): Promise<AuditEntry[
     },
   ];
 }
+
+
+
+
+export interface PersonaConfig {
+  name: string;
+  defaultRoute: string;
+  allowedRoutes: string[];
+  description: string;
+}

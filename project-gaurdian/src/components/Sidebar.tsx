@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
@@ -10,6 +10,7 @@ import {
   History,
   TrendingUp,
   Lock,
+  ChevronLeft,
 } from 'lucide-react';
 import { PersonaRole } from '../types';
 
@@ -19,74 +20,127 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ activePersona, allowedRoutes }) => {
-  const navItems = [
-    { path: '/home', label: 'Overview', icon: LayoutDashboard },
-    { path: '/trade', label: 'Trade Blotter', icon: ArrowLeftRight },
-    { path: '/clients', label: 'Client Passports', icon: Users },
-    { path: '/ideas', label: 'Approved Ideas', icon: Lightbulb },
-    { path: '/bafin', label: 'BaFin Rulebook', icon: BookOpen },
-    { path: '/risk', label: 'Risk & Anomalies', icon: AlertTriangle },
-    { path: '/audit', label: 'XAI Audit Explorer', icon: History },
-    { path: '/executive', label: 'Executive ROI', icon: TrendingUp },
+  const [collapsed, setCollapsed] = useState(false);
+
+  const navGroups = [
+    {
+      label: 'Research',
+      items: [
+        { path: '/home', label: 'Overview', icon: LayoutDashboard },
+        { path: '/trade', label: 'Trade Blotter', icon: ArrowLeftRight },
+        { path: '/clients', label: 'Client Passports', icon: Users },
+      ],
+    },
+    {
+      label: 'Decisioning',
+      items: [
+        { path: '/ideas', label: 'Approved Ideas', icon: Lightbulb },
+        { path: '/audit', label: 'XAI Audit Explorer', icon: History },
+      ],
+    },
+    {
+      label: 'Compliance',
+      items: [
+        { path: '/bafin', label: 'BaFin Rulebook', icon: BookOpen },
+        { path: '/risk', label: 'Risk & Anomalies', icon: AlertTriangle },
+      ],
+    },
+    {
+      label: 'Reporting',
+      items: [
+        { path: '/executive', label: 'Executive ROI', icon: TrendingUp },
+      ],
+    },
   ];
 
   return (
-    <aside className="w-64 border-r border-[#1F2937] bg-[#0F1115] flex flex-col justify-between p-4 shrink-0 hidden md:flex">
+    <aside
+      className={`relative border-r border-[#393939] bg-[#161616] flex flex-col justify-between p-4 shrink-0 hidden md:flex transition-all duration-200 ${
+        collapsed ? 'w-20' : 'w-64'
+      }`}
+    >
+      <button
+        type="button"
+        onClick={() => setCollapsed((c) => !c)}
+        className="absolute top-1/2 -right-4 -translate-y-1/2 z-10 flex items-center justify-center h-9 w-9 rounded-full bg-[#262626] border border-[#393939] text-[#c6c6c6] hover:text-[#f4f4f4] hover:bg-[#353535] transition-colors"
+        title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+      >
+        <ChevronLeft className={`h-5 w-5 transition-transform ${collapsed ? 'rotate-180' : ''}`} />
+      </button>
+
       {/* Navigation Items */}
       <div className="space-y-6">
-        <div>
-          <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 px-3 block mb-2">
-            Front-Office Modules
-          </span>
-          <nav className="space-y-1">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              const isAllowed = allowedRoutes.includes(item.path);
+        {navGroups.map((group, idx) => (
+          <div key={group.label}>
+            {collapsed ? (
+              idx > 0 && <div className="h-px bg-[#393939] mx-2 mb-2" />
+            ) : (
+              <span className="text-sm font-semibold uppercase tracking-[0.32px] text-[#c6c6c6] px-3 block mb-2">
+                {group.label}
+              </span>
+            )}
+            <nav className="space-y-1">
+              {group.items.map((item) => {
+                const Icon = item.icon;
+                const isAllowed = allowedRoutes.includes(item.path);
 
-              return (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  className={({ isActive }) =>
-                    `flex items-center justify-between rounded-lg px-3 py-2 text-xs font-medium transition-colors ${
-                      isActive
-                        ? isAllowed
-                          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-semibold'
-                          : 'bg-rose-500/10 text-rose-400 border border-rose-500/30 font-semibold'
-                        : isAllowed
-                        ? 'text-slate-300 hover:bg-[#1F2937] hover:text-slate-100'
-                        : 'text-slate-500 hover:bg-rose-500/10 hover:text-rose-300'
-                    }`
-                  }
-                  title={isAllowed ? `Open ${item.label}` : `Locked for persona '${activePersona}'. Click to view access details.`}
-                >
-                  <div className="flex items-center gap-3">
-                    <Icon className={`h-4 w-4 ${isAllowed ? '' : 'text-slate-500'}`} />
-                    <span>{item.label}</span>
-                  </div>
-                  {!isAllowed && (
-                    <span className="flex items-center gap-1 text-[10px] text-amber-500/90 font-mono bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
-                      <Lock className="h-3 w-3" />
-                      <span>LOCKED</span>
-                    </span>
-                  )}
-                </NavLink>
-              );
-            })}
-          </nav>
-        </div>
-      </div>
-
-      {/* Role Footer Card */}
-      <div className="rounded-xl border border-[#1F2937] bg-[#090A0C] p-3">
-        <div className="flex items-center gap-2">
-          <div className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-          <span className="text-xs font-semibold text-slate-200">Persona Claims Active</span>
-        </div>
-        <p className="mt-1 text-[11px] text-slate-400">
-          Role: <strong className="text-emerald-400">{activePersona}</strong>
-        </p>
-        <p className="text-[10px] text-slate-500 mt-1">RBAC enforced on all API endpoints</p>
+                return (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `group relative flex items-center rounded-r-sm py-2.5 text-base font-normal transition-colors border-l-4 ${
+                        collapsed ? 'justify-center px-2' : 'justify-between pl-2.5 pr-3'
+                      } ${
+                        isActive
+                          ? isAllowed
+                            ? 'bg-[#393939] text-[#f4f4f4] border-l-[#0f62fe] font-semibold'
+                            : 'bg-[#fa4d56]/10 text-[#fa4d56] border-l-[#fa4d56] font-semibold'
+                          : isAllowed
+                          ? 'border-l-transparent text-[#c6c6c6] hover:bg-[#262626] hover:text-[#f4f4f4]'
+                          : 'border-l-transparent text-[#6f6f6f] hover:bg-[#fa4d56]/5 hover:text-[#fa4d56]'
+                      }`
+                    }
+                    title={isAllowed ? item.label : `Locked for persona '${activePersona}'. Click to view access details.`}
+                  >
+                    {({ isActive }) => (
+                      <>
+                        <div className={`flex items-center ${collapsed ? '' : 'gap-3'}`}>
+                          <Icon
+                            className={`h-5 w-5 shrink-0 transition-colors ${
+                              isActive
+                                ? isAllowed
+                                  ? 'text-[#0f62fe]'
+                                  : 'text-[#fa4d56]'
+                                : isAllowed
+                                ? 'text-[#c6c6c6] group-hover:text-[#f4f4f4]'
+                                : 'text-[#6f6f6f]'
+                            }`}
+                          />
+                          {!collapsed && <span>{item.label}</span>}
+                        </div>
+                        {!collapsed && !isAllowed && (
+                          <span className="flex items-center gap-1 text-xs text-[#fa4d56] font-mono bg-[#fa4d56]/10 px-1.5 py-0.5 rounded border border-[#fa4d56]/30">
+                            <Lock className="h-3.5 w-3.5" />
+                            <span>LOCKED</span>
+                          </span>
+                        )}
+                        {collapsed && (
+                          <span className="pointer-events-none absolute left-full top-1/2 ml-3 -translate-y-1/2 whitespace-nowrap rounded-md border border-[#393939] bg-[#262626] px-2.5 py-1.5 text-sm text-[#f4f4f4] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 z-20">
+                            {item.label}
+                            {!isAllowed && (
+                              <Lock className="ml-1.5 inline h-3.5 w-3.5 text-[#fa4d56] align-text-bottom" />
+                            )}
+                          </span>
+                        )}
+                      </>
+                    )}
+                  </NavLink>
+                );
+              })}
+            </nav>
+          </div>
+        ))}
       </div>
     </aside>
   );
