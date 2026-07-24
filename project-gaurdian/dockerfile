@@ -50,7 +50,7 @@ RUN printf '%s\n' \
     'PORT="${PORT:-3000}"' \
     'export BACKEND_URL="http://127.0.0.1:${PYTHON_PORT}"' \
     '' \
-    'python3 python_backend/app.py "${PYTHON_PORT}" &' \
+    '(cd python_backend && python3 app.py "${PYTHON_PORT}") &' \
     'PYTHON_PID=$!' \
     '' \
     'wait_for_backend() {' \
