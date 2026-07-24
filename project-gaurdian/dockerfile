@@ -40,7 +40,7 @@ COPY python_backend ./python_backend
 EXPOSE 3000
 EXPOSE 5050
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
     CMD python3 -c "import json,sys,urllib.request; frontend_ok = urllib.request.urlopen('http://127.0.0.1:3000').getcode() == 200; backend = json.load(urllib.request.urlopen('http://127.0.0.1:5000/api/health')); sys.exit(0 if frontend_ok and backend.get('status') == 'ok' else 1)"
 
 RUN printf '%s\n' \
