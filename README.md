@@ -1,4 +1,4 @@
-Aegis Trade
+ ## Aegis Trade
 
 Aegis Tradeis a persona-driven AI compliance and front-office trading cockpit. It combines a **React + Vite** web app with a **Python AI engine** to simulate a regulated trading environment with approvals, compliance checks, auditability, and risk monitoring.
 
