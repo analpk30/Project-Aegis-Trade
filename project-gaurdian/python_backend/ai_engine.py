@@ -82,6 +82,24 @@ def _build_bafin_agent():
     )
 
 
+_RISK_NARRATOR_INSTRUCTION = """You are a 2nd Line Market Risk Officer writing a crisp desk-head briefing.
+You are given the OUTPUT of a quantitative cross-market anomaly model (Mahalanobis distance over a rolling
+covariance matrix) and a Hawkes contagion forecast. Do NOT invent numbers — narrate only what is given.
+
+Write 90-130 words:
+1. State the severity and what the multivariate signal means (a correlation-structure break, not a single-market move).
+2. Name the driving markets and the exposed client books / notional.
+3. Interpret the Hawkes cascade probability in plain risk language.
+4. End with a single clear recommended action for the desk.
+"""
+
+
+def _build_risk_agent():
+    return Agent(
+        name='risk_narrator_agent',
+        model=_VERTEX_MODEL,
+        description='Narrates quantitative cross-market anomaly output into a risk-desk briefing via Vertex AI.',
+        instruction=_RISK_NARRATOR_INSTRUCTION,
 def _build_ideas_agent():
     return Agent(
         name='ideas_generation_agent',
@@ -145,6 +163,71 @@ def _run_bafin_oneshot(prompt: str) -> str:
     )
 
 
+def _run_risk_oneshot(prompt: str) -> str:
+    return call_with_retry(
+        lambda: async_runtime.submit(_run_ephemeral_adk_agent(_build_risk_agent(), prompt, 'risk')),
+        label='risk-narrator',
+    )
+
+
+def narrate_risk_anomaly(anomaly: dict) -> dict:
+    """Generate an executive risk briefing from a computed anomaly (on-demand).
+
+    This narrates numbers the quant engine already produced — it is NOT retrieval
+    and NOT a detector; the math stays authoritative, the LLM only explains it.
+    Falls back to a deterministic briefing if Vertex is unavailable.
+    """
+    start_time = time.time()
+    sigma = anomaly.get('deviationSigma', 0)
+    maha = anomaly.get('mahalanobisDistance', 0)
+    drivers = ', '.join(anomaly.get('contributingMarkets', []) or []) or 'n/a'
+    clients = ', '.join(anomaly.get('affectedClients', []) or []) or 'none'
+    notional = anomaly.get('exposedNotionalEur', 0)
+    contagion = anomaly.get('contagionProbability')
+    horizon = anomaly.get('forecastHorizonMins', 15)
+    contagion_pct = f"{contagion*100:.0f}%" if contagion is not None else 'n/a'
+
+    prompt = f"""Quantitative cross-market anomaly model output:
+- Severity: {anomaly.get('alertLevel')} — {sigma}σ (equivalent Gaussian), Mahalanobis distance {maha}
+- Metric: {anomaly.get('metric')}
+- Driving markets (correlation contributors): {drivers}
+- Exposed client books: {clients}
+- Exposed notional: €{notional:,}
+- Hawkes contagion forecast: {contagion_pct} probability of cascade within {horizon} minutes
+
+Write the desk-head briefing."""
+
+    if _ADK_AVAILABLE and _configure_vertex_ai():
+        try:
+            text = _run_risk_oneshot(prompt)
+            if text:
+                return {
+                    'text': text,
+                    'model': f'{_VERTEX_MODEL} (Vertex AI / Cloud ADK)',
+                    'latencyMs': int((time.time() - start_time) * 1000),
+                    'fallbackUsed': False,
+                }
+        except Exception as e:
+            print(f"[Python AI Engine] Risk narrator error: {e}. Falling back to deterministic briefing.")
+
+    action = anomaly.get('recommendedAction', 'Escalate to 2nd Line Risk.')
+    text = (
+        f"{anomaly.get('alertLevel')} cross-market anomaly at {sigma}σ (Mahalanobis {maha}). "
+        f"The signal is a break in the joint correlation structure across {drivers} — each market's own move "
+        f"stays within normal single-name tolerance, so univariate monitors would miss it. "
+        f"Exposed books: {clients} (€{notional:,} notional). "
+        f"Hawkes contagion model estimates {contagion_pct} probability of cascade within {horizon} minutes. "
+        f"Recommended action: {action}"
+    )
+    return {
+        'text': text,
+        'model': 'risk-narrator-rules-v1',
+        'latencyMs': max(10, int((time.time() - start_time) * 1000)),
+        'fallbackUsed': True,
+    }
+
+import urllib.request
+import urllib.error
 def _run_ideas_oneshot(prompt: str) -> str:
     return call_with_retry(
         lambda: async_runtime.submit(_run_ephemeral_adk_agent(_build_ideas_agent(), prompt, 'ideas')),

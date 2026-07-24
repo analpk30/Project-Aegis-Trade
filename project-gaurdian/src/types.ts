@@ -141,9 +141,17 @@ export interface MarketAnomaly {
   metric: string;
   deviationSigma: number;
   affectedClients: string[];
-  alertLevel: 'AMBER' | 'RED';
+  alertLevel: 'GREEN' | 'AMBER' | 'RED';
   description: string;
   recommendedAction: string;
+  // Optional quant fields from the live cross-market anomaly engine.
+  mahalanobisDistance?: number;
+  contributingMarkets?: string[];
+  contagionProbability?: number;
+  forecastHorizonMins?: number;
+  exposedNotionalEur?: number;
+  sigmaHistory?: number[];
+  contagionHistory?: number[];
 }
 
 export interface HedgeOption {
