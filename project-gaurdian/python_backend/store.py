@@ -138,32 +138,32 @@ class DataStore:
 # [self._decode_nested_value(record) for record in records]
     def seed_clients(self):
         self.clients = self._load_file(
-            './data/clients_data.json'
+            '../data/clients_data.json'
         )
         print(f"Seeded fine cases : {self.clients}")
         
 
     def seed_bafin(self):
         self.bafin_announcements = self._load_file(
-            './data/BaFin_Announcements_100.json'
+            '../data/BaFin_Announcements_100.json'
         )
         print(f"Seeded bafin cases : {self.bafin_announcements}")
 
     def seed_ideas(self):
-        self.ideas = self._load_file('./data/ideas_data_100.json',
+        self.ideas = self._load_file('../data/ideas_data_100.json',
       
         )
         print(f"Seeded fine cases : {self.ideas}")
 
     def seed_anomalies(self):
         self.anomalies = self._load_file(
-            './data/anomalies.json',
+            '../data/anomalies.json',
         )
         print(f"Seeded fine cases : {self.anomalies}")
 
     def seed_hedges(self):
         self.hedges = self._load_file(
-                    './data/hedges.json',
+                    '../data/hedges.json',
                 )
 
     def seed_executive_metrics(self):
@@ -186,7 +186,7 @@ class DataStore:
         from scoring import compute_guardian_score
         from vector_engine import build_order_vector, match_precrime_pattern
         order_seeds = self._load_file(
-                    './data/trade_orders_100.json',
+                    '../data/trade_orders_100.json',
                 )
 
         # order_seeds = [

@@ -188,11 +188,6 @@ export const Ideas: React.FC<IdeasProps> = ({ activePersona = 'Trader' }) => {
             </div>
           )}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {ideas.map((idea,i) => (
-          <div
-            key={i}
-            className="rounded-2xl border border-[#1F2937] bg-[#0F1115] p-5 shadow-xl flex flex-col justify-between space-y-4 hover:border-amber-500/40 transition-all"
           <button
             onClick={handleSynthesizeIdeasWithAI}
             disabled={isGenerating}
@@ -216,12 +211,15 @@ export const Ideas: React.FC<IdeasProps> = ({ activePersona = 'Trader' }) => {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {ideas.map((idea) => (
-            <div
-              key={idea.id}
-              className="rounded-2xl border border-[#1F2937] bg-[#0F1115] p-5 shadow-xl flex flex-col justify-between space-y-4 hover:border-amber-500/40 transition-all relative overflow-hidden group"
-            >
+        <div className="space-y-4">
+          <div
+            className="flex gap-6 overflow-y-auto snap-x snap-mandatory pb-2"
+          >
+            {ideas.map((idea) => (
+              <div
+                key={idea.id}
+                className="min-w-full md:min-w-[calc(50%-0.75rem)] lg:min-w-[calc((100%-3rem)/3)] snap-start rounded-2xl border border-[#1F2937] bg-[#0F1115] p-5 shadow-xl flex flex-col justify-between space-y-4 hover:border-amber-500/40 transition-all relative overflow-hidden group"
+              >
               <div className="space-y-3">
                 <div className="flex items-center justify-between border-b border-[#1F2937] pb-3">
                   <span className="font-mono text-xs font-bold text-amber-400">{idea.id}</span>
@@ -274,8 +272,9 @@ export const Ideas: React.FC<IdeasProps> = ({ activePersona = 'Trader' }) => {
                 <Send className="h-4 w-4" />
                 <span>{sendingId === idea.id ? 'Drafting Order...' : 'Send to Blotter (Create Order)'}</span>
               </button>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

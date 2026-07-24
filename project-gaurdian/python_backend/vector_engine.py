@@ -14,7 +14,7 @@ def cosine_similarity(a: list, b: list) -> float:
 
 
 SEEDED_FINE_CASES = pd.read_excel(
-    './data/SEEDED_FINE_CASES.xlsx',
+    '../data/SEEDED_FINE_CASES.xlsx',
     engine='openpyxl',
 ).to_dict(orient='records')
 
