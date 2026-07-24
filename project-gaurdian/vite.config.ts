@@ -4,7 +4,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
-  const backendUrl = process.env.BACKEND_URL ?? 'http://127.0.0.1:5050';
+  const backendUrl = process.env.BACKEND_URL ?? 'http://127.0.0.1:5000';
   const apiProxy = {
     '/api': {
       target: backendUrl,
