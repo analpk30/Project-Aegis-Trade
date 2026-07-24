@@ -30,12 +30,21 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 RUN python3 -m venv "$VIRTUAL_ENV" \
-    && pip install --no-cache-dir python-dotenv google-adk google-genai numpy pandas
-RUN python3 -c "import google.adk, google.genai, numpy, pandas"
+    && pip install --no-cache-dir python-dotenv google-adk google-genai numpy pandas openpyxl
+RUN python3 -c "import google.adk, google.genai, numpy, pandas, openpyxl"
 
 COPY --from=builder /app/dist ./dist
 COPY vite.config.ts ./vite.config.ts
 COPY python_backend ./python_backend
+RUN cd python_backend && pip install --no-cache-dir -r requirements.txt
+# Seed data (read by vector_engine.py / store.py via '../data/...'); backend runs
+# from /app/python_backend, so these must land at /app/data.
+COPY data ./data
+
+# Build-time boot smoke: import the app exactly as the container will (from
+# python_backend/), validating every dependency AND that the seed data resolves.
+# Fails the build fast instead of crashing the Cloud Run revision at startup.
+RUN cd python_backend && python3 -c "import app" && echo "backend import smoke OK"
 
 EXPOSE 3000
 EXPOSE 5050
