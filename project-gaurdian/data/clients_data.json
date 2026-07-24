@@ -1,0 +1,3264 @@
+[
+  {
+    "id": "CL-DE-3181",
+    "name": "Schuster Textilwerke Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.8",
+        "timestamp": "2024-03-01T16:05:00Z",
+        "modifiedBy": "R. Albrecht (Sales)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v1.9",
+        "timestamp": "2023-12-20T16:05:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-5919",
+    "name": "Baltic Crown Capital Markets AG",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v3.5",
+        "timestamp": "2025-03-13T12:45:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Cross-sell consent withdrawn at client request."
+      },
+      {
+        "version": "v3.6",
+        "timestamp": "2024-07-18T12:45:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Expanded GDPR consent to include Credit products."
+      },
+      {
+        "version": "v3.7",
+        "timestamp": "2024-07-10T12:45:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-AT-8767",
+    "name": "Brandt Energie Finance GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.3",
+        "timestamp": "2025-08-09T12:30:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Onboarded for FX hedging mandate only."
+      },
+      {
+        "version": "v3.4",
+        "timestamp": "2025-05-24T12:30:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      },
+      {
+        "version": "v3.5",
+        "timestamp": "2024-06-19T12:30:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-7405",
+    "name": "Winterfeld Family Office AG",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.2",
+        "timestamp": "2025-05-20T07:15:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      }
+    ]
+  },
+  {
+    "id": "CL-CH-8945",
+    "name": "Kanton Z\u00fcrich Investment Office",
+    "entityType": "Public Sector",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.3",
+        "timestamp": "2024-06-03T08:10:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-2019",
+    "name": "Quantum Meridian Macro Fund ICAV",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.5",
+        "timestamp": "2026-07-10T17:50:00Z",
+        "modifiedBy": "P. Lindner (1st Line)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      },
+      {
+        "version": "v2.6",
+        "timestamp": "2026-04-15T17:50:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-IT-2407",
+    "name": "Marburg Capital Institutional Capital SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.0",
+        "timestamp": "2024-12-21T16:30:00Z",
+        "modifiedBy": "P. Lindner (1st Line)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      },
+      {
+        "version": "v2.1",
+        "timestamp": "2024-06-25T16:30:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-9873",
+    "name": "Elbtal Asset Management AG",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.2",
+        "timestamp": "2025-12-13T11:50:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-6726",
+    "name": "Northgate Alpha Fund SCSp",
+    "entityType": "Fund",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.3",
+        "timestamp": "2024-01-29T11:45:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Annual review missed \u2014 account placed under remediation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-6447",
+    "name": "Ville de Lyon Pension Reserve Fund",
+    "entityType": "Public Sector",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.3",
+        "timestamp": "2026-05-04T17:05:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-GB-3281",
+    "name": "Elbtal Investment Partners GmbH",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.6",
+        "timestamp": "2025-04-30T17:30:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      },
+      {
+        "version": "v1.8",
+        "timestamp": "2024-12-21T17:30:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v1.7",
+        "timestamp": "2024-09-16T17:30:00Z",
+        "modifiedBy": "S. Wagner (Sales)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-AT-4000",
+    "name": "Dornier Industrietechnik Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.7",
+        "timestamp": "2025-11-09T16:50:00Z",
+        "modifiedBy": "F. Roth (1st Line)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v2.8",
+        "timestamp": "2025-04-29T16:50:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-1456",
+    "name": "von Kessler Family Office Group",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "RETAIL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.1",
+        "timestamp": "2024-09-11T10:20:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-NL-4942",
+    "name": "Ironwood Credit Opportunities Fund SICAV",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.5",
+        "timestamp": "2025-07-26T10:45:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Onboarded for FX hedging mandate only."
+      },
+      {
+        "version": "v1.6",
+        "timestamp": "2025-02-03T10:45:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-4207",
+    "name": "Bergmann Chemie Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": false,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.2",
+        "timestamp": "2026-06-25T14:10:00Z",
+        "modifiedBy": "D. Schulz (1st Line)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      },
+      {
+        "version": "v3.3",
+        "timestamp": "2025-12-16T14:10:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Documentation lapsed \u2014 pending client resubmission."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-3122",
+    "name": "Nordlicht Logistik Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.4",
+        "timestamp": "2026-06-16T08:05:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-AT-2993",
+    "name": "Quantum Meridian Global Fund plc",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.9",
+        "timestamp": "2025-10-11T08:20:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-3914",
+    "name": "Wagner Elektronik Finance GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.3",
+        "timestamp": "2024-11-15T17:20:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Enhanced due diligence review initiated for new relationship."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-1233",
+    "name": "Alpenblick Global Investors SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.4",
+        "timestamp": "2025-06-02T11:15:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v1.5",
+        "timestamp": "2024-12-21T11:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-3997",
+    "name": "Alpenblick Investment Partners GmbH",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.7",
+        "timestamp": "2024-01-04T11:30:00Z",
+        "modifiedBy": "C. Neumann (Sales)",
+        "changes": "Cross-sell consent withdrawn at client request."
+      },
+      {
+        "version": "v2.8",
+        "timestamp": "2023-10-28T11:30:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-9096",
+    "name": "Marburg Capital Asset Management AG",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.9",
+        "timestamp": "2024-03-27T16:50:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Refreshed source-of-wealth documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-6909",
+    "name": "Kronberg Institutional Capital SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2026-04-26T17:15:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-8848",
+    "name": "Comunidad de Madrid Pension Reserve Fund",
+    "entityType": "Public Sector",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2024-03-08T14:20:00Z",
+        "modifiedBy": "P. Lindner (1st Line)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v1.3",
+        "timestamp": "2023-09-13T14:20:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      },
+      {
+        "version": "v1.4",
+        "timestamp": "2023-07-14T14:20:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-8640",
+    "name": "Freistaat Sachsen Treasury Office",
+    "entityType": "Public Sector",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.8",
+        "timestamp": "2025-12-09T10:45:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-ES-9335",
+    "name": "Bluecrest Northern Hedge Fund LP",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.8",
+        "timestamp": "2024-03-17T16:05:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Refreshed source-of-wealth documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-1192",
+    "name": "Steinbr\u00fcck Institutional Capital SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.5",
+        "timestamp": "2026-05-10T12:00:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-8008",
+    "name": "Provincia di Milano Pension Reserve Fund",
+    "entityType": "Public Sector",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.5",
+        "timestamp": "2025-10-12T09:15:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      },
+      {
+        "version": "v2.6",
+        "timestamp": "2025-06-26T09:15:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Refreshed source-of-wealth documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-4910",
+    "name": "Amberfield Alpha Fund SCSp",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.3",
+        "timestamp": "2024-05-10T09:45:00Z",
+        "modifiedBy": "C. Neumann (Sales)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v2.4",
+        "timestamp": "2023-09-26T09:45:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Updated authorized signatory list."
+      },
+      {
+        "version": "v2.5",
+        "timestamp": "2023-09-03T09:45:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-LU-4917",
+    "name": "Kaiser Stahlwerke Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2025-07-14T10:15:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-1528",
+    "name": "Dornier Industrietechnik Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2025-06-25T17:15:00Z",
+        "modifiedBy": "C. Neumann (Sales)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v1.3",
+        "timestamp": "2025-01-06T17:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      },
+      {
+        "version": "v1.4",
+        "timestamp": "2024-08-05T17:15:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Documentation lapsed \u2014 pending client resubmission."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-3058",
+    "name": "Zeppelin Motoren Group Treasury SE",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.7",
+        "timestamp": "2025-06-18T17:05:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      }
+    ]
+  },
+  {
+    "id": "CL-NL-6183",
+    "name": "Kronberg Securities SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.8",
+        "timestamp": "2026-03-20T16:00:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-NL-6936",
+    "name": "Ferrante Wealth Advisory Group",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.2",
+        "timestamp": "2024-08-21T17:40:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Updated authorized signatory list."
+      },
+      {
+        "version": "v2.3",
+        "timestamp": "2023-12-27T17:40:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-3325",
+    "name": "Rossbach Wealth Advisory Group",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "RETAIL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.5",
+        "timestamp": "2025-05-22T16:10:00Z",
+        "modifiedBy": "R. Albrecht (Sales)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v1.6",
+        "timestamp": "2025-03-10T16:10:00Z",
+        "modifiedBy": "N. Fischer (Sales)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v1.7",
+        "timestamp": "2024-03-24T16:10:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-2323",
+    "name": "Voss Maschinenbau Finance GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.4",
+        "timestamp": "2024-02-02T11:40:00Z",
+        "modifiedBy": "S. Wagner (Sales)",
+        "changes": "Onboarded for FX hedging mandate only."
+      },
+      {
+        "version": "v2.5",
+        "timestamp": "2023-11-07T11:40:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-GB-7631",
+    "name": "Siemens Group Treasury SE",
+    "entityType": "Corporate",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.4",
+        "timestamp": "2025-07-08T14:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v2.5",
+        "timestamp": "2025-05-02T14:15:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Enhanced due diligence review initiated for new relationship."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-8044",
+    "name": "Baltic Crown Global Investors SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2024-10-31T07:05:00Z",
+        "modifiedBy": "P. Lindner (1st Line)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v1.3",
+        "timestamp": "2024-03-02T07:05:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-3632",
+    "name": "Ironwood Hedge Fund LP",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.0",
+        "timestamp": "2024-03-21T15:15:00Z",
+        "modifiedBy": "F. Roth (1st Line)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      },
+      {
+        "version": "v2.2",
+        "timestamp": "2023-10-21T15:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      },
+      {
+        "version": "v2.1",
+        "timestamp": "2023-09-20T15:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      }
+    ]
+  },
+  {
+    "id": "CL-NL-5162",
+    "name": "Land Brandenburg Sovereign Reserve Fund",
+    "entityType": "Public Sector",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.4",
+        "timestamp": "2026-02-04T15:05:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-7125",
+    "name": "Baumgartner Family Office Group",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2025-10-31T14:00:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-1723",
+    "name": "Baltic Crown Global Investors SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2025-10-14T16:30:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Refreshed source-of-wealth documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-3681",
+    "name": "Silberfels Securities SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.8",
+        "timestamp": "2025-02-21T08:40:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-6975",
+    "name": "Bergmann Chemie Holding Treasury AG",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.5",
+        "timestamp": "2026-01-15T13:15:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Onboarded for FX hedging mandate only."
+      },
+      {
+        "version": "v1.6",
+        "timestamp": "2025-10-18T13:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-7355",
+    "name": "Rheinmetall Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.5",
+        "timestamp": "2024-06-24T08:05:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v2.6",
+        "timestamp": "2023-12-24T08:05:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v2.7",
+        "timestamp": "2023-12-23T08:05:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-7387",
+    "name": "Elbtal Institutional Capital SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v3.2",
+        "timestamp": "2024-05-06T09:15:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      },
+      {
+        "version": "v3.3",
+        "timestamp": "2023-09-19T09:15:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      }
+    ]
+  },
+  {
+    "id": "CL-LU-6985",
+    "name": "Rothenburg Family Office AG",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "RETAIL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.6",
+        "timestamp": "2024-08-28T14:45:00Z",
+        "modifiedBy": "N. Fischer (Sales)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      },
+      {
+        "version": "v1.7",
+        "timestamp": "2024-06-12T14:45:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      }
+    ]
+  },
+  {
+    "id": "CL-CH-4622",
+    "name": "Havelland Securities SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2024-01-27T08:05:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-5330",
+    "name": "Westfalen Asset Management AG",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.5",
+        "timestamp": "2025-01-16T07:15:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v1.6",
+        "timestamp": "2024-05-28T07:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-CH-3895",
+    "name": "Kronberg Asset Management AG",
+    "entityType": "Institutional",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.1",
+        "timestamp": "2024-09-28T13:30:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      },
+      {
+        "version": "v3.2",
+        "timestamp": "2024-01-17T13:30:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "KYC pack submitted, pending Central Compliance approval."
+      }
+    ]
+  },
+  {
+    "id": "CL-GB-1042",
+    "name": "Rossbach Wealth Advisory Group",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v3.3",
+        "timestamp": "2025-10-02T13:40:00Z",
+        "modifiedBy": "S. Wagner (Sales)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v3.4",
+        "timestamp": "2025-02-17T13:40:00Z",
+        "modifiedBy": "R. Albrecht (Sales)",
+        "changes": "Refreshed source-of-wealth documentation."
+      },
+      {
+        "version": "v3.5",
+        "timestamp": "2024-09-27T13:40:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-5329",
+    "name": "Delacroix Family Office AG",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "RETAIL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.2",
+        "timestamp": "2025-04-06T08:05:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-9491",
+    "name": "Provincia di Milano Investment Office",
+    "entityType": "Public Sector",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.3",
+        "timestamp": "2024-01-13T16:50:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-CH-6497",
+    "name": "Rothenburg Private Capital Partners",
+    "entityType": "HNW",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "RETAIL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": false,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2024-03-23T17:45:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v1.3",
+        "timestamp": "2023-11-25T17:45:00Z",
+        "modifiedBy": "Compliance Ops",
+        "changes": "Annual review missed \u2014 account placed under remediation."
+      }
+    ]
+  },
+  {
+    "id": "CL-NL-9787",
+    "name": "Quantum Meridian Macro Fund ICAV",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.1",
+        "timestamp": "2024-01-16T09:20:00Z",
+        "modifiedBy": "R. Albrecht (Sales)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v1.2",
+        "timestamp": "2023-06-17T09:20:00Z",
+        "modifiedBy": "D. Schulz (1st Line)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      },
+      {
+        "version": "v1.3",
+        "timestamp": "2023-06-12T09:20:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Refreshed source-of-wealth documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-AT-1470",
+    "name": "Brandt Energie Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.9",
+        "timestamp": "2024-02-03T07:05:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Annual review missed \u2014 account placed under remediation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-5708",
+    "name": "Kronberg Securities SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2024-04-19T10:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Onboarded for FX hedging mandate only."
+      },
+      {
+        "version": "v1.1",
+        "timestamp": "2023-08-11T10:15:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-9812",
+    "name": "Schuster Textilwerke Werkzeugbau Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.0",
+        "timestamp": "2025-05-30T14:20:00Z",
+        "modifiedBy": "P. Lindner (1st Line)",
+        "changes": "Updated authorized signatory list."
+      },
+      {
+        "version": "v3.0",
+        "timestamp": "2025-01-02T14:20:00Z",
+        "modifiedBy": "F. Roth (1st Line)",
+        "changes": "Onboarded for FX hedging mandate only."
+      },
+      {
+        "version": "v3.0",
+        "timestamp": "2024-06-22T14:20:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-4517",
+    "name": "Ehrlich Wealth Advisory Group",
+    "entityType": "HNW",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.4",
+        "timestamp": "2025-05-21T16:30:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Initial onboarding. EXPIRED KYC document refresh required."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-9211",
+    "name": "Kanton Z\u00fcrich Pension Reserve Fund",
+    "entityType": "Public Sector",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.0",
+        "timestamp": "2026-07-02T08:40:00Z",
+        "modifiedBy": "C. Neumann (Sales)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v3.0",
+        "timestamp": "2026-02-15T08:40:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Onboarding in progress \u2014 awaiting source-of-funds evidence."
+      }
+    ]
+  },
+  {
+    "id": "CL-IT-8569",
+    "name": "Kronberg Institutional Capital SE",
+    "entityType": "Institutional",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.6",
+        "timestamp": "2025-11-08T15:30:00Z",
+        "modifiedBy": "R. Albrecht (Sales)",
+        "changes": "Expanded GDPR consent to include Credit products."
+      },
+      {
+        "version": "v1.7",
+        "timestamp": "2025-04-14T15:30:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "KYC pack submitted, pending Central Compliance approval."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-7295",
+    "name": "Delacroix Family Office Group",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.1",
+        "timestamp": "2024-12-01T10:20:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-7630",
+    "name": "Alpenblick Securities SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.0",
+        "timestamp": "2025-05-27T17:20:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-4971",
+    "name": "Falkenstein Investment Partners GmbH",
+    "entityType": "Institutional",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": false,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.5",
+        "timestamp": "2025-10-18T08:45:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "KYC refresh overdue \u2014 trading line flagged for suspension."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-6705",
+    "name": "Silver Birch Credit Opportunities Fund SICAV",
+    "entityType": "Fund",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.7",
+        "timestamp": "2026-07-18T08:00:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Cross-sell consent withdrawn at client request."
+      },
+      {
+        "version": "v2.8",
+        "timestamp": "2025-11-17T08:00:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Initial onboarding. EXPIRED KYC document refresh required."
+      }
+    ]
+  },
+  {
+    "id": "CL-LU-7548",
+    "name": "Havelland Institutional Capital SE",
+    "entityType": "Institutional",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.0",
+        "timestamp": "2026-01-16T16:30:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Annual review missed \u2014 account placed under remediation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-7771",
+    "name": "Odenwald Investment Partners GmbH",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2024-08-05T09:10:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      },
+      {
+        "version": "v1.3",
+        "timestamp": "2024-04-30T09:10:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-6938",
+    "name": "Wagner Elektronik Werkzeugbau Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": false,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.6",
+        "timestamp": "2024-09-07T17:20:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Onboarded for FX hedging mandate only."
+      },
+      {
+        "version": "v2.7",
+        "timestamp": "2024-02-01T17:20:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Documentation lapsed \u2014 pending client resubmission."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-3501",
+    "name": "Lindenau Global Investors SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v3.1",
+        "timestamp": "2024-09-13T16:05:00Z",
+        "modifiedBy": "P. Lindner (1st Line)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      },
+      {
+        "version": "v3.2",
+        "timestamp": "2023-12-30T16:05:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-CH-3282",
+    "name": "Havelland Institutional Capital SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v3.1",
+        "timestamp": "2026-01-29T14:05:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-LU-1467",
+    "name": "Zeppelin Motoren Finance GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.3",
+        "timestamp": "2025-05-24T17:20:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      },
+      {
+        "version": "v2.4",
+        "timestamp": "2024-10-13T17:20:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Expanded GDPR consent to include Credit products."
+      },
+      {
+        "version": "v2.5",
+        "timestamp": "2024-02-13T17:20:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Enhanced due diligence review initiated for new relationship."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-6467",
+    "name": "Elbtal Asset Management AG",
+    "entityType": "Institutional",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.3",
+        "timestamp": "2025-07-21T10:20:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      },
+      {
+        "version": "v2.4",
+        "timestamp": "2025-03-09T10:20:00Z",
+        "modifiedBy": "S. Wagner (Sales)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      },
+      {
+        "version": "v2.5",
+        "timestamp": "2024-06-14T10:20:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Annual review missed \u2014 account placed under remediation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-2777",
+    "name": "Wagner Elektronik Holding Treasury AG",
+    "entityType": "Corporate",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.9",
+        "timestamp": "2025-02-12T15:40:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Enhanced due diligence review initiated for new relationship."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-7907",
+    "name": "Odenwald Investment Partners GmbH",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.2",
+        "timestamp": "2024-02-10T17:45:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-NL-2101",
+    "name": "Emerald Bridge Credit Opportunities Fund SICAV",
+    "entityType": "Fund",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.1",
+        "timestamp": "2025-05-24T16:50:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Documentation lapsed \u2014 pending client resubmission."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-4969",
+    "name": "Silberfels Securities SE",
+    "entityType": "Institutional",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2026-05-29T08:15:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "New entity onboarding \u2014 UBO documentation under review."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-6096",
+    "name": "Rheinmetall Holding Treasury AG",
+    "entityType": "Corporate",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": false,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2026-01-04T07:00:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "KYC refresh overdue \u2014 trading line flagged for suspension."
+      }
+    ]
+  },
+  {
+    "id": "CL-LU-6440",
+    "name": "Zeppelin Motoren Group Treasury SE",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.8",
+        "timestamp": "2025-05-03T13:45:00Z",
+        "modifiedBy": "S. Wagner (Sales)",
+        "changes": "Refreshed source-of-wealth documentation."
+      },
+      {
+        "version": "v2.9",
+        "timestamp": "2024-12-23T13:45:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-3304",
+    "name": "Emerald Bridge Hedge Fund LP",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.3",
+        "timestamp": "2025-12-06T07:30:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v2.4",
+        "timestamp": "2025-05-10T07:30:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Renewed institutional mandate documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-AT-4384",
+    "name": "Greywolf Hedge Fund LP",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.0",
+        "timestamp": "2026-03-17T10:20:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-LU-6944",
+    "name": "Freistaat Sachsen Investment Office",
+    "entityType": "Public Sector",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.2",
+        "timestamp": "2025-06-02T16:15:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Updated authorized signatory list."
+      },
+      {
+        "version": "v1.3",
+        "timestamp": "2025-02-16T16:15:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-5584",
+    "name": "Delacroix Family Office Group",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "RETAIL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2025-06-15T16:00:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Cross-sell consent withdrawn at client request."
+      },
+      {
+        "version": "v1.0",
+        "timestamp": "2024-11-17T16:00:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-GB-9298",
+    "name": "Falken Pharma Group Treasury SE",
+    "entityType": "Corporate",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2025-05-13T08:40:00Z",
+        "modifiedBy": "R. Albrecht (Sales)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      },
+      {
+        "version": "v1.1",
+        "timestamp": "2024-10-21T08:40:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "KYC pack submitted, pending Central Compliance approval."
+      }
+    ]
+  },
+  {
+    "id": "CL-CH-1094",
+    "name": "Voss Maschinenbau Holding Treasury AG",
+    "entityType": "Corporate",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.1",
+        "timestamp": "2024-09-21T15:45:00Z",
+        "modifiedBy": "Officer L. Brandt (Compliance)",
+        "changes": "KYC pack submitted, pending Central Compliance approval."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-3289",
+    "name": "Republik \u00d6sterreich Investment Office",
+    "entityType": "Public Sector",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.3",
+        "timestamp": "2025-04-24T10:00:00Z",
+        "modifiedBy": "Compliance Ops",
+        "changes": "Annual review missed \u2014 account placed under remediation."
+      }
+    ]
+  },
+  {
+    "id": "CL-GB-5858",
+    "name": "Amberfield Macro Fund ICAV",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.3",
+        "timestamp": "2025-07-20T09:45:00Z",
+        "modifiedBy": "N. Fischer (Sales)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v1.4",
+        "timestamp": "2025-03-19T09:45:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-7809",
+    "name": "Zeppelin Motoren Corporate Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.5",
+        "timestamp": "2024-05-02T11:15:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v2.6",
+        "timestamp": "2024-01-03T11:15:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Completed annual eligible counterparty re-attestation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-3951",
+    "name": "Quantum Meridian Hedge Fund LP",
+    "entityType": "Fund",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": false,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.3",
+        "timestamp": "2025-01-03T13:00:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Onboarding in progress \u2014 awaiting source-of-funds evidence."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-1907",
+    "name": "Voss Maschinenbau Werkzeugbau Treasury GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.1",
+        "timestamp": "2025-08-19T11:15:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-6258",
+    "name": "Bergmann Chemie Finance GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": false,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.7",
+        "timestamp": "2025-08-11T16:00:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Updated authorized signatory list."
+      },
+      {
+        "version": "v2.8",
+        "timestamp": "2025-05-13T16:00:00Z",
+        "modifiedBy": "Officer A. Richter (Compliance)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      }
+    ]
+  },
+  {
+    "id": "CL-AT-8601",
+    "name": "Greywolf Macro Fund ICAV",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.2",
+        "timestamp": "2024-07-05T09:05:00Z",
+        "modifiedBy": "R. Albrecht (Sales)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      },
+      {
+        "version": "v2.4",
+        "timestamp": "2024-02-28T09:05:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      },
+      {
+        "version": "v2.3",
+        "timestamp": "2023-10-30T09:05:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Updated authorized signatory list."
+      }
+    ]
+  },
+  {
+    "id": "CL-IE-9611",
+    "name": "Siemens Holding Treasury AG",
+    "entityType": "Corporate",
+    "kycStatus": "EXPIRED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.7",
+        "timestamp": "2024-08-20T10:10:00Z",
+        "modifiedBy": "D. Schulz (1st Line)",
+        "changes": "Updated authorized signatory list."
+      },
+      {
+        "version": "v3.9",
+        "timestamp": "2024-01-29T10:10:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Documentation lapsed \u2014 pending client resubmission."
+      },
+      {
+        "version": "v3.8",
+        "timestamp": "2024-01-11T10:10:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      }
+    ]
+  },
+  {
+    "id": "CL-IT-4289",
+    "name": "Nordkreis Asset Management AG",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v1.4",
+        "timestamp": "2024-05-30T17:30:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Annual MiFID II suitability taxonomy refresh."
+      },
+      {
+        "version": "v1.5",
+        "timestamp": "2024-02-13T17:30:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      },
+      {
+        "version": "v1.6",
+        "timestamp": "2023-07-29T17:30:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-5710",
+    "name": "Voss Maschinenbau Finance GmbH",
+    "entityType": "Corporate",
+    "kycStatus": "PENDING",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": false,
+      "Rates": false,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.6",
+        "timestamp": "2024-09-29T17:20:00Z",
+        "modifiedBy": "D. Schulz (1st Line)",
+        "changes": "Cross-sell consent withdrawn at client request."
+      },
+      {
+        "version": "v3.7",
+        "timestamp": "2024-07-28T17:20:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      },
+      {
+        "version": "v3.8",
+        "timestamp": "2024-01-25T17:20:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "New entity onboarding \u2014 UBO documentation under review."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-4630",
+    "name": "Vindobona Global Investors SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": true
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2025-08-14T11:20:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Updated authorized signatory list."
+      },
+      {
+        "version": "v1.1",
+        "timestamp": "2025-02-19T11:20:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-1356",
+    "name": "Winterfeld Family Office AG",
+    "entityType": "HNW",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "RETAIL",
+    "divisionClearance": {
+      "investmentBanking": false,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.1",
+        "timestamp": "2025-02-09T07:30:00Z",
+        "modifiedBy": "C. Neumann (Sales)",
+        "changes": "Opted in to Rates & FX derivative hedging disclosures."
+      },
+      {
+        "version": "v1.2",
+        "timestamp": "2024-10-17T07:30:00Z",
+        "modifiedBy": "C. Neumann (Sales)",
+        "changes": "Re-verified UBO structure and renewed GwG declaration."
+      },
+      {
+        "version": "v1.3",
+        "timestamp": "2024-02-05T07:30:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Refreshed source-of-wealth documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-DE-8786",
+    "name": "Falkenstein Asset Management AG",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v3.2",
+        "timestamp": "2025-11-15T12:10:00Z",
+        "modifiedBy": "T. Hoffmann (Sales)",
+        "changes": "Updated authorized signatory list."
+      },
+      {
+        "version": "v3.3",
+        "timestamp": "2025-05-07T12:10:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-LU-6275",
+    "name": "Kronberg Securities SE",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "HIGH",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": false,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v2.5",
+        "timestamp": "2025-09-13T08:40:00Z",
+        "modifiedBy": "F. Roth (1st Line)",
+        "changes": "Refreshed source-of-wealth documentation."
+      },
+      {
+        "version": "v2.6",
+        "timestamp": "2025-03-03T08:40:00Z",
+        "modifiedBy": "M. Becker (1st Line)",
+        "changes": "Renewed institutional mandate documentation."
+      },
+      {
+        "version": "v2.7",
+        "timestamp": "2024-12-19T08:40:00Z",
+        "modifiedBy": "Officer J. Vogel (Compliance)",
+        "changes": "Refreshed source-of-wealth documentation."
+      }
+    ]
+  },
+  {
+    "id": "CL-FR-9148",
+    "name": "Marburg Capital Investment Partners GmbH",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "ELIGIBLE_COUNTERPARTY",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": true,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": false,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v1.0",
+        "timestamp": "2024-11-29T10:40:00Z",
+        "modifiedBy": "Officer K. Meier (Compliance)",
+        "changes": "Updated prime brokerage leverage thresholds."
+      }
+    ]
+  },
+  {
+    "id": "CL-CH-3526",
+    "name": "Alpenblick Capital Markets AG",
+    "entityType": "Institutional",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "LOW",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": true
+    },
+    "versionHistory": [
+      {
+        "version": "v2.5",
+        "timestamp": "2025-06-21T10:05:00Z",
+        "modifiedBy": "Officer S. Krause (Compliance)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      }
+    ]
+  },
+  {
+    "id": "CL-GB-9586",
+    "name": "Ironwood Global Fund plc",
+    "entityType": "Fund",
+    "kycStatus": "VERIFIED",
+    "amlRiskLevel": "MEDIUM",
+    "suitabilityCategory": "PROFESSIONAL",
+    "divisionClearance": {
+      "investmentBanking": true,
+      "wealthManagement": false,
+      "corporateTreasury": false
+    },
+    "gdprConsentMap": {
+      "FX": true,
+      "Rates": true,
+      "Credit": true,
+      "Equities": true,
+      "crossSell": false
+    },
+    "versionHistory": [
+      {
+        "version": "v3.3",
+        "timestamp": "2025-06-08T09:05:00Z",
+        "modifiedBy": "D. Schulz (1st Line)",
+        "changes": "Passed periodic AML risk re-scoring review."
+      },
+      {
+        "version": "v3.4",
+        "timestamp": "2024-11-30T09:05:00Z",
+        "modifiedBy": "System Auto-Audit",
+        "changes": "Refreshed source-of-wealth documentation."
+      }
+    ]
+  }
+]

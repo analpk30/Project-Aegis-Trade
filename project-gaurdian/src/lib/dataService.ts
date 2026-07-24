@@ -144,15 +144,20 @@ export async function generateAIIdeasFromHistory(): Promise<{ ideas: GuardianIde
 }
 
 export async function fetchBafinAnnouncements(): Promise<BaFinAnnouncement[]> {
+
   try {
     const res = await fetch('/api/bafin');
     if (res.ok) {
       const data = await res.json();
-      if (data.announcements && data.announcements.length > 0) return data.announcements;
+      if (data.announcements && data.announcements.length > 0) {
+        console.log("data annoucement :",data.announcement)
+        return data.announcements;
+      }
     }
   } catch (e) {
     console.warn('[DataService] API offline or unavailable, using local store for bafin');
   }
+  console.log("global annoucement :",globalStore.bafinAnnouncements)
   return globalStore.bafinAnnouncements;
 }
 
@@ -161,7 +166,10 @@ export async function fetchAnomalies(): Promise<MarketAnomaly[]> {
     const res = await fetch('/api/risk/anomalies');
     if (res.ok) {
       const data = await res.json();
-      if (data.anomalies && data.anomalies.length > 0) return data.anomalies;
+      if (data.anomalies && data.anomalies.length > 0){
+
+        return data.anomalies;
+      } 
     }
   } catch (e) {
     console.warn('[DataService] API offline or unavailable, using local store for anomalies');

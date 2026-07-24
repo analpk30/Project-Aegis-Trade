@@ -142,11 +142,11 @@ export const Bafin: React.FC<BafinProps> = ({ activePersona = 'Central Complianc
 
       {/* Do/Don't Cards Grid */}
       <div className="space-y-6">
-        {filteredAnnouncements.map((ann) => (
-          <div key={ann.id} className="rounded-2xl border border-[#1F2937] bg-[#0F1115] p-6 shadow-xl space-y-4">
+        {filteredAnnouncements.map((ann, i) => (
+          <div key={i} className="rounded-2xl border border-[#1F2937] bg-[#0F1115] p-6 shadow-xl space-y-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-[#1F2937] pb-3">
               <div>
-                <span className="font-mono text-xs font-bold text-blue-400">{ann.id}</span>
+                <span className="font-mono text-xs font-bold text-blue-400">{ann.ID}</span>
                 <h3 className="text-base font-bold text-slate-100 mt-0.5">{ann.title}</h3>
               </div>
               <div className="flex items-center gap-2">

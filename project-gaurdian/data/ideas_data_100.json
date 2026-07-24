@@ -1,0 +1,2042 @@
+[
+  {
+    "id": "IDEA-2026-201",
+    "title": "German SSA 7Y Asset Swap Tightening",
+    "assetClass": "Rates",
+    "clientName": "Provincia di Milano Investment Office",
+    "clientId": "CL-DE-9491",
+    "expectedAlphaBps": "21",
+    "riskAdjustedReturn": "2.57",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Provincia di Milano Investment Office suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "KfW 7Y Asset Swap Package",
+      "direction": "BUY",
+      "sizeEur": "13000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-202",
+    "title": "EUR/USD 1Y Zero-Cost Collar Rebalance",
+    "assetClass": "FX",
+    "clientName": "Ferrante Wealth Advisory Group",
+    "clientId": "CL-NL-6936",
+    "expectedAlphaBps": "45",
+    "riskAdjustedReturn": "2.99",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ferrante Wealth Advisory Group suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "13500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-203",
+    "title": "Investment Grade Credit Beta Overlay",
+    "assetClass": "Credit",
+    "clientName": "Rheinmetall Corporate Treasury GmbH",
+    "clientId": "CL-DE-7355",
+    "expectedAlphaBps": "41",
+    "riskAdjustedReturn": "2.18",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Rheinmetall Corporate Treasury GmbH suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR Financials Senior CDS Basket",
+      "direction": "SELL",
+      "sizeEur": "26500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-204",
+    "title": "EUR 5s10s Swap Curve Re-Steepener",
+    "assetClass": "Rates",
+    "clientName": "Elbtal Institutional Capital SE",
+    "clientId": "CL-IE-7387",
+    "expectedAlphaBps": "22",
+    "riskAdjustedReturn": "2.89",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Elbtal Institutional Capital SE suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 5Y Breakeven Swap",
+      "direction": "SELL",
+      "sizeEur": "13500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-205",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Kaiser Stahlwerke Corporate Treasury GmbH",
+    "clientId": "CL-LU-4917",
+    "expectedAlphaBps": "35",
+    "riskAdjustedReturn": "2.28",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kaiser Stahlwerke Corporate Treasury GmbH suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 6M Zero-Cost Collar",
+      "direction": "SELL",
+      "sizeEur": "24500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-206",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Freistaat Sachsen Treasury Office",
+    "clientId": "CL-DE-8640",
+    "expectedAlphaBps": "59",
+    "riskAdjustedReturn": "2.41",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Freistaat Sachsen Treasury Office suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 3Y/5Y Curve",
+      "direction": "SELL",
+      "sizeEur": "33000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-207",
+    "title": "Euribor 3M/6M Basis Mean Reversion",
+    "assetClass": "Rates",
+    "clientName": "Kanton Zürich Investment Office",
+    "clientId": "CL-CH-8945",
+    "expectedAlphaBps": "21",
+    "riskAdjustedReturn": "2.54",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kanton Zürich Investment Office suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "EUR 3M vs 6M Basis Swap",
+      "direction": "SELL",
+      "sizeEur": "15500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-208",
+    "title": "EUR/USD 6M Collar Volatility Hedge",
+    "assetClass": "FX",
+    "clientName": "Elbtal Investment Partners GmbH",
+    "clientId": "CL-GB-3281",
+    "expectedAlphaBps": "41",
+    "riskAdjustedReturn": "2.54",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Elbtal Investment Partners GmbH suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 6M Zero-Cost Collar",
+      "direction": "SELL",
+      "sizeEur": "18500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-209",
+    "title": "Crossover 3Y/5Y Relative Value",
+    "assetClass": "Credit",
+    "clientName": "Elbtal Institutional Capital SE",
+    "clientId": "CL-IE-7387",
+    "expectedAlphaBps": "27",
+    "riskAdjustedReturn": "2.68",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Elbtal Institutional Capital SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR Financials Senior CDS Basket",
+      "direction": "SELL",
+      "sizeEur": "15000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-210",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Alpenblick Securities SE",
+    "clientId": "CL-DE-7630",
+    "expectedAlphaBps": "29",
+    "riskAdjustedReturn": "2.3",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Alpenblick Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 5Y Breakeven Swap",
+      "direction": "SELL",
+      "sizeEur": "17500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-211",
+    "title": "EUR/USD 1Y Zero-Cost Collar Rebalance",
+    "assetClass": "FX",
+    "clientName": "Marburg Capital Investment Partners GmbH",
+    "clientId": "CL-FR-9148",
+    "expectedAlphaBps": "37",
+    "riskAdjustedReturn": "2.27",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Marburg Capital Investment Partners GmbH suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/CHF 9M Participating Forward",
+      "direction": "BUY",
+      "sizeEur": "9000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-212",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Ironwood Credit Opportunities Fund SICAV",
+    "clientId": "CL-NL-4942",
+    "expectedAlphaBps": "64",
+    "riskAdjustedReturn": "2.27",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ironwood Credit Opportunities Fund SICAV suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "EUR IG CDS Index Overlay",
+      "direction": "BUY",
+      "sizeEur": "22500000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-213",
+    "title": "Euro Inflation Linker Breakeven Relative Value",
+    "assetClass": "Rates",
+    "clientName": "Bergmann Chemie Holding Treasury AG",
+    "clientId": "CL-DE-6975",
+    "expectedAlphaBps": "34",
+    "riskAdjustedReturn": "3.19",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Bergmann Chemie Holding Treasury AG suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "DE10Y vs FR10Y Government Bond Spread",
+      "direction": "SELL",
+      "sizeEur": "10000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-214",
+    "title": "EUR/CHF 9M Participating Forward Overlay",
+    "assetClass": "FX",
+    "clientName": "Kanton Zürich Investment Office",
+    "clientId": "CL-CH-8945",
+    "expectedAlphaBps": "23",
+    "riskAdjustedReturn": "2.93",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kanton Zürich Investment Office suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/CHF 9M Participating Forward",
+      "direction": "SELL",
+      "sizeEur": "7500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-215",
+    "title": "Crossover 3Y/5Y Relative Value",
+    "assetClass": "Credit",
+    "clientName": "Kronberg Securities SE",
+    "clientId": "CL-DE-5708",
+    "expectedAlphaBps": "36",
+    "riskAdjustedReturn": "2.85",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kronberg Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "EUR Financials Senior CDS Basket",
+      "direction": "SELL",
+      "sizeEur": "30500000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-216",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Freistaat Sachsen Investment Office",
+    "clientId": "CL-LU-6944",
+    "expectedAlphaBps": "41",
+    "riskAdjustedReturn": "2.31",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Freistaat Sachsen Investment Office suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Eurex MTF.",
+    "orderDraft": {
+      "instrument": "EUR 3M vs 6M Basis Swap",
+      "direction": "SELL",
+      "sizeEur": "29500000",
+      "venue": "Eurex MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-217",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Silberfels Securities SE",
+    "clientId": "CL-DE-3681",
+    "expectedAlphaBps": "36",
+    "riskAdjustedReturn": "2.43",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Silberfels Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 6M Zero-Cost Collar",
+      "direction": "BUY",
+      "sizeEur": "18000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-218",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Provincia di Milano Investment Office",
+    "clientId": "CL-DE-9491",
+    "expectedAlphaBps": "58",
+    "riskAdjustedReturn": "2.13",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Provincia di Milano Investment Office suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 3Y/5Y Curve",
+      "direction": "SELL",
+      "sizeEur": "22500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-219",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Elbtal Investment Partners GmbH",
+    "clientId": "CL-GB-3281",
+    "expectedAlphaBps": "29",
+    "riskAdjustedReturn": "2.87",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Elbtal Investment Partners GmbH suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR 3M vs 6M Basis Swap",
+      "direction": "SELL",
+      "sizeEur": "25500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-220",
+    "title": "USD/JPY 3M Downside Protection Overlay",
+    "assetClass": "FX",
+    "clientName": "Quantum Meridian Macro Fund ICAV",
+    "clientId": "CL-NL-9787",
+    "expectedAlphaBps": "23",
+    "riskAdjustedReturn": "2.59",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Quantum Meridian Macro Fund ICAV suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "EUR/CHF 9M Participating Forward",
+      "direction": "SELL",
+      "sizeEur": "5000000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-221",
+    "title": "Investment Grade Credit Beta Overlay",
+    "assetClass": "Credit",
+    "clientName": "Baltic Crown Global Investors SE",
+    "clientId": "CL-DE-1723",
+    "expectedAlphaBps": "67",
+    "riskAdjustedReturn": "2.1",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Baltic Crown Global Investors SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "EUR IG CDS Index Overlay",
+      "direction": "BUY",
+      "sizeEur": "39000000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-222",
+    "title": "Euribor 3M/6M Basis Mean Reversion",
+    "assetClass": "Rates",
+    "clientName": "Zeppelin Motoren Group Treasury SE",
+    "clientId": "CL-FR-3058",
+    "expectedAlphaBps": "39",
+    "riskAdjustedReturn": "2.47",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Zeppelin Motoren Group Treasury SE suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "KfW 7Y Asset Swap Package",
+      "direction": "BUY",
+      "sizeEur": "33500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-223",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Voss Maschinenbau Werkzeugbau Treasury GmbH",
+    "clientId": "CL-DE-1907",
+    "expectedAlphaBps": "44",
+    "riskAdjustedReturn": "2.45",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Voss Maschinenbau Werkzeugbau Treasury GmbH suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "EUR/CHF 9M Participating Forward",
+      "direction": "SELL",
+      "sizeEur": "15000000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-224",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Brandt Energie Finance GmbH",
+    "clientId": "CL-AT-8767",
+    "expectedAlphaBps": "32",
+    "riskAdjustedReturn": "1.96",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Brandt Energie Finance GmbH suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Xover Curve Switch",
+      "direction": "BUY",
+      "sizeEur": "10000000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-225",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Voss Maschinenbau Finance GmbH",
+    "clientId": "CL-IE-2323",
+    "expectedAlphaBps": "28",
+    "riskAdjustedReturn": "3.01",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Voss Maschinenbau Finance GmbH suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 5Y Breakeven Swap",
+      "direction": "BUY",
+      "sizeEur": "10000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-226",
+    "title": "USD/JPY 3M Downside Protection Overlay",
+    "assetClass": "FX",
+    "clientName": "Kanton Zürich Investment Office",
+    "clientId": "CL-CH-8945",
+    "expectedAlphaBps": "37",
+    "riskAdjustedReturn": "3.19",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kanton Zürich Investment Office suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "21000000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-227",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Emerald Bridge Hedge Fund LP",
+    "clientId": "CL-IE-3304",
+    "expectedAlphaBps": "37",
+    "riskAdjustedReturn": "1.94",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Emerald Bridge Hedge Fund LP suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "iTraxx Xover Curve Switch",
+      "direction": "BUY",
+      "sizeEur": "22500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-228",
+    "title": "German SSA 7Y Asset Swap Tightening",
+    "assetClass": "Rates",
+    "clientName": "Emerald Bridge Hedge Fund LP",
+    "clientId": "CL-IE-3304",
+    "expectedAlphaBps": "43",
+    "riskAdjustedReturn": "2.85",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Emerald Bridge Hedge Fund LP suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Eurex MTF.",
+    "orderDraft": {
+      "instrument": "EUR 5Y/10Y IRS Curve Position",
+      "direction": "SELL",
+      "sizeEur": "14000000",
+      "venue": "Eurex MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-229",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Zeppelin Motoren Corporate Treasury GmbH",
+    "clientId": "CL-DE-7809",
+    "expectedAlphaBps": "21",
+    "riskAdjustedReturn": "3.16",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Zeppelin Motoren Corporate Treasury GmbH suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "USD/JPY 3M Put Spread",
+      "direction": "BUY",
+      "sizeEur": "25000000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-230",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Amberfield Macro Fund ICAV",
+    "clientId": "CL-GB-5858",
+    "expectedAlphaBps": "46",
+    "riskAdjustedReturn": "2.74",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Amberfield Macro Fund ICAV suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "iTraxx Xover Curve Switch",
+      "direction": "BUY",
+      "sizeEur": "25000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-231",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Lindenau Global Investors SE",
+    "clientId": "CL-DE-3501",
+    "expectedAlphaBps": "38",
+    "riskAdjustedReturn": "2.53",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Lindenau Global Investors SE suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "EUR 5Y/10Y IRS Curve Position",
+      "direction": "BUY",
+      "sizeEur": "23000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-232",
+    "title": "EUR/USD 6M Collar Volatility Hedge",
+    "assetClass": "FX",
+    "clientName": "Odenwald Investment Partners GmbH",
+    "clientId": "CL-DE-7771",
+    "expectedAlphaBps": "20",
+    "riskAdjustedReturn": "3.13",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Odenwald Investment Partners GmbH suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "EUR/CHF 9M Participating Forward",
+      "direction": "BUY",
+      "sizeEur": "24000000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-233",
+    "title": "Crossover 3Y/5Y Relative Value",
+    "assetClass": "Credit",
+    "clientName": "Alpenblick Securities SE",
+    "clientId": "CL-DE-7630",
+    "expectedAlphaBps": "67",
+    "riskAdjustedReturn": "2.44",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Alpenblick Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Main 5Y",
+      "direction": "SELL",
+      "sizeEur": "29000000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-234",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Alpenblick Capital Markets AG",
+    "clientId": "CL-CH-3526",
+    "expectedAlphaBps": "44",
+    "riskAdjustedReturn": "3.17",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Alpenblick Capital Markets AG suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "DE10Y vs FR10Y Government Bond Spread",
+      "direction": "BUY",
+      "sizeEur": "32500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-235",
+    "title": "EUR/USD 1Y Zero-Cost Collar Rebalance",
+    "assetClass": "FX",
+    "clientName": "Marburg Capital Asset Management AG",
+    "clientId": "CL-DE-9096",
+    "expectedAlphaBps": "21",
+    "riskAdjustedReturn": "2.3",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Marburg Capital Asset Management AG suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "17500000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-236",
+    "title": "Crossover 3Y/5Y Relative Value",
+    "assetClass": "Credit",
+    "clientName": "Havelland Securities SE",
+    "clientId": "CL-CH-4622",
+    "expectedAlphaBps": "37",
+    "riskAdjustedReturn": "1.8",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Havelland Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR IG CDS Index Overlay",
+      "direction": "SELL",
+      "sizeEur": "18500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-237",
+    "title": "German SSA 7Y Asset Swap Tightening",
+    "assetClass": "Rates",
+    "clientName": "Voss Maschinenbau Finance GmbH",
+    "clientId": "CL-IE-2323",
+    "expectedAlphaBps": "22",
+    "riskAdjustedReturn": "2.39",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Voss Maschinenbau Finance GmbH suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "EUR 5Y/10Y IRS Curve Position",
+      "direction": "BUY",
+      "sizeEur": "35000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-238",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Havelland Institutional Capital SE",
+    "clientId": "CL-CH-3282",
+    "expectedAlphaBps": "46",
+    "riskAdjustedReturn": "3.33",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Havelland Institutional Capital SE suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "USD/JPY 3M Put Spread",
+      "direction": "SELL",
+      "sizeEur": "23500000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-239",
+    "title": "EUR Financials Senior CDS Basis Tightening",
+    "assetClass": "Credit",
+    "clientName": "Baltic Crown Global Investors SE",
+    "clientId": "CL-DE-8044",
+    "expectedAlphaBps": "42",
+    "riskAdjustedReturn": "2.99",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Baltic Crown Global Investors SE suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Xover Curve Switch",
+      "direction": "BUY",
+      "sizeEur": "17500000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-240",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Nordlicht Logistik Corporate Treasury GmbH",
+    "clientId": "CL-DE-3122",
+    "expectedAlphaBps": "41",
+    "riskAdjustedReturn": "2.99",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Nordlicht Logistik Corporate Treasury GmbH suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Eurex MTF.",
+    "orderDraft": {
+      "instrument": "DE10Y vs FR10Y Government Bond Spread",
+      "direction": "SELL",
+      "sizeEur": "17000000",
+      "venue": "Eurex MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-241",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Comunidad de Madrid Pension Reserve Fund",
+    "clientId": "CL-DE-8848",
+    "expectedAlphaBps": "39",
+    "riskAdjustedReturn": "2.35",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Comunidad de Madrid Pension Reserve Fund suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "USD/JPY 3M Put Spread",
+      "direction": "SELL",
+      "sizeEur": "18500000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-242",
+    "title": "Investment Grade Credit Beta Overlay",
+    "assetClass": "Credit",
+    "clientName": "Kronberg Securities SE",
+    "clientId": "CL-NL-6183",
+    "expectedAlphaBps": "48",
+    "riskAdjustedReturn": "2.57",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kronberg Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Main 5Y",
+      "direction": "SELL",
+      "sizeEur": "17000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-243",
+    "title": "German SSA 7Y Asset Swap Tightening",
+    "assetClass": "Rates",
+    "clientName": "Kronberg Securities SE",
+    "clientId": "CL-NL-6183",
+    "expectedAlphaBps": "22",
+    "riskAdjustedReturn": "2.89",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kronberg Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 5Y Breakeven Swap",
+      "direction": "BUY",
+      "sizeEur": "32500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-244",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Provincia di Milano Pension Reserve Fund",
+    "clientId": "CL-DE-8008",
+    "expectedAlphaBps": "45",
+    "riskAdjustedReturn": "2.24",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Provincia di Milano Pension Reserve Fund suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "USD/JPY 3M Put Spread",
+      "direction": "SELL",
+      "sizeEur": "17000000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-245",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Amberfield Macro Fund ICAV",
+    "clientId": "CL-GB-5858",
+    "expectedAlphaBps": "26",
+    "riskAdjustedReturn": "2.62",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Amberfield Macro Fund ICAV suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR IG CDS Index Overlay",
+      "direction": "BUY",
+      "sizeEur": "35000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-246",
+    "title": "Euribor 3M/6M Basis Mean Reversion",
+    "assetClass": "Rates",
+    "clientName": "Alpenblick Investment Partners GmbH",
+    "clientId": "CL-FR-3997",
+    "expectedAlphaBps": "22",
+    "riskAdjustedReturn": "3.01",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Alpenblick Investment Partners GmbH suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR 3M vs 6M Basis Swap",
+      "direction": "SELL",
+      "sizeEur": "32500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-247",
+    "title": "USD/JPY 3M Downside Protection Overlay",
+    "assetClass": "FX",
+    "clientName": "Provincia di Milano Investment Office",
+    "clientId": "CL-DE-9491",
+    "expectedAlphaBps": "20",
+    "riskAdjustedReturn": "2.96",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Provincia di Milano Investment Office suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "28500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-248",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Kronberg Securities SE",
+    "clientId": "CL-LU-6275",
+    "expectedAlphaBps": "31",
+    "riskAdjustedReturn": "2.63",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kronberg Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 3Y/5Y Curve",
+      "direction": "SELL",
+      "sizeEur": "17000000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-249",
+    "title": "German SSA 7Y Asset Swap Tightening",
+    "assetClass": "Rates",
+    "clientName": "Kronberg Institutional Capital SE",
+    "clientId": "CL-IE-6909",
+    "expectedAlphaBps": "25",
+    "riskAdjustedReturn": "2.9",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kronberg Institutional Capital SE suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "DE10Y vs FR10Y Government Bond Spread",
+      "direction": "SELL",
+      "sizeEur": "9500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-250",
+    "title": "EUR/CHF 9M Participating Forward Overlay",
+    "assetClass": "FX",
+    "clientName": "Dornier Industrietechnik Corporate Treasury GmbH",
+    "clientId": "CL-AT-4000",
+    "expectedAlphaBps": "18",
+    "riskAdjustedReturn": "3.31",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Dornier Industrietechnik Corporate Treasury GmbH suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "8500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-251",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Kronberg Securities SE",
+    "clientId": "CL-DE-5708",
+    "expectedAlphaBps": "45",
+    "riskAdjustedReturn": "1.87",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kronberg Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 3Y/5Y Curve",
+      "direction": "SELL",
+      "sizeEur": "13500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-252",
+    "title": "Euribor 3M/6M Basis Mean Reversion",
+    "assetClass": "Rates",
+    "clientName": "Ironwood Credit Opportunities Fund SICAV",
+    "clientId": "CL-NL-4942",
+    "expectedAlphaBps": "30",
+    "riskAdjustedReturn": "2.47",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ironwood Credit Opportunities Fund SICAV suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "KfW 7Y Asset Swap Package",
+      "direction": "BUY",
+      "sizeEur": "28000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-253",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Voss Maschinenbau Finance GmbH",
+    "clientId": "CL-IE-2323",
+    "expectedAlphaBps": "31",
+    "riskAdjustedReturn": "2.64",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Voss Maschinenbau Finance GmbH suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "EUR/GBP 1Y 25D Risk Reversal",
+      "direction": "BUY",
+      "sizeEur": "7500000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-254",
+    "title": "EUR Financials Senior CDS Basis Tightening",
+    "assetClass": "Credit",
+    "clientName": "Dornier Industrietechnik Corporate Treasury GmbH",
+    "clientId": "CL-AT-4000",
+    "expectedAlphaBps": "66",
+    "riskAdjustedReturn": "3.06",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Dornier Industrietechnik Corporate Treasury GmbH suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "EUR Financials Senior CDS Basket",
+      "direction": "BUY",
+      "sizeEur": "26000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-255",
+    "title": "German SSA 7Y Asset Swap Tightening",
+    "assetClass": "Rates",
+    "clientName": "Baumgartner Family Office Group",
+    "clientId": "CL-DE-7125",
+    "expectedAlphaBps": "34",
+    "riskAdjustedReturn": "2.28",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Baumgartner Family Office Group suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 5Y Breakeven Swap",
+      "direction": "BUY",
+      "sizeEur": "11000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-256",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Nordlicht Logistik Corporate Treasury GmbH",
+    "clientId": "CL-DE-3122",
+    "expectedAlphaBps": "27",
+    "riskAdjustedReturn": "3.2",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Nordlicht Logistik Corporate Treasury GmbH suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "EUR/CHF 9M Participating Forward",
+      "direction": "SELL",
+      "sizeEur": "27000000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-257",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Quantum Meridian Global Fund plc",
+    "clientId": "CL-AT-2993",
+    "expectedAlphaBps": "57",
+    "riskAdjustedReturn": "2.66",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Quantum Meridian Global Fund plc suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 3Y/5Y Curve",
+      "direction": "BUY",
+      "sizeEur": "37000000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-258",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Kaiser Stahlwerke Corporate Treasury GmbH",
+    "clientId": "CL-LU-4917",
+    "expectedAlphaBps": "23",
+    "riskAdjustedReturn": "3.1",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kaiser Stahlwerke Corporate Treasury GmbH suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "EUR 5Y/10Y IRS Curve Position",
+      "direction": "BUY",
+      "sizeEur": "32000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-259",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Zeppelin Motoren Corporate Treasury GmbH",
+    "clientId": "CL-DE-7809",
+    "expectedAlphaBps": "34",
+    "riskAdjustedReturn": "2.49",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Zeppelin Motoren Corporate Treasury GmbH suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "USD/JPY 3M Put Spread",
+      "direction": "BUY",
+      "sizeEur": "24500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-260",
+    "title": "Crossover 3Y/5Y Relative Value",
+    "assetClass": "Credit",
+    "clientName": "Zeppelin Motoren Group Treasury SE",
+    "clientId": "CL-LU-6440",
+    "expectedAlphaBps": "28",
+    "riskAdjustedReturn": "3.01",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Zeppelin Motoren Group Treasury SE suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Main 5Y",
+      "direction": "BUY",
+      "sizeEur": "10500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-261",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Ironwood Global Fund plc",
+    "clientId": "CL-GB-9586",
+    "expectedAlphaBps": "20",
+    "riskAdjustedReturn": "2.94",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ironwood Global Fund plc suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "EUR 5Y/10Y IRS Curve Position",
+      "direction": "BUY",
+      "sizeEur": "9500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-262",
+    "title": "USD/JPY 3M Downside Protection Overlay",
+    "assetClass": "FX",
+    "clientName": "Freistaat Sachsen Treasury Office",
+    "clientId": "CL-DE-8640",
+    "expectedAlphaBps": "25",
+    "riskAdjustedReturn": "2.26",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Freistaat Sachsen Treasury Office suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "EUR/USD 6M Zero-Cost Collar",
+      "direction": "BUY",
+      "sizeEur": "8000000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-263",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Quantum Meridian Global Fund plc",
+    "clientId": "CL-AT-2993",
+    "expectedAlphaBps": "30",
+    "riskAdjustedReturn": "2.14",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Quantum Meridian Global Fund plc suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 3Y/5Y Curve",
+      "direction": "BUY",
+      "sizeEur": "29000000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-264",
+    "title": "EUR 5s10s Swap Curve Re-Steepener",
+    "assetClass": "Rates",
+    "clientName": "Ville de Lyon Pension Reserve Fund",
+    "clientId": "CL-DE-6447",
+    "expectedAlphaBps": "20",
+    "riskAdjustedReturn": "2.98",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ville de Lyon Pension Reserve Fund suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Eurex MTF.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 5Y Breakeven Swap",
+      "direction": "BUY",
+      "sizeEur": "24000000",
+      "venue": "Eurex MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-265",
+    "title": "EUR/CHF 9M Participating Forward Overlay",
+    "assetClass": "FX",
+    "clientName": "Ironwood Credit Opportunities Fund SICAV",
+    "clientId": "CL-NL-4942",
+    "expectedAlphaBps": "22",
+    "riskAdjustedReturn": "2.14",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ironwood Credit Opportunities Fund SICAV suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "USD/JPY 3M Put Spread",
+      "direction": "SELL",
+      "sizeEur": "12500000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-266",
+    "title": "EUR Financials Senior CDS Basis Tightening",
+    "assetClass": "Credit",
+    "clientName": "Marburg Capital Asset Management AG",
+    "clientId": "CL-DE-9096",
+    "expectedAlphaBps": "63",
+    "riskAdjustedReturn": "2.16",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Marburg Capital Asset Management AG suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Main 5Y",
+      "direction": "BUY",
+      "sizeEur": "20500000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-267",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Marburg Capital Investment Partners GmbH",
+    "clientId": "CL-FR-9148",
+    "expectedAlphaBps": "26",
+    "riskAdjustedReturn": "2.22",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Marburg Capital Investment Partners GmbH suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR 3M vs 6M Basis Swap",
+      "direction": "SELL",
+      "sizeEur": "17000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-268",
+    "title": "USD/JPY 3M Downside Protection Overlay",
+    "assetClass": "FX",
+    "clientName": "Zeppelin Motoren Group Treasury SE",
+    "clientId": "CL-LU-6440",
+    "expectedAlphaBps": "27",
+    "riskAdjustedReturn": "2.65",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Zeppelin Motoren Group Treasury SE suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "8000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-269",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Provincia di Milano Pension Reserve Fund",
+    "clientId": "CL-DE-8008",
+    "expectedAlphaBps": "61",
+    "riskAdjustedReturn": "2.47",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Provincia di Milano Pension Reserve Fund suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Main 5Y",
+      "direction": "SELL",
+      "sizeEur": "38500000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-270",
+    "title": "EUR 5s10s Swap Curve Re-Steepener",
+    "assetClass": "Rates",
+    "clientName": "Falkenstein Asset Management AG",
+    "clientId": "CL-DE-8786",
+    "expectedAlphaBps": "22",
+    "riskAdjustedReturn": "2.62",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Falkenstein Asset Management AG suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 5Y Breakeven Swap",
+      "direction": "SELL",
+      "sizeEur": "12500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-271",
+    "title": "USD/JPY 3M Downside Protection Overlay",
+    "assetClass": "FX",
+    "clientName": "Provincia di Milano Investment Office",
+    "clientId": "CL-DE-9491",
+    "expectedAlphaBps": "39",
+    "riskAdjustedReturn": "2.78",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Provincia di Milano Investment Office suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "EUR/CHF 9M Participating Forward",
+      "direction": "BUY",
+      "sizeEur": "19000000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-272",
+    "title": "EUR Financials Senior CDS Basis Tightening",
+    "assetClass": "Credit",
+    "clientName": "Baltic Crown Capital Markets AG",
+    "clientId": "CL-DE-5919",
+    "expectedAlphaBps": "67",
+    "riskAdjustedReturn": "2.09",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Baltic Crown Capital Markets AG suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 3Y/5Y Curve",
+      "direction": "SELL",
+      "sizeEur": "36000000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-273",
+    "title": "Euro Inflation Linker Breakeven Relative Value",
+    "assetClass": "Rates",
+    "clientName": "Greywolf Macro Fund ICAV",
+    "clientId": "CL-AT-8601",
+    "expectedAlphaBps": "23",
+    "riskAdjustedReturn": "2.34",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Greywolf Macro Fund ICAV suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "KfW 7Y Asset Swap Package",
+      "direction": "BUY",
+      "sizeEur": "17000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-274",
+    "title": "EUR/CHF 9M Participating Forward Overlay",
+    "assetClass": "FX",
+    "clientName": "Ironwood Credit Opportunities Fund SICAV",
+    "clientId": "CL-NL-4942",
+    "expectedAlphaBps": "39",
+    "riskAdjustedReturn": "2.43",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ironwood Credit Opportunities Fund SICAV suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "EUR/GBP 1Y 25D Risk Reversal",
+      "direction": "BUY",
+      "sizeEur": "29500000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-275",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Comunidad de Madrid Pension Reserve Fund",
+    "clientId": "CL-DE-8848",
+    "expectedAlphaBps": "26",
+    "riskAdjustedReturn": "2.4",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Comunidad de Madrid Pension Reserve Fund suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "iTraxx Xover Curve Switch",
+      "direction": "SELL",
+      "sizeEur": "16000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-276",
+    "title": "Euro Inflation Linker Breakeven Relative Value",
+    "assetClass": "Rates",
+    "clientName": "Havelland Institutional Capital SE",
+    "clientId": "CL-CH-3282",
+    "expectedAlphaBps": "42",
+    "riskAdjustedReturn": "2.33",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Havelland Institutional Capital SE suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 5Y Breakeven Swap",
+      "direction": "BUY",
+      "sizeEur": "34500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-277",
+    "title": "EUR/CHF 9M Participating Forward Overlay",
+    "assetClass": "FX",
+    "clientName": "Odenwald Investment Partners GmbH",
+    "clientId": "CL-DE-7771",
+    "expectedAlphaBps": "30",
+    "riskAdjustedReturn": "3.2",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Odenwald Investment Partners GmbH suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "SELL",
+      "sizeEur": "23500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-278",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Kronberg Securities SE",
+    "clientId": "CL-LU-6275",
+    "expectedAlphaBps": "40",
+    "riskAdjustedReturn": "3.08",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kronberg Securities SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "iTraxx Xover Curve Switch",
+      "direction": "SELL",
+      "sizeEur": "30500000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-279",
+    "title": "EUR 5s10s Swap Curve Re-Steepener",
+    "assetClass": "Rates",
+    "clientName": "Havelland Institutional Capital SE",
+    "clientId": "CL-CH-3282",
+    "expectedAlphaBps": "39",
+    "riskAdjustedReturn": "2.46",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Havelland Institutional Capital SE suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "DE10Y vs FR10Y Government Bond Spread",
+      "direction": "BUY",
+      "sizeEur": "24500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-280",
+    "title": "EUR/USD 1Y Zero-Cost Collar Rebalance",
+    "assetClass": "FX",
+    "clientName": "Quantum Meridian Macro Fund ICAV",
+    "clientId": "CL-NL-9787",
+    "expectedAlphaBps": "33",
+    "riskAdjustedReturn": "2.64",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Quantum Meridian Macro Fund ICAV suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "10500000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-281",
+    "title": "Investment Grade Credit Beta Overlay",
+    "assetClass": "Credit",
+    "clientName": "Kronberg Institutional Capital SE",
+    "clientId": "CL-IE-6909",
+    "expectedAlphaBps": "60",
+    "riskAdjustedReturn": "2.25",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kronberg Institutional Capital SE suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR IG CDS Index Overlay",
+      "direction": "SELL",
+      "sizeEur": "24500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-282",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Provincia di Milano Pension Reserve Fund",
+    "clientId": "CL-DE-8008",
+    "expectedAlphaBps": "30",
+    "riskAdjustedReturn": "3.18",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Provincia di Milano Pension Reserve Fund suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Eurex MTF.",
+    "orderDraft": {
+      "instrument": "EUR 5Y/10Y IRS Curve Position",
+      "direction": "SELL",
+      "sizeEur": "12500000",
+      "venue": "Eurex MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-283",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Ironwood Credit Opportunities Fund SICAV",
+    "clientId": "CL-NL-4942",
+    "expectedAlphaBps": "26",
+    "riskAdjustedReturn": "2.62",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ironwood Credit Opportunities Fund SICAV suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/GBP 1Y 25D Risk Reversal",
+      "direction": "BUY",
+      "sizeEur": "23000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-284",
+    "title": "EUR Financials Senior CDS Basis Tightening",
+    "assetClass": "Credit",
+    "clientName": "Rossbach Wealth Advisory Group",
+    "clientId": "CL-GB-1042",
+    "expectedAlphaBps": "51",
+    "riskAdjustedReturn": "2.32",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Rossbach Wealth Advisory Group suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "iTraxx Xover Curve Switch",
+      "direction": "BUY",
+      "sizeEur": "14000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-285",
+    "title": "Euro Inflation Linker Breakeven Relative Value",
+    "assetClass": "Rates",
+    "clientName": "Ironwood Global Fund plc",
+    "clientId": "CL-GB-9586",
+    "expectedAlphaBps": "40",
+    "riskAdjustedReturn": "2.79",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ironwood Global Fund plc suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR 3M vs 6M Basis Swap",
+      "direction": "BUY",
+      "sizeEur": "16000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-286",
+    "title": "EUR/GBP 1Y Risk Reversal Carry",
+    "assetClass": "FX",
+    "clientName": "Steinbrück Institutional Capital SE",
+    "clientId": "CL-DE-1192",
+    "expectedAlphaBps": "46",
+    "riskAdjustedReturn": "3.24",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Steinbrück Institutional Capital SE suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "EUR/CHF 9M Participating Forward",
+      "direction": "BUY",
+      "sizeEur": "22000000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-287",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Greywolf Hedge Fund LP",
+    "clientId": "CL-AT-4384",
+    "expectedAlphaBps": "40",
+    "riskAdjustedReturn": "2.08",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Greywolf Hedge Fund LP suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR Financials Senior CDS Basket",
+      "direction": "SELL",
+      "sizeEur": "19500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-288",
+    "title": "Euribor 3M/6M Basis Mean Reversion",
+    "assetClass": "Rates",
+    "clientName": "Provincia di Milano Pension Reserve Fund",
+    "clientId": "CL-DE-8008",
+    "expectedAlphaBps": "44",
+    "riskAdjustedReturn": "2.48",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Provincia di Milano Pension Reserve Fund suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR 3M vs 6M Basis Swap",
+      "direction": "BUY",
+      "sizeEur": "14500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-289",
+    "title": "EUR/CHF 9M Participating Forward Overlay",
+    "assetClass": "FX",
+    "clientName": "Kaiser Stahlwerke Corporate Treasury GmbH",
+    "clientId": "CL-LU-4917",
+    "expectedAlphaBps": "28",
+    "riskAdjustedReturn": "3.13",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kaiser Stahlwerke Corporate Treasury GmbH suitability profile (Professional). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 6M Zero-Cost Collar",
+      "direction": "SELL",
+      "sizeEur": "23000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-290",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Zeppelin Motoren Group Treasury SE",
+    "clientId": "CL-FR-3058",
+    "expectedAlphaBps": "63",
+    "riskAdjustedReturn": "2.08",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Zeppelin Motoren Group Treasury SE suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR IG CDS Index Overlay",
+      "direction": "SELL",
+      "sizeEur": "27000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-291",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Kaiser Stahlwerke Corporate Treasury GmbH",
+    "clientId": "CL-LU-4917",
+    "expectedAlphaBps": "40",
+    "riskAdjustedReturn": "2.56",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Kaiser Stahlwerke Corporate Treasury GmbH suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Bloomberg MTF.",
+    "orderDraft": {
+      "instrument": "EUR 5Y/10Y IRS Curve Position",
+      "direction": "BUY",
+      "sizeEur": "10000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-292",
+    "title": "EUR/USD 1Y Zero-Cost Collar Rebalance",
+    "assetClass": "FX",
+    "clientName": "Lindenau Global Investors SE",
+    "clientId": "CL-DE-3501",
+    "expectedAlphaBps": "27",
+    "riskAdjustedReturn": "2.72",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Lindenau Global Investors SE suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on EBS MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "15500000",
+      "venue": "EBS MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-293",
+    "title": "Sub-IG Europe Index Curve Steepener",
+    "assetClass": "Credit",
+    "clientName": "Quantum Meridian Global Fund plc",
+    "clientId": "CL-AT-2993",
+    "expectedAlphaBps": "65",
+    "riskAdjustedReturn": "2.59",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Quantum Meridian Global Fund plc suitability profile (Eligible Counterparty). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "EUR IG CDS Index Overlay",
+      "direction": "SELL",
+      "sizeEur": "25500000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-294",
+    "title": "Bund 10Y vs OAT 10Y Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Falkenstein Asset Management AG",
+    "clientId": "CL-DE-8786",
+    "expectedAlphaBps": "31",
+    "riskAdjustedReturn": "2.56",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Falkenstein Asset Management AG suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Eurex MTF.",
+    "orderDraft": {
+      "instrument": "EUR 3M vs 6M Basis Swap",
+      "direction": "SELL",
+      "sizeEur": "28500000",
+      "venue": "Eurex MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-295",
+    "title": "EUR/CHF 9M Participating Forward Overlay",
+    "assetClass": "FX",
+    "clientName": "Marburg Capital Asset Management AG",
+    "clientId": "CL-DE-9096",
+    "expectedAlphaBps": "27",
+    "riskAdjustedReturn": "2.74",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Marburg Capital Asset Management AG suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on 360T MTF.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "23500000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-296",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Freistaat Sachsen Treasury Office",
+    "clientId": "CL-DE-8640",
+    "expectedAlphaBps": "63",
+    "riskAdjustedReturn": "2.26",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Freistaat Sachsen Treasury Office suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on MarketAxess.",
+    "orderDraft": {
+      "instrument": "EUR Financials Senior CDS Basket",
+      "direction": "SELL",
+      "sizeEur": "25000000",
+      "venue": "MarketAxess"
+    }
+  },
+  {
+    "id": "IDEA-2026-297",
+    "title": "Euro Inflation Linker Breakeven Relative Value",
+    "assetClass": "Rates",
+    "clientName": "Ville de Lyon Pension Reserve Fund",
+    "clientId": "CL-DE-6447",
+    "expectedAlphaBps": "39",
+    "riskAdjustedReturn": "3.01",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Ville de Lyon Pension Reserve Fund suitability profile (Professional). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "DE10Y vs FR10Y Government Bond Spread",
+      "direction": "SELL",
+      "sizeEur": "13500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-298",
+    "title": "EUR/USD 6M Collar Volatility Hedge",
+    "assetClass": "FX",
+    "clientName": "Bergmann Chemie Finance GmbH",
+    "clientId": "CL-DE-6258",
+    "expectedAlphaBps": "41",
+    "riskAdjustedReturn": "2.7",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Bergmann Chemie Finance GmbH suitability profile (Eligible Counterparty). GDPR consent verified for FX derivatives. Best-execution venue availability confirmed on FXall.",
+    "orderDraft": {
+      "instrument": "EUR/USD 1Y Collar",
+      "direction": "BUY",
+      "sizeEur": "23500000",
+      "venue": "FXall"
+    }
+  },
+  {
+    "id": "IDEA-2026-299",
+    "title": "iTraxx Main 5Y Carry Compression",
+    "assetClass": "Credit",
+    "clientName": "Rossbach Wealth Advisory Group",
+    "clientId": "CL-GB-1042",
+    "expectedAlphaBps": "44",
+    "riskAdjustedReturn": "2.89",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Rossbach Wealth Advisory Group suitability profile (Professional). GDPR consent verified for Credit derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "EUR Financials Senior CDS Basket",
+      "direction": "BUY",
+      "sizeEur": "14000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-300",
+    "title": "German SSA 7Y Asset Swap Tightening",
+    "assetClass": "Rates",
+    "clientName": "Falkenstein Asset Management AG",
+    "clientId": "CL-DE-8786",
+    "expectedAlphaBps": "23",
+    "riskAdjustedReturn": "2.73",
+    "prescreenedPassed": "TRUE",
+    "justification": "Pre-screened against Falkenstein Asset Management AG suitability profile (Eligible Counterparty). GDPR consent verified for Rates derivatives. Best-execution venue availability confirmed on Tradeweb.",
+    "orderDraft": {
+      "instrument": "DE10Y vs FR10Y Government Bond Spread",
+      "direction": "SELL",
+      "sizeEur": "28500000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-208",
+    "title": "EUR 10Y Inflation Swap Long Breakeven",
+    "assetClass": "Rates",
+    "clientName": "Provincia di Milano Investment Office",
+    "clientId": "CL-DE-9491",
+    "expectedAlphaBps": "28",
+    "riskAdjustedReturn": "1.85",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Order size EUR 25,000,000 exceeds client single-trade limit of EUR 15,000,000. Best-execution venue Bloomberg MTF confirmed.",
+    "orderDraft": {
+      "instrument": "Euro HICPxT 10Y Breakeven Swap",
+      "direction": "BUY",
+      "sizeEur": "25000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-209",
+    "title": "USD/EUR 6M Forward Hedging Carry",
+    "assetClass": "FX",
+    "clientName": "Ferrante Wealth Advisory Group",
+    "clientId": "CL-NL-6936",
+    "expectedAlphaBps": "38",
+    "riskAdjustedReturn": "2.15",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: GDPR consent missing for FX derivatives trading. Target market suitability check unverified.",
+    "orderDraft": {
+      "instrument": "USD/EUR 6M Forward",
+      "direction": "SELL",
+      "sizeEur": "18000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-210",
+    "title": "High Yield Credit Index Protection Buyer",
+    "assetClass": "Credit",
+    "clientName": "Rheinmetall Corporate Treasury GmbH",
+    "clientId": "CL-DE-7355",
+    "expectedAlphaBps": "52",
+    "riskAdjustedReturn": "1.95",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Underlying instrument iTraxx Crossover on internal risk restriction list for treasury mandate.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 5Y",
+      "direction": "BUY",
+      "sizeEur": "30000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-211",
+    "title": "EUR 2s10s Swap Curve Flattener",
+    "assetClass": "Rates",
+    "clientName": "Elbtal Institutional Capital SE",
+    "clientId": "CL-IE-7387",
+    "expectedAlphaBps": "19",
+    "riskAdjustedReturn": "2.1",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Leveraged swap exposure exceeds client VAR portfolio limit. Bloomberg MTF available.",
+    "orderDraft": {
+      "instrument": "EUR 2Y vs 10Y Interest Rate Swap",
+      "direction": "SELL",
+      "sizeEur": "45000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-212",
+    "title": "GBP/EUR 3M Volatility Collar",
+    "assetClass": "FX",
+    "clientName": "Kaiser Stahlwerke Corporate Treasury GmbH",
+    "clientId": "CL-LU-4917",
+    "expectedAlphaBps": "42",
+    "riskAdjustedReturn": "2.05",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: 360T MTF venue onboarding pending for client LEI. GDPR consent verified.",
+    "orderDraft": {
+      "instrument": "GBP/EUR 3M Zero-Cost Collar",
+      "direction": "BUY",
+      "sizeEur": "20000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-213",
+    "title": "Subordinated Financials CDS Basis Arbitrage",
+    "assetClass": "Credit",
+    "clientName": "Freistaat Sachsen Treasury Office",
+    "clientId": "CL-DE-8640",
+    "expectedAlphaBps": "64",
+    "riskAdjustedReturn": "2.3",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Client public treasury mandate prohibits speculative derivative credit structures.",
+    "orderDraft": {
+      "instrument": "EUR Subordinated Financials CDS 5Y",
+      "direction": "BUY",
+      "sizeEur": "15000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-214",
+    "title": "CHF/EUR Cross-Currency Basis Spread",
+    "assetClass": "Rates",
+    "clientName": "Kanton Zürich Investment Office",
+    "clientId": "CL-CH-8945",
+    "expectedAlphaBps": "25",
+    "riskAdjustedReturn": "2.4",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: MiFID II target market classification error for complex cross-currency package.",
+    "orderDraft": {
+      "instrument": "CHF/EUR 5Y Cross-Currency Basis Swap",
+      "direction": "BUY",
+      "sizeEur": "22000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-215",
+    "title": "German Sovereign 10Y Asset Swap Spread",
+    "assetClass": "Rates",
+    "clientName": "Provincia di Milano Investment Office",
+    "clientId": "CL-DE-9491",
+    "expectedAlphaBps": "18",
+    "riskAdjustedReturn": "2.2",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Execution venue Tradeweb missing active credit line for client entity.",
+    "orderDraft": {
+      "instrument": "Bund 10Y Asset Swap Package",
+      "direction": "BUY",
+      "sizeEur": "35000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-216",
+    "title": "EUR/USD 2Y Risk Reversal Hedging",
+    "assetClass": "FX",
+    "clientName": "Ferrante Wealth Advisory Group",
+    "clientId": "CL-NL-6936",
+    "expectedAlphaBps": "31",
+    "riskAdjustedReturn": "1.75",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Client risk profile (Professional-Restricted) limits FX option maturity to 1Y maximum.",
+    "orderDraft": {
+      "instrument": "EUR/USD 2Y Risk Reversal",
+      "direction": "SELL",
+      "sizeEur": "12000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-217",
+    "title": "European Corporate Bond Synthetic Overlay",
+    "assetClass": "Credit",
+    "clientName": "Rheinmetall Corporate Treasury GmbH",
+    "clientId": "CL-DE-7355",
+    "expectedAlphaBps": "48",
+    "riskAdjustedReturn": "2.08",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Concentration threshold breached for sector exposure in Credit asset class.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Senior Financials 5Y",
+      "direction": "BUY",
+      "sizeEur": "28000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-218",
+    "title": "ESTR OIS 2Y Rate Cut Positioning",
+    "assetClass": "Rates",
+    "clientName": "Elbtal Institutional Capital SE",
+    "clientId": "CL-IE-7387",
+    "expectedAlphaBps": "24",
+    "riskAdjustedReturn": "2.62",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Order size EUR 50,000,000 exceeds maximum permitted trade size of EUR 40,000,000.",
+    "orderDraft": {
+      "instrument": "EUR ESTR 2Y Receiver OIS",
+      "direction": "BUY",
+      "sizeEur": "50000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-219",
+    "title": "USD/EUR Spot Cross Hedging",
+    "assetClass": "FX",
+    "clientName": "Kaiser Stahlwerke Corporate Treasury GmbH",
+    "clientId": "CL-LU-4917",
+    "expectedAlphaBps": "29",
+    "riskAdjustedReturn": "1.9",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Missing GDPR consent renewal for FX spot execution.",
+    "orderDraft": {
+      "instrument": "USD/EUR Spot",
+      "direction": "BUY",
+      "sizeEur": "16000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-220",
+    "title": "Sovereign CDS Tightening Compression",
+    "assetClass": "Credit",
+    "clientName": "Freistaat Sachsen Treasury Office",
+    "clientId": "CL-DE-8640",
+    "expectedAlphaBps": "36",
+    "riskAdjustedReturn": "2.12",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Sovereign CDS selling restricted under municipal treasury investment policy.",
+    "orderDraft": {
+      "instrument": "Sovereign Western Europe CDS Basket 5Y",
+      "direction": "SELL",
+      "sizeEur": "20000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-221",
+    "title": "EUR 10s30s Ultra-Long Swap Steepener",
+    "assetClass": "Rates",
+    "clientName": "Kanton Zürich Investment Office",
+    "clientId": "CL-CH-8945",
+    "expectedAlphaBps": "23",
+    "riskAdjustedReturn": "2.25",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Portfolio duration risk delta limit exceeded. Bloomberg MTF available.",
+    "orderDraft": {
+      "instrument": "EUR 10Y vs 30Y Interest Rate Swap",
+      "direction": "BUY",
+      "sizeEur": "17500000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-222",
+    "title": "Italian BTP vs Bund Spread Compression",
+    "assetClass": "Rates",
+    "clientName": "Provincia di Milano Investment Office",
+    "clientId": "CL-DE-9491",
+    "expectedAlphaBps": "32",
+    "riskAdjustedReturn": "2.45",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Conflict of interest policy flag for domestic sovereign spread trading.",
+    "orderDraft": {
+      "instrument": "BTP/Bund 10Y Yield Spread Swap",
+      "direction": "SELL",
+      "sizeEur": "19000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-223",
+    "title": "EUR/JPY 1Y Range Accrual",
+    "assetClass": "FX",
+    "clientName": "Ferrante Wealth Advisory Group",
+    "clientId": "CL-NL-6936",
+    "expectedAlphaBps": "55",
+    "riskAdjustedReturn": "2.8",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Exotics / Structured FX products restricted for this client classification.",
+    "orderDraft": {
+      "instrument": "EUR/JPY 1Y Range Accrual Note",
+      "direction": "BUY",
+      "sizeEur": "10000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-224",
+    "title": "Investment Grade Auto Sector CDS Short",
+    "assetClass": "Credit",
+    "clientName": "Rheinmetall Corporate Treasury GmbH",
+    "clientId": "CL-DE-7355",
+    "expectedAlphaBps": "46",
+    "riskAdjustedReturn": "2.01",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Single-name / sector concentration check failed on Automotive exposure.",
+    "orderDraft": {
+      "instrument": "EUR Auto Sector Senior CDS Index",
+      "direction": "BUY",
+      "sizeEur": "22000000",
+      "venue": "Tradeweb"
+    }
+  },
+  {
+    "id": "IDEA-2026-225",
+    "title": "EUR 5Y Real Rate Receiver",
+    "assetClass": "Rates",
+    "clientName": "Elbtal Institutional Capital SE",
+    "clientId": "CL-IE-7387",
+    "expectedAlphaBps": "27",
+    "riskAdjustedReturn": "2.35",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Pre-trade LEI validation failure on trade repository reporting service.",
+    "orderDraft": {
+      "instrument": "EUR 5Y Real Rate Swap",
+      "direction": "BUY",
+      "sizeEur": "31000000",
+      "venue": "Bloomberg MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-226",
+    "title": "GBP/USD 6M Currency Put Spread",
+    "assetClass": "FX",
+    "clientName": "Kaiser Stahlwerke Corporate Treasury GmbH",
+    "clientId": "CL-LU-4917",
+    "expectedAlphaBps": "37",
+    "riskAdjustedReturn": "2.18",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Unhedged currency derivative exposure exceeds corporate hedging policy limit.",
+    "orderDraft": {
+      "instrument": "GBP/USD 6M Put Spread",
+      "direction": "BUY",
+      "sizeEur": "14000000",
+      "venue": "360T MTF"
+    }
+  },
+  {
+    "id": "IDEA-2026-227",
+    "title": "European High Yield CDS Index Arbitrage",
+    "assetClass": "Credit",
+    "clientName": "Freistaat Sachsen Treasury Office",
+    "clientId": "CL-DE-8640",
+    "expectedAlphaBps": "61",
+    "riskAdjustedReturn": "2.5",
+    "prescreenedPassed": "FALSE",
+    "justification": "Pre-screening failed: Credit rating threshold violation; High Yield derivatives disallowed for public entity.",
+    "orderDraft": {
+      "instrument": "iTraxx Europe Crossover 5Y",
+      "direction": "BUY",
+      "sizeEur": "25000000",
+      "venue": "Bloomberg MTF"
+    }
+  }
+]

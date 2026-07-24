@@ -1,5 +1,7 @@
+import json
 import math
 
+import pandas as pd
 def cosine_similarity(a: list, b: list) -> float:
     if len(a) != len(b) or len(a) == 0:
         return 0.0
@@ -10,68 +12,81 @@ def cosine_similarity(a: list, b: list) -> float:
         return 0.0
     return dot_product / (norm_a * norm_b)
 
-SEEDED_FINE_CASES = [
-    {
-        'id': 'CASE-2015-LIBOR',
-        'caseName': 'LIBOR Benchmark Manipulation (2015)',
-        'caseYear': 2015,
-        'category': 'Benchmark & Rate Fixing',
-        'regulator': 'BaFin / FCA',
-        'fineAmount': '€450 Million',
-        'description': 'Traders colluded via chat rooms to submit artificial benchmark rates influencing EURIBOR/LIBOR fixings.',
-        'keyPattern': 'Off-market quotes submitted near fix window + trader comms referencing benchmark offsets.',
-        'mitigationStrategy': 'Halt automated execution on rate fixings; trigger 1st Line Compliance review immediately.',
-        'vector': [0.85, 0.92, 0.88, 0.95, 0.10, 0.40, 0.20, 0.80],
-    },
-    {
-        'id': 'CASE-2018-MBS',
-        'caseName': 'MBS Mismarking & Illiquid Asset Valuation (2018)',
-        'caseYear': 2018,
-        'category': 'Valuation & Mismarking',
-        'regulator': 'SEC / BaFin',
-        'fineAmount': '€180 Million',
-        'description': 'Structured credit desk overvalued subprime mortgage-backed securities to disguise inventory losses.',
-        'keyPattern': 'High size transactions in illiquid credit instruments executed >150bps off fair value mark.',
-        'mitigationStrategy': 'Mandate independent risk controller price verification before booking trade.',
-        'vector': [0.90, 0.85, 0.95, 0.30, 0.15, 0.90, 0.10, 0.20],
-    },
-    {
-        'id': 'CASE-2021-AML',
-        'caseName': 'Cross-Border Wealth AML Structural Failure (2021)',
-        'caseYear': 2021,
-        'category': 'AML & Customer Due Diligence',
-        'regulator': 'BaFin',
-        'fineAmount': '€320 Million',
-        'description': 'Unvetted offshore holding companies routed €100M+ FX swaps without verified ultimate beneficial owners.',
-        'keyPattern': 'High volume FX/Rates orders routed for clients with EXPIRED or PENDING KYC status.',
-        'mitigationStrategy': 'Block order flow instantly until UBO documentation and GwG compliance clearance is uploaded.',
-        'vector': [0.75, 0.20, 0.30, 0.50, 0.10, 0.30, 0.98, 0.40],
-    },
-    {
-        'id': 'CASE-2022-FRONTRUN',
-        'caseName': 'Block Order Front-Running & Information Leakage (2022)',
-        'caseYear': 2022,
-        'category': 'Market Abuse (MAR)',
-        'regulator': 'BaFin / ESMA',
-        'fineAmount': '€95 Million',
-        'description': 'Prop desk executed personal/firm hedge trades milliseconds prior to executing client €50M+ block order.',
-        'keyPattern': 'Prop/hedge order placed in same instrument within 30 seconds preceding large client order.',
-        'mitigationStrategy': 'Enforce strict Chinese wall & order queue time lock; auto-suspend prop trading on active client block.',
-        'vector': [0.95, 0.70, 0.60, 0.80, 0.05, 0.50, 0.05, 0.95],
-    },
-    {
-        'id': 'CASE-2023-SPOOF',
-        'caseName': 'High-Frequency Quote Spoofing & Layering (2023)',
-        'caseYear': 2023,
-        'category': 'Order Book Manipulation',
-        'regulator': 'BaFin',
-        'fineAmount': '€60 Million',
-        'description': 'Rapid creation and cancellation of non-bona fide orders to artificially move order book depth.',
-        'keyPattern': 'High order-to-trade ratio (>50:1) with rapid cancellation times under 500ms.',
-        'mitigationStrategy': 'Throttle algo order entry rate and flag desk to Market Abuse Surveillance.',
-        'vector': [0.40, 0.50, 0.70, 0.20, 0.05, 0.20, 0.05, 0.99],
-    },
-]
+
+SEEDED_FINE_CASES = pd.read_excel(
+    './data/SEEDED_FINE_CASES.xlsx',
+    engine='openpyxl',
+).to_dict(orient='records')
+
+for fine_case in SEEDED_FINE_CASES:
+    vector = fine_case.get('vector')
+    if isinstance(vector, str):
+        fine_case['vector'] = json.loads(vector)
+
+print(f"Seeded fine cases : {SEEDED_FINE_CASES}")
+
+# SEEDED_FINE_CASES = [
+#     {
+#         'id': 'CASE-2015-LIBOR',
+#         'caseName': 'LIBOR Benchmark Manipulation (2015)',
+#         'caseYear': 2015,
+#         'category': 'Benchmark & Rate Fixing',
+#         'regulator': 'BaFin / FCA',
+#         'fineAmount': '€450 Million',
+#         'description': 'Traders colluded via chat rooms to submit artificial benchmark rates influencing EURIBOR/LIBOR fixings.',
+#         'keyPattern': 'Off-market quotes submitted near fix window + trader comms referencing benchmark offsets.',
+#         'mitigationStrategy': 'Halt automated execution on rate fixings; trigger 1st Line Compliance review immediately.',
+#         'vector': [0.85, 0.92, 0.88, 0.95, 0.10, 0.40, 0.20, 0.80],
+#     },
+#     {
+#         'id': 'CASE-2018-MBS',
+#         'caseName': 'MBS Mismarking & Illiquid Asset Valuation (2018)',
+#         'caseYear': 2018,
+#         'category': 'Valuation & Mismarking',
+#         'regulator': 'SEC / BaFin',
+#         'fineAmount': '€180 Million',
+#         'description': 'Structured credit desk overvalued subprime mortgage-backed securities to disguise inventory losses.',
+#         'keyPattern': 'High size transactions in illiquid credit instruments executed >150bps off fair value mark.',
+#         'mitigationStrategy': 'Mandate independent risk controller price verification before booking trade.',
+#         'vector': [0.90, 0.85, 0.95, 0.30, 0.15, 0.90, 0.10, 0.20],
+#     },
+#     {
+#         'id': 'CASE-2021-AML',
+#         'caseName': 'Cross-Border Wealth AML Structural Failure (2021)',
+#         'caseYear': 2021,
+#         'category': 'AML & Customer Due Diligence',
+#         'regulator': 'BaFin',
+#         'fineAmount': '€320 Million',
+#         'description': 'Unvetted offshore holding companies routed €100M+ FX swaps without verified ultimate beneficial owners.',
+#         'keyPattern': 'High volume FX/Rates orders routed for clients with EXPIRED or PENDING KYC status.',
+#         'mitigationStrategy': 'Block order flow instantly until UBO documentation and GwG compliance clearance is uploaded.',
+#         'vector': [0.75, 0.20, 0.30, 0.50, 0.10, 0.30, 0.98, 0.40],
+#     },
+#     {
+#         'id': 'CASE-2022-FRONTRUN',
+#         'caseName': 'Block Order Front-Running & Information Leakage (2022)',
+#         'caseYear': 2022,
+#         'category': 'Market Abuse (MAR)',
+#         'regulator': 'BaFin / ESMA',
+#         'fineAmount': '€95 Million',
+#         'description': 'Prop desk executed personal/firm hedge trades milliseconds prior to executing client €50M+ block order.',
+#         'keyPattern': 'Prop/hedge order placed in same instrument within 30 seconds preceding large client order.',
+#         'mitigationStrategy': 'Enforce strict Chinese wall & order queue time lock; auto-suspend prop trading on active client block.',
+#         'vector': [0.95, 0.70, 0.60, 0.80, 0.05, 0.50, 0.05, 0.95],
+#     },
+#     {
+#         'id': 'CASE-2023-SPOOF',
+#         'caseName': 'High-Frequency Quote Spoofing & Layering (2023)',
+#         'caseYear': 2023,
+#         'category': 'Order Book Manipulation',
+#         'regulator': 'BaFin',
+#         'fineAmount': '€60 Million',
+#         'description': 'Rapid creation and cancellation of non-bona fide orders to artificially move order book depth.',
+#         'keyPattern': 'High order-to-trade ratio (>50:1) with rapid cancellation times under 500ms.',
+#         'mitigationStrategy': 'Throttle algo order entry rate and flag desk to Market Abuse Surveillance.',
+#         'vector': [0.40, 0.50, 0.70, 0.20, 0.05, 0.20, 0.05, 0.99],
+#     },
+# ]
 
 def build_order_vector(
     size_eur: float,
