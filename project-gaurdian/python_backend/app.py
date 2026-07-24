@@ -694,6 +694,62 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.send_json({"success": True, "chatSessionId": chat_session_id})
             return
 
+        # 6c. Cross-Market Anomaly Engine — demo regime controls
+        if path == '/api/risk/simulate-shock' or path == '/api/risk/simulate-reset':
+            regime = 'stressed' if path.endswith('shock') else 'normal'
+            try:
+                from anomaly_runtime import set_regime
+                active = set_regime(regime)
+                log_audit_event(
+                    module='Cross-Market Risk Engine',
+                    persona=store.active_persona,
+                    user=store.active_user,
+                    action=f"Market regime switched to {active.upper()}",
+                    reasoning_payload=f"Anomaly engine regime set to '{active}'. Cross-market correlation structure will {'destabilise' if active == 'stressed' else 'normalise'} over subsequent ticks.",
+                    guardian_score_at_time=42 if active == 'stressed' else 95,
+                    model_used='mahalanobis-cross-market-v1',
+                    latency_ms=2,
+                    fallback_used=False,
+                )
+                self.send_json({'success': True, 'regime': active})
+            except Exception as e:
+                self.send_json({'error': f'anomaly engine unavailable: {e}'}, status=503)
+            return
+
+        # 6d. AI Risk Briefing — narrate the current top anomaly (on-demand LLM)
+        if path == '/api/risk/anomalies/narrate':
+            anomaly_id = body.get('anomalyId')
+            anomaly = None
+            if anomaly_id:
+                anomaly = next((a for a in store.anomalies if a['id'] == anomaly_id), None)
+            if anomaly is None and store.anomalies:
+                anomaly = store.anomalies[0]
+            if anomaly is None:
+                self.send_json({'error': 'no active anomaly to narrate'}, status=404)
+                return
+
+            from ai_engine import narrate_risk_anomaly
+            result = narrate_risk_anomaly(anomaly)
+
+            log_audit_event(
+                module='Cross-Market Risk Engine',
+                persona=store.active_persona,
+                user=store.active_user,
+                action=f"Generated AI Risk Briefing for {anomaly['id']}",
+                reasoning_payload=f"Narrated {anomaly.get('alertLevel')} anomaly at {anomaly.get('deviationSigma')}σ. Briefing: '{result['text'][:140]}...'",
+                guardian_score_at_time=42 if anomaly.get('alertLevel') == 'RED' else 90,
+                model_used=result['model'],
+                latency_ms=result['latencyMs'],
+                fallback_used=result['fallbackUsed'],
+            )
+            self.send_json({
+                'anomalyId': anomaly['id'],
+                'narrative': result['text'],
+                'model': result['model'],
+                'fallbackUsed': result['fallbackUsed'],
+            })
+            return
+
         # 7. Audit Export PDF
         if path == "/api/audit/export":
             log_audit_event(
@@ -737,6 +793,12 @@ def run_server(port=5000):
     print(f"==================================================")
     print(f"🚀 Python AI Backend Online on http://0.0.0.0:{port}")
     print(f"==================================================")
+    # Start the live cross-market anomaly engine (computes store.anomalies).
+    try:
+        from anomaly_runtime import start_engine
+        start_engine(store)
+    except Exception as e:
+        print(f"[AnomalyEngine] not started ({e}); serving seeded anomalies")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
