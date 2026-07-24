@@ -52,7 +52,7 @@ export const Risk: React.FC<RiskProps> = ({ activePersona = 'Risk Officer' }) =>
       forceRender((n) => n + 1);
     };
     poll();
-    const t = setInterval(poll, 5000);
+    const t = setInterval(poll, 500);
     return () => {
       active = false;
       clearInterval(t);
